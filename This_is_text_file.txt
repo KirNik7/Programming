@@ -1,1 +1,2 @@
 This is text in this text file
+--> Some new text here <--
