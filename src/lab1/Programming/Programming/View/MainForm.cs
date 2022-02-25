@@ -66,7 +66,8 @@ namespace Programming.View
 
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            int selectedIndexEnum = ValuesListBox.SelectedIndex;
+            IntValueTextBox.Text = selectedIndexEnum.ToString();
         }
 
         private void SeasonHandleButton_Click(object sender, EventArgs e)
