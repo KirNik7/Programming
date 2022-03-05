@@ -168,10 +168,11 @@ namespace Programming.View
             this.EnumsGroupBox.Size = new System.Drawing.Size(845, 280);
             this.EnumsGroupBox.TabIndex = 0;
             this.EnumsGroupBox.TabStop = false;
-            this.EnumsGroupBox.Text = "Enumirations";
+            this.EnumsGroupBox.Text = "Enumerations";
             // 
             // IntValueTextBox
             // 
+            this.IntValueTextBox.Enabled = false;
             this.IntValueTextBox.Location = new System.Drawing.Point(372, 37);
             this.IntValueTextBox.Name = "IntValueTextBox";
             this.IntValueTextBox.Size = new System.Drawing.Size(125, 23);
