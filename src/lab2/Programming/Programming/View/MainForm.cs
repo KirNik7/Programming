@@ -95,10 +95,10 @@ namespace Programming.View
 
         private void WeekdayParsingButton_Click(object sender, EventArgs e)
         {
-            Weekday value;
-            if (Enum.TryParse(WeekdayParsingTextBox.Text, out value))
+            Weekday weekdayValue;
+            if (Enum.TryParse(WeekdayParsingTextBox.Text, out weekdayValue))
             {
-                ItsWeekdayLabel.Text = $"Это день недели ({WeekdayParsingTextBox.Text} = {(int)value})";
+                ItsWeekdayLabel.Text = $"Это день недели ({WeekdayParsingTextBox.Text} = {(int)weekdayValue})";
             }
             else
             {
