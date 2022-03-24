@@ -1,4 +1,4 @@
-public class rectangle
+public class Rectangle
 {
     private double _length;
     private double _width;
@@ -11,7 +11,7 @@ public class rectangle
         {
             if (value<0.0)
             {
-                throw new ArgumentExeption("Ожидается длина прямоугольника больше 0.");
+                throw new ArgumentException("Ожидается длина прямоугольника больше 0.");
             }
             _length = value;
         }
@@ -24,7 +24,7 @@ public class rectangle
         {
             if (value < 0.0)
             {
-                throw new ArgumentExeption("Ожидается ширина прямоугольника больше 0.");
+                throw new ArgumentException("Ожидается ширина прямоугольника больше 0.");
             }
             _width = value;
         }
