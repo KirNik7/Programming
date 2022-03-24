@@ -1,4 +1,6 @@
-﻿namespace Programming.Model.Classes
+﻿using System;
+
+namespace Programming.Model.Classes
 {
     public class Flight
     {
@@ -28,7 +30,7 @@
             FlightTime = flightTime;
         }
 
-        public Flight()
+        public Flight() { }
     }
 }
 

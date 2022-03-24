@@ -1,4 +1,6 @@
-﻿namespace Programming.Model.Classes
+﻿using System;
+
+namespace Programming.Model.Classes
 {
 	public class Song
 	{
@@ -31,7 +33,7 @@
 			Duration = duration;
         }
 
-		public Song()
+		public Song() { }
 	}
 }
 

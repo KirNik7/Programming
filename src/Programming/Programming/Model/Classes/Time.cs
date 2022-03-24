@@ -1,4 +1,6 @@
-﻿namespace Programming.Model.Classes
+﻿using System;
+
+namespace Programming.Model.Classes
 {
     public class Time
     {
@@ -52,7 +54,7 @@
             Seconds = seconds;
         }
 
-        public Time()
+        public Time() { }
     }
 }
 

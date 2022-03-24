@@ -1,4 +1,6 @@
-﻿namespace Programming.Model.Classes
+﻿using System;
+
+namespace Programming.Model.Classes
 {
 	public class Contact
 	{
@@ -18,7 +20,7 @@
 			Email = email;
         }
 		
-		public Contact()
+		public Contact() { }
 	}
 }
 

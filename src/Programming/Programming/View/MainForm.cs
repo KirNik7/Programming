@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Programming.Model.Enums;
 using Color = Programming.Model.Enums.Color;
+using Programming.Model.Classes;
 
 namespace Programming.View
 {

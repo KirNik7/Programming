@@ -1,3 +1,5 @@
+using System;
+
 namespace Programming.Model.Classes
 {
     public class Rectangle
@@ -41,6 +43,6 @@ namespace Programming.Model.Classes
             Color = color;
         }
 
-        public Rectangle()
+        public Rectangle() { }
     }
 }
