@@ -20,6 +20,15 @@
                 _flightTime = value;
             }
         }
+
+        public Flight(string departurePoint, string destinationPoint, int flightTime)
+        {
+            DeparturePoint = departurePoint;
+            DestinationPoint = destinationPoint;
+            FlightTime = flightTime;
+        }
+
+        public Flight()
     }
 }
 

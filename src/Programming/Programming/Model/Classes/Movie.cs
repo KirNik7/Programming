@@ -48,6 +48,17 @@
                 _rating = value;
             }
         }
+
+        public Movie(string title, int duration, int year, string genre, double rating)
+        {
+            Title = title;
+            Duration = duration;
+            Year = year;
+            Genre = genre;
+            Rating = rating;
+        }
+
+        public Movie()
     }
 }
 

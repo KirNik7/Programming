@@ -22,6 +22,16 @@
 		public string Artist { get; set; }
 
 		public string Album { get; set; }
+
+		public Song(string title, string artist, string album, int duration)
+        {
+			Title = title;
+			Artist = artist;
+			Album = album;
+			Duration = duration;
+        }
+
+		public Song()
 	}
 }
 

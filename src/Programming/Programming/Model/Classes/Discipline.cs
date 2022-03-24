@@ -19,5 +19,14 @@
 		public string Title { get; set; }
 
 		public string TeachersLastName { get; set; }
+
+		public Discipline(string title, string teachersLastName, int mark)
+        {
+			Title = title;
+			TeachersLastName = teachersLastName;
+			Mark = mark;
+        }
+
+		public Discipline()
 	}
 }
