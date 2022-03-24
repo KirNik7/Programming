@@ -1,45 +1,49 @@
-﻿public class Time
+﻿namespace Programming.Model.Classes
 {
-	private int _hours;
-	private int _minutes;
-	private int _seconds;
-
-	public int Hours
+    public class Time
     {
-        get { return _hours; }
-        set
+        private int _hours;
+        private int _minutes;
+        private int _seconds;
+
+        public int Hours
         {
-            if (value < 0 || value > 23)
+            get { return _hours; }
+            set
             {
-                throw new ArgumentException("Ожидается часы больше 0 и меньше 23.");
+                if (value < 0 || value > 23)
+                {
+                    throw new ArgumentException("Ожидается часы больше 0 и меньше или равно 23.");
+                }
+                _hours = value;
             }
-            _hours = value;
         }
-    }
 
-    public int Minutes
-    {
-        get { return _minutes; }
-        set
+        public int Minutes
         {
-            if (value < 0 || value > 60)
+            get { return _minutes; }
+            set
             {
-                throw new ArgumentException("Ожидается минуты больше 0 и меньше 60.");
+                if (value < 0 || value > 60)
+                {
+                    throw new ArgumentException("Ожидается минуты больше 0 и меньше или равно 60.");
+                }
+                _minutes = value;
             }
-            _minutes = value;
         }
-    }
 
-    public int Seconds
-    {
-        get { return _seconds; }
-        set
+        public int Seconds
         {
-            if (value < 0 || value > 60)
+            get { return _seconds; }
+            set
             {
-                throw new ArgumentException("Ожидается секунды больше 0 и меньше 60.");
+                if (value < 0 || value > 60)
+                {
+                    throw new ArgumentException("Ожидается секунды больше 0 и меньше или равно 60.");
+                }
+                _seconds = value;
             }
-            _seconds = value;
         }
     }
 }
+

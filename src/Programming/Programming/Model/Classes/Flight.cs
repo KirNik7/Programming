@@ -1,31 +1,25 @@
-﻿public class Flight
+﻿namespace Programming.Model.Classes
 {
-	private string _departurePoint;
-	private string _destinationPoint;
-	private int _flightTime;
-
-	public string DeparturePoint
+    public class Flight
     {
-        get { return _departurePoint; }
-		set { _departurePoint = value; }
-    }
+        private int _flightTime;
 
-	public string DestinationPoint
-    {
-		get { return _destinationPoint; }
-        set { _destinationPoint = value; }
-    }
+        public string DeparturePoint { get; set; }
 
-	public int FlightTime
-    {
-        get { return _flightTime; }
-        set
+        public string DestinationPoint { get; set; }
+
+        public int FlightTime
         {
-            if (value < 0)
+            get { return _flightTime; }
+            set
             {
-                throw new ArgumentException("Ожидается время полёта больше 0.");
+                if (value < 0)
+                {
+                    throw new ArgumentException("Ожидается время полёта больше 0.");
+                }
+                _flightTime = value;
             }
-            _flightTime = value;
         }
     }
 }
+

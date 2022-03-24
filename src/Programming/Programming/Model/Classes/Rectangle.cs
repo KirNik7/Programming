@@ -1,38 +1,37 @@
-public class Rectangle
+namespace Programming.Model.Classes
 {
-    private double _length;
-    private double _width;
-    private string _color;
-
-    public double Length
+    public class Rectangle
     {
-        get { return _length; }
-        set
+        private double _length;
+        private double _width;
+        private string _color;
+
+        public double Length
         {
-            if (value<0.0)
+            get { return _length; }
+            set
             {
-                throw new ArgumentException("Ожидается длина прямоугольника больше 0.");
+                if (value < 0.0)
+                {
+                    throw new ArgumentException("Ожидается длина прямоугольника больше 0.");
+                }
+                _length = value;
             }
-            _length = value;
         }
-    }
 
-    public double Width
-    {
-        get { return _width; }
-        set
+        public double Width
         {
-            if (value < 0.0)
+            get { return _width; }
+            set
             {
-                throw new ArgumentException("Ожидается ширина прямоугольника больше 0.");
+                if (value < 0.0)
+                {
+                    throw new ArgumentException("Ожидается ширина прямоугольника больше 0.");
+                }
+                _width = value;
             }
-            _width = value;
         }
-    }
 
-    public string Color
-    {
-        get { return _color; }
-        set { _color = value; }
+        public string Color { get; set; }
     }
 }

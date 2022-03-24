@@ -1,59 +1,53 @@
-﻿public class Movie
+﻿namespace Programming.Model.Classes
 {
-	private string _title;
-	private int _duration;
-	private int _year;
-	private string _genre;
-	private double _rating;
-
-	public string Title
+    public class Movie
     {
-        get { return _title; }
-		set { _title = value; }
-    }
+        private int _duration;
+        private int _year;
+        private double _rating;
 
-	public int Duration
-    {
-        get { return _duration; }
-        set
+        public string Title { get; set; }
+
+        public int Duration
         {
-            if (value < 0)
+            get { return _duration; }
+            set
             {
-                throw new ArgumentException("Ожидается продолжительность фильма больше 0.");
+                if (value < 0)
+                {
+                    throw new ArgumentException("Ожидается продолжительность фильма больше 0.");
+                }
+                _duration = value;
             }
-            _duration = value;
         }
-    }
 
-    public int Year
-    {
-        get { return _year; }
-        set
+        public int Year
         {
-            if (value < 1900 || value > 2022)
+            get { return _year; }
+            set
             {
-                throw new ArgumentException("Ожидается год выпуска больше 1900 и меньше 2022.");
+                if (value < 1900 || value > 2022)
+                {
+                    throw new ArgumentException("Ожидается год выпуска больше 1900 и меньше или равно 2022.");
+                }
+                _year = value;
             }
-            _year = value;
         }
-    }
 
-    public string Genre
-    {
-        get { return _genre; }
-        set { _genre = value; }
-    }
+        public string Genre { get; set; }
 
-    public double Rating
-    {
-        get { return _rating; }
-        set
+        public double Rating
         {
-            if (value < 0.0 || value > 10.0)
+            get { return _rating; }
+            set
             {
-                throw new ArgumentException("Ожидается рейтинг больше 0 и меньше 10.");
+                if (value < 0.0 || value > 10.0)
+                {
+                    throw new ArgumentException("Ожидается рейтинг больше 0 и меньше или равно 10.");
+                }
+                _rating = value;
             }
-            _rating = value;
         }
     }
 }
+
