@@ -36,9 +36,7 @@ namespace Programming.View
 
             for (int i = 0; i<5; i++)
             {
-                _rectangles[i].Length = i+1;
-                _rectangles[i].Width = i+1;
-                _rectangles[i].Color = "Здесь должен быть разный цвет :)";
+                Model.Classes.Rectangle();
                 RectanglesListBox.Items.Add(_rectangles[i]);
             }
         }
