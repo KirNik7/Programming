@@ -286,7 +286,7 @@ namespace Programming.View
             this.RectanglesListBox.Name = "RectanglesListBox";
             this.RectanglesListBox.Size = new System.Drawing.Size(138, 184);
             this.RectanglesListBox.TabIndex = 0;
-            //this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            //     (!!!ЭТУ СТРОКУ ЗАКОММЕНТИРОВАЛ ИЗ-ЗА ОШИБКИ!!!)     this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // RectangleLengthLabel
             // 
