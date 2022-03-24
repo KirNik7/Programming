@@ -15,6 +15,9 @@ namespace Programming.View
 {
     public partial class MainForm : Form
     {
+        private Model.Classes.Rectangle[] _rectangles = new Model.Classes.Rectangle[5];
+        private Model.Classes.Rectangle _currentRectangle = new Model.Classes.Rectangle();
+
         public MainForm()
         {
             InitializeComponent();
@@ -29,6 +32,14 @@ namespace Programming.View
             foreach (var value in values)
             {
                 SeasonHandleComboBox.Items.Add(value);
+            }
+
+            for (int i = 0; i<5; i++)
+            {
+                _rectangles[i].Length = i+1;
+                _rectangles[i].Width = i+1;
+                _rectangles[i].Color = "Здесь должен быть разный цвет :)";
+                RectanglesListBox.Items.Add(_rectangles[i]);
             }
         }
 
