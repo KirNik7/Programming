@@ -290,9 +290,9 @@ namespace Programming.View
             this.MoviesGroupBox.Controls.Add(this.MovieTitleTextBox);
             this.MoviesGroupBox.Controls.Add(this.MovieTitleLabel);
             this.MoviesGroupBox.Controls.Add(this.MoviesListBox);
-            this.MoviesGroupBox.Location = new System.Drawing.Point(435, 6);
+            this.MoviesGroupBox.Location = new System.Drawing.Point(435, 7);
             this.MoviesGroupBox.Name = "MoviesGroupBox";
-            this.MoviesGroupBox.Size = new System.Drawing.Size(422, 417);
+            this.MoviesGroupBox.Size = new System.Drawing.Size(418, 416);
             this.MoviesGroupBox.TabIndex = 1;
             this.MoviesGroupBox.TabStop = false;
             this.MoviesGroupBox.Text = "Movies";
@@ -412,9 +412,9 @@ namespace Programming.View
             this.RectanglesGroupBox.Controls.Add(this.RectangleLengthTextBox);
             this.RectanglesGroupBox.Controls.Add(this.RectangleLengthLabel);
             this.RectanglesGroupBox.Controls.Add(this.RectanglesListBox);
-            this.RectanglesGroupBox.Location = new System.Drawing.Point(6, 6);
+            this.RectanglesGroupBox.Location = new System.Drawing.Point(8, 7);
             this.RectanglesGroupBox.Name = "RectanglesGroupBox";
-            this.RectanglesGroupBox.Size = new System.Drawing.Size(423, 417);
+            this.RectanglesGroupBox.Size = new System.Drawing.Size(420, 416);
             this.RectanglesGroupBox.TabIndex = 0;
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";

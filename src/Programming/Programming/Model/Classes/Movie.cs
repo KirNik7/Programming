@@ -12,13 +12,22 @@ namespace Programming.Model.Classes
 
         public string Title
         {
-            get { return _title; }
-            set { _title = value; }
+            get 
+            { 
+                return _title; 
+            }
+            set 
+            { 
+                _title = value; 
+            }
         }
 
         public int DurationMinutes
         {
-            get { return _durationMinutes; }
+            get 
+            { 
+                return _durationMinutes; 
+            }
             set
             {
                 if (value < 0)
@@ -31,7 +40,10 @@ namespace Programming.Model.Classes
 
         public int ReleaseYear
         {
-            get { return _releaseYear; }
+            get 
+            { 
+                return _releaseYear; 
+            }
             set
             {
                 if (value < 1900 || value > DateTime.Now.Year)
@@ -46,7 +58,10 @@ namespace Programming.Model.Classes
 
         public double Rating
         {
-            get { return _rating; }
+            get 
+            { 
+                return _rating; 
+            }
             set
             {
                 if (value < 0.0 || value > 10.0)
@@ -67,7 +82,10 @@ namespace Programming.Model.Classes
             _count++;
         }
 
-        public Movie() { _count++; }
+        public Movie() 
+        { 
+            _count++; 
+        }
 
         public override string ToString()
         {

@@ -12,7 +12,10 @@ namespace Programming.Model.Classes
 
         public int FlightTime
         {
-            get { return _flightTime; }
+            get 
+            { 
+                return _flightTime; 
+            }
             set
             {
                 if (value < 0)

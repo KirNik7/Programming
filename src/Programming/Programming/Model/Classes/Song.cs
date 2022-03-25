@@ -8,7 +8,10 @@ namespace Programming.Model.Classes
 
 		public int Duration
         {
-			get { return _duration; }
+			get 
+			{ 
+				return _duration; 
+			}
             set
             {
 				if (value < 0)

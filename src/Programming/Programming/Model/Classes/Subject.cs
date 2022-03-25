@@ -8,7 +8,10 @@ namespace Programming.Model.Classes
 
 		public int Mark
         {
-			get { return _mark; }
+			get 
+			{ 
+				return _mark; 
+			}
             set
             {
 				if (value < 0 || value > 5)

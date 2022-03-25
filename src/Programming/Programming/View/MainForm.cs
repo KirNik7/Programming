@@ -18,8 +18,8 @@ namespace Programming.View
         private string[] _titlesMovies = { "Leading The Beginning", "Smile At The Champions", "Separated By The Town", "Painting The West", "Battle My Future" };
         private Movie _currentMovie;
         private string[] _genres;
-        private System.Drawing.Color _colorError = System.Drawing.Color.LightPink;
-        private System.Drawing.Color _colorNormal = System.Drawing.Color.White;
+        private System.Drawing.Color _errorBackColor = System.Drawing.Color.LightPink;
+        private System.Drawing.Color _currentBackColor = System.Drawing.Color.White;
 
         public MainForm()
         {
@@ -51,8 +51,12 @@ namespace Programming.View
 
             for (int i = 0; i < _movies.Length; i++)
             {
-                _movies[i] = new Movie(_titlesMovies[i], rand.Next(90, 210), rand.Next(2021, DateTime.Now.Year + 1),
-                                       _genres[rand.Next(0, _genres.Length)], Math.Round(rand.NextDouble() * 10, 2));
+                _movies[i] = new Movie(
+                    _titlesMovies[i], 
+                    rand.Next(90, 210), 
+                    rand.Next(2021, DateTime.Now.Year + 1),
+                    _genres[rand.Next(0, _genres.Length)], 
+                    Math.Round(rand.NextDouble() * 10, 2));
                 MoviesListBox.Items.Add(_movies[i].ToString());
             }
         }
@@ -166,11 +170,11 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Length = int.Parse(RectangleLengthTextBox.Text);
-                RectangleLengthTextBox.BackColor = _colorNormal;
+                RectangleLengthTextBox.BackColor = _currentBackColor;
             }
             catch (Exception ex)
             {
-                RectangleLengthTextBox.BackColor = _colorError;
+                RectangleLengthTextBox.BackColor = _errorBackColor;
             }
         }
 
@@ -179,11 +183,11 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Width = int.Parse(RectangleWidthTextBox.Text);
-                RectangleWidthTextBox.BackColor = _colorNormal;
+                RectangleWidthTextBox.BackColor = _currentBackColor;
             }
             catch (Exception ex)
             {
-                RectangleWidthTextBox.BackColor = _colorError;
+                RectangleWidthTextBox.BackColor = _errorBackColor;
             }
         }
 
@@ -218,11 +222,11 @@ namespace Programming.View
             try
             {
                 _currentMovie.ReleaseYear = int.Parse(MovieYearTextBox.Text);
-                MovieYearTextBox.BackColor = _colorNormal;
+                MovieYearTextBox.BackColor = _currentBackColor;
             }
             catch (Exception ex)
             {
-                MovieYearTextBox.BackColor = _colorError;
+                MovieYearTextBox.BackColor = _errorBackColor;
             }
         }
 
@@ -231,11 +235,11 @@ namespace Programming.View
             try
             {
                 _currentMovie.DurationMinutes = int.Parse(MovieDurationTextBox.Text);
-                MovieDurationTextBox.BackColor = _colorNormal;
+                MovieDurationTextBox.BackColor = _currentBackColor;
             }
             catch (Exception ex)
             {
-                MovieDurationTextBox.BackColor = _colorError;
+                MovieDurationTextBox.BackColor = _errorBackColor;
             }
         }
 
@@ -244,11 +248,11 @@ namespace Programming.View
             try
             {
                 _currentMovie.Rating = double.Parse(MovieRatingTextBox.Text);
-                MovieRatingTextBox.BackColor = _colorNormal;
+                MovieRatingTextBox.BackColor = _currentBackColor;
             }
             catch (Exception ex)
             {
-                MovieRatingTextBox.BackColor = _colorError;
+                MovieRatingTextBox.BackColor = _errorBackColor;
             }
         }
 
