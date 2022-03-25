@@ -10,13 +10,20 @@ using System.Windows.Forms;
 using Programming.Model.Enums;
 using Color = Programming.Model.Enums.Color;
 using Programming.Model.Classes;
+using Rectangle = Programming.Model.Classes.Rectangle;
 
 namespace Programming.View
 {
     public partial class MainForm : Form
     {
-        private Model.Classes.Rectangle[] _rectangles = new Model.Classes.Rectangle[5];
-        private Model.Classes.Rectangle _currentRectangle = new Model.Classes.Rectangle();
+        Random rand = new Random();
+        private Rectangle[] _rectangles;
+        private Rectangle _currentRectangle;
+        private string[] _colors;
+        private Movie[] _movies;
+        private string[] _titlesMovies = { "Leading The Beginning", "Smile At The Champions", "Separated By The Town", "Painting The West", "Battle My Future" };
+        private Movie _currentMovie;
+        private string[] _genres;
 
         public MainForm()
         {
@@ -34,12 +41,23 @@ namespace Programming.View
                 SeasonHandleComboBox.Items.Add(value);
             }
 
-            for (int i = 0; i<5; i++)
+            _colors = Enum.GetNames(typeof(Color));
+            _genres = Enum.GetNames(typeof(Genre));
+            _rectangles = new Rectangle[5];
+            _movies = new Movie[5];
+
+            for (int i = 0; i < _rectangles.Length; i++)
             {
-                _rectangles[i].Length = i+1;
-                _rectangles[i].Width = i+1;
-                _rectangles[i].Color = "Здесь должен быть разный цвет :)";
-                RectanglesListBox.Items.Add(_rectangles[i]);
+                _rectangles[i] = new Rectangle(rand.Next(0, 1000), rand.Next(0, 1000),
+                                               _colors[rand.Next(_colors.Length)]);
+                RectanglesListBox.Items.Add(_rectangles[i].ToString());
+            }
+
+            for (int i = 0; i < _movies.Length; i++)
+            {
+                _movies[i] = new Movie(_titlesMovies[i], rand.Next(90, 210), rand.Next(2021, DateTime.Now.Year + 1),
+                                       _genres[rand.Next(0, _genres.Length)], Math.Round(rand.NextDouble() * 10, 2));
+                MoviesListBox.Items.Add(_movies[i].ToString());
             }
         }
 
