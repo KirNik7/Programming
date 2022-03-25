@@ -2,7 +2,7 @@
 
 namespace Programming.Model.Classes
 {
-	public class Discipline
+	public class Subject
 	{
 		private int _mark;
 
@@ -22,13 +22,13 @@ namespace Programming.Model.Classes
 
 		public string TeachersLastName { get; set; }
 
-		public Discipline(string title, string teachersLastName, int mark)
+		public Subject(string title, string teachersLastName, int mark)
         {
 			Title = title;
 			TeachersLastName = teachersLastName;
 			Mark = mark;
         }
 
-		public Discipline() { }
+		public Subject() { }
 	}
 }

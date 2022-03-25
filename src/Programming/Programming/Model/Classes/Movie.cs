@@ -6,8 +6,8 @@ namespace Programming.Model.Classes
     {
         private static int _count;
         private string _title;
-        private int _duration;
-        private int _year;
+        private int _durationMinutes;
+        private int _releaseYear;
         private double _rating;
 
         public string Title
@@ -16,29 +16,29 @@ namespace Programming.Model.Classes
             set { _title = value; }
         }
 
-        public int Duration
+        public int DurationMinutes
         {
-            get { return _duration; }
+            get { return _durationMinutes; }
             set
             {
                 if (value < 0)
                 {
                     throw new ArgumentException("Ожидается продолжительность фильма больше 0.");
                 }
-                _duration = value;
+                _durationMinutes = value;
             }
         }
 
-        public int Year
+        public int ReleaseYear
         {
-            get { return _year; }
+            get { return _releaseYear; }
             set
             {
                 if (value < 1900 || value > DateTime.Now.Year)
                 {
                     throw new ArgumentException("Ожидается год выпуска больше 1900 и меньше или равно 2022.");
                 }
-                _year = value;
+                _releaseYear = value;
             }
         }
 
@@ -60,8 +60,8 @@ namespace Programming.Model.Classes
         public Movie(string title, int duration, int year, string genre, double rating)
         {
             Title = title;
-            Duration = duration;
-            Year = year;
+            DurationMinutes = duration;
+            ReleaseYear = year;
             Genre = genre;
             Rating = rating;
             _count++;
