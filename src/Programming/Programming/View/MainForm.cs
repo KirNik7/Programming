@@ -18,7 +18,7 @@ namespace Programming.View
         private string[] _titlesMovies = { "Leading The Beginning", "Smile At The Champions", "Separated By The Town", "Painting The West", "Battle My Future" };
         private Movie _currentMovie;
         private string[] _genres;
-        private System.Drawing.Color _colorErrror = System.Drawing.Color.LightPink;
+        private System.Drawing.Color _colorError = System.Drawing.Color.LightPink;
         private System.Drawing.Color _colorNormal = System.Drawing.Color.White;
 
         public MainForm()
