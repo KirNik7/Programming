@@ -136,15 +136,6 @@ namespace Programming.View
             }
         }
 
-        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int indexRectangle = RectanglesListBox.SelectedIndex;
-            _currentRectangle = _rectangles[indexRectangle];
-            RectangleLengthTextBox.Text = _currentRectangle.Length.ToString();
-            RectangleWidthTextBox.Text = _currentRectangle.Width.ToString();
-            RectangleColorTextBox.Text = _currentRectangle.Color;
-        }
-
         private int FindRectangleWithMaxWidth(Rectangle[] rectangles)
         {
             int indexMaxWidth = 0;
@@ -158,6 +149,30 @@ namespace Programming.View
                 }
             }
             return indexMaxWidth;
+        }
+
+        private int FindMovieWithMaxRating(Movie[] movie)
+        {
+            int indexMaxRating = 0;
+            double maxRating = 0;
+            for (int i = 0; i < movie.Length; i++)
+            {
+                if (movie[i].Rating > maxRating)
+                {
+                    maxRating = movie[i].Rating;
+                    indexMaxRating = i;
+                }
+            }
+            return indexMaxRating;
+        }
+
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexRectangle = RectanglesListBox.SelectedIndex;
+            _currentRectangle = _rectangles[indexRectangle];
+            RectangleLengthTextBox.Text = _currentRectangle.Length.ToString();
+            RectangleWidthTextBox.Text = _currentRectangle.Width.ToString();
+            RectangleColorTextBox.Text = _currentRectangle.Color;
         }
 
         private void RectangleFindButton_Click(object sender, EventArgs e)
@@ -254,21 +269,6 @@ namespace Programming.View
             {
                 MovieRatingTextBox.BackColor = _errorBackColor;
             }
-        }
-
-        private int FindMovieWithMaxRating(Movie[] movie)
-        {
-            int indexMaxRating = 0;
-            double maxRating = 0;
-            for (int i = 0; i < movie.Length; i++)
-            {
-                if (movie[i].Rating > maxRating)
-                {
-                    maxRating = movie[i].Rating;
-                    indexMaxRating = i;
-                }
-            }
-            return indexMaxRating;
         }
 
         private void MovieFindButton_Click(object sender, EventArgs e)
