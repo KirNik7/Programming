@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
 using Color = Programming.Model.Enums.Color;
+using SystemColor = System.Drawing.Color;
 using Programming.Model.Classes;
 using Rectangle = Programming.Model.Classes.Rectangle;
 
@@ -27,9 +28,9 @@ namespace Programming.View
 
         private string[] _genres;
 
-        private System.Drawing.Color _errorBackColor = System.Drawing.Color.LightPink;
+        private readonly SystemColor _errorBackColor = SystemColor.LightPink;
 
-        private System.Drawing.Color _currentBackColor = System.Drawing.Color.White;
+        private readonly SystemColor _currentBackColor = SystemColor.White;
 
         public MainForm()
         {
@@ -69,6 +70,36 @@ namespace Programming.View
                     Math.Round(rand.NextDouble() * 10, 2));
                 MoviesListBox.Items.Add(_movies[i].ToString());
             }
+        }
+
+        private int FindRectangleWithMaxWidth(Rectangle[] rectangles)
+        {
+            int indexMaxWidth = 0;
+            double maxWidth = 0;
+            for (int i = 0; i < rectangles.Length; i++)
+            {
+                if (rectangles[i].Width > maxWidth)
+                {
+                    maxWidth = rectangles[i].Width;
+                    indexMaxWidth = i;
+                }
+            }
+            return indexMaxWidth;
+        }
+
+        private int FindMovieWithMaxRating(Movie[] movie)
+        {
+            int indexMaxRating = 0;
+            double maxRating = 0;
+            for (int i = 0; i < movie.Length; i++)
+            {
+                if (movie[i].Rating > maxRating)
+                {
+                    maxRating = movie[i].Rating;
+                    indexMaxRating = i;
+                }
+            }
+            return indexMaxRating;
         }
 
         public void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,36 +176,6 @@ namespace Programming.View
             {
                 ItsWeekdayLabel.Text = "Нет такого дня недели";
             }
-        }
-
-        private int FindRectangleWithMaxWidth(Rectangle[] rectangles)
-        {
-            int indexMaxWidth = 0;
-            double maxWidth = 0;
-            for (int i = 0; i < rectangles.Length; i++)
-            {
-                if (rectangles[i].Width > maxWidth)
-                {
-                    maxWidth = rectangles[i].Width;
-                    indexMaxWidth = i;
-                }
-            }
-            return indexMaxWidth;
-        }
-
-        private int FindMovieWithMaxRating(Movie[] movie)
-        {
-            int indexMaxRating = 0;
-            double maxRating = 0;
-            for (int i = 0; i < movie.Length; i++)
-            {
-                if (movie[i].Rating > maxRating)
-                {
-                    maxRating = movie[i].Rating;
-                    indexMaxRating = i;
-                }
-            }
-            return indexMaxRating;
         }
 
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
