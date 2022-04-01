@@ -5,9 +5,13 @@ namespace Programming.Model.Classes
     public class Movie
     {
         private static int _count;
+
         private string _title;
+
         private int _durationMinutes;
+
         private int _releaseYear;
+
         private double _rating;
 
         public string Title
@@ -32,7 +36,8 @@ namespace Programming.Model.Classes
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Ожидается продолжительность фильма больше 0.");
+                    throw new ArgumentException(
+                        "Ожидается продолжительность фильма больше 0.");
                 }
                 _durationMinutes = value;
             }
@@ -48,7 +53,8 @@ namespace Programming.Model.Classes
             {
                 if (value < 1900 || value > DateTime.Now.Year)
                 {
-                    throw new ArgumentException("Ожидается год выпуска больше 1900 и меньше или равно 2022.");
+                    throw new ArgumentException(
+                        "Ожидается год выпуска больше 1900 и меньше или равно 2022.");
                 }
                 _releaseYear = value;
             }
@@ -66,7 +72,8 @@ namespace Programming.Model.Classes
             {
                 if (value < 0.0 || value > 10.0)
                 {
-                    throw new ArgumentException("Ожидается рейтинг больше 0 и меньше или равно 10.");
+                    throw new ArgumentException(
+                        "Ожидается рейтинг больше 0 и меньше или равно 10.");
                 }
                 _rating = value;
             }

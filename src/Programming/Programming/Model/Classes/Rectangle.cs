@@ -5,7 +5,9 @@ namespace Programming.Model.Classes
     public class Rectangle
     {
         private static int _count = 0;
+
         private double _length;
+
         private double _width;
 
         public double Length

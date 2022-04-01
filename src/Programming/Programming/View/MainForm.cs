@@ -11,14 +11,24 @@ namespace Programming.View
     public partial class MainForm : Form
     {
         Random rand = new Random();
+
         private Rectangle[] _rectangles;
+
         private Rectangle _currentRectangle;
+
         private string[] _colors;
+
         private Movie[] _movies;
-        private string[] _titlesMovies = { "Leading The Beginning", "Smile At The Champions", "Separated By The Town", "Painting The West", "Battle My Future" };
+
+        private string[] _titlesMovies = { "Leading The Beginning", "Smile At The Champions", 
+            "Separated By The Town", "Painting The West", "Battle My Future" };
+
         private Movie _currentMovie;
+
         private string[] _genres;
+
         private System.Drawing.Color _errorBackColor = System.Drawing.Color.LightPink;
+
         private System.Drawing.Color _currentBackColor = System.Drawing.Color.White;
 
         public MainForm()
@@ -128,7 +138,8 @@ namespace Programming.View
             Weekday weekday;
             if (Enum.TryParse(WeekdayParsingTextBox.Text, out weekday))
             {
-                ItsWeekdayLabel.Text = $"Это день недели ({WeekdayParsingTextBox.Text} = {(int)weekday})";
+                ItsWeekdayLabel.Text = $"Это день недели " +
+                    $"({WeekdayParsingTextBox.Text} = {(int)weekday})";
             }
             else
             {
