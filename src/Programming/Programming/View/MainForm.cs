@@ -211,7 +211,7 @@ namespace Programming.View
                 _currentRectangle.Length = int.Parse(RectangleLengthTextBox.Text);
                 RectangleLengthTextBox.BackColor = _currentBackColor;
             }
-            catch (Exception ex)
+            catch
             {
                 RectangleLengthTextBox.BackColor = _errorBackColor;
             }
@@ -224,7 +224,7 @@ namespace Programming.View
                 _currentRectangle.Width = int.Parse(RectangleWidthTextBox.Text);
                 RectangleWidthTextBox.BackColor = _currentBackColor;
             }
-            catch (Exception ex)
+            catch
             {
                 RectangleWidthTextBox.BackColor = _errorBackColor;
             }
@@ -263,7 +263,7 @@ namespace Programming.View
                 _currentMovie.ReleaseYear = int.Parse(MovieYearTextBox.Text);
                 MovieYearTextBox.BackColor = _currentBackColor;
             }
-            catch (Exception ex)
+            catch
             {
                 MovieYearTextBox.BackColor = _errorBackColor;
             }
@@ -276,7 +276,7 @@ namespace Programming.View
                 _currentMovie.DurationMinutes = int.Parse(MovieDurationTextBox.Text);
                 MovieDurationTextBox.BackColor = _currentBackColor;
             }
-            catch (Exception ex)
+            catch
             {
                 MovieDurationTextBox.BackColor = _errorBackColor;
             }
@@ -289,7 +289,7 @@ namespace Programming.View
                 _currentMovie.Rating = double.Parse(MovieRatingTextBox.Text);
                 MovieRatingTextBox.BackColor = _currentBackColor;
             }
-            catch (Exception ex)
+            catch
             {
                 MovieRatingTextBox.BackColor = _errorBackColor;
             }
