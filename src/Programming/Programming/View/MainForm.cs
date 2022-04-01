@@ -48,10 +48,16 @@ namespace Programming.View
                 SeasonHandleComboBox.Items.Add(value);
             }
 
+            InitRectangles();
+
+            InitMovies();
+        }
+
+        private void InitRectangles()
+        {
             _colors = Enum.GetNames(typeof(Color));
-            _genres = Enum.GetNames(typeof(Genre));
+            
             _rectangles = new Rectangle[5];
-            _movies = new Movie[5];
 
             for (int i = 0; i < _rectangles.Length; i++)
             {
@@ -59,14 +65,21 @@ namespace Programming.View
                                                _colors[rand.Next(_colors.Length)]);
                 RectanglesListBox.Items.Add(_rectangles[i].ToString());
             }
+        }
+
+        private void InitMovies()
+        {
+            _genres = Enum.GetNames(typeof(Genre));
+
+            _movies = new Movie[5];
 
             for (int i = 0; i < _movies.Length; i++)
             {
                 _movies[i] = new Movie(
-                    _titlesMovies[i], 
-                    rand.Next(90, 210), 
+                    _titlesMovies[i],
+                    rand.Next(90, 210),
                     rand.Next(2021, DateTime.Now.Year + 1),
-                    _genres[rand.Next(0, _genres.Length)], 
+                    _genres[rand.Next(0, _genres.Length)],
                     Math.Round(rand.NextDouble() * 10, 2));
                 MoviesListBox.Items.Add(_movies[i].ToString());
             }
