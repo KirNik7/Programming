@@ -34,9 +34,9 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0 || value > 60)
+                if (value < 0 || value > 59)
                 {
-                    throw new ArgumentException("Ожидается минуты больше 0 и меньше или равно 60.");
+                    throw new ArgumentException("Ожидается минуты больше 0 и меньше или равно 59.");
                 }
                 _minutes = value;
             }
@@ -50,9 +50,9 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0 || value > 60)
+                if (value < 0 || value > 59)
                 {
-                    throw new ArgumentException("Ожидается секунды больше 0 и меньше или равно 60.");
+                    throw new ArgumentException("Ожидается секунды больше 0 и меньше или равно 59.");
                 }
                 _seconds = value;
             }
