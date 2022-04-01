@@ -11,7 +11,11 @@ namespace Programming.View
 {
     public partial class MainForm : Form
     {
-        Random rand = new Random();
+        private readonly SystemColor _errorBackColor = SystemColor.LightPink;
+
+        private readonly SystemColor _currentBackColor = SystemColor.White;
+
+        private Random random = new Random();
 
         private Rectangle[] _rectangles;
 
@@ -27,10 +31,6 @@ namespace Programming.View
         private Movie _currentMovie;
 
         private string[] _genres;
-
-        private readonly SystemColor _errorBackColor = SystemColor.LightPink;
-
-        private readonly SystemColor _currentBackColor = SystemColor.White;
 
         public MainForm()
         {
@@ -49,7 +49,6 @@ namespace Programming.View
             }
 
             InitRectangles();
-
             InitMovies();
         }
 
@@ -61,8 +60,8 @@ namespace Programming.View
 
             for (int i = 0; i < _rectangles.Length; i++)
             {
-                _rectangles[i] = new Rectangle(rand.Next(0, 1000), rand.Next(0, 1000),
-                                               _colors[rand.Next(_colors.Length)]);
+                _rectangles[i] = new Rectangle(random.Next(0, 1000), random.Next(0, 1000),
+                                               _colors[random.Next(_colors.Length)]);
                 RectanglesListBox.Items.Add(_rectangles[i].ToString());
             }
         }
@@ -77,10 +76,10 @@ namespace Programming.View
             {
                 _movies[i] = new Movie(
                     _titlesMovies[i],
-                    rand.Next(90, 210),
-                    rand.Next(2021, DateTime.Now.Year + 1),
-                    _genres[rand.Next(0, _genres.Length)],
-                    Math.Round(rand.NextDouble() * 10, 2));
+                    random.Next(90, 210),
+                    random.Next(2021, DateTime.Now.Year + 1),
+                    _genres[random.Next(0, _genres.Length)],
+                    Math.Round(random.NextDouble() * 10, 2));
                 MoviesListBox.Items.Add(_movies[i].ToString());
             }
         }
