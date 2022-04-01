@@ -107,7 +107,7 @@ namespace Programming.View
             // 
             // SeasonHandleButton
             // 
-            this.SeasonHandleButton.Location = new System.Drawing.Point(198, 41);
+            this.SeasonHandleButton.Location = new System.Drawing.Point(197, 41);
             this.SeasonHandleButton.Name = "SeasonHandleButton";
             this.SeasonHandleButton.Size = new System.Drawing.Size(75, 23);
             this.SeasonHandleButton.TabIndex = 2;
@@ -199,7 +199,7 @@ namespace Programming.View
             // IntValueTextBox
             // 
             this.IntValueTextBox.Enabled = false;
-            this.IntValueTextBox.Location = new System.Drawing.Point(372, 37);
+            this.IntValueTextBox.Location = new System.Drawing.Point(342, 37);
             this.IntValueTextBox.Name = "IntValueTextBox";
             this.IntValueTextBox.Size = new System.Drawing.Size(125, 23);
             this.IntValueTextBox.TabIndex = 5;
@@ -207,7 +207,7 @@ namespace Programming.View
             // IntValueLabel
             // 
             this.IntValueLabel.AutoSize = true;
-            this.IntValueLabel.Location = new System.Drawing.Point(372, 19);
+            this.IntValueLabel.Location = new System.Drawing.Point(342, 19);
             this.IntValueLabel.Name = "IntValueLabel";
             this.IntValueLabel.Size = new System.Drawing.Size(55, 15);
             this.IntValueLabel.TabIndex = 4;
@@ -216,7 +216,7 @@ namespace Programming.View
             // ChooseValueLabel
             // 
             this.ChooseValueLabel.AutoSize = true;
-            this.ChooseValueLabel.Location = new System.Drawing.Point(194, 19);
+            this.ChooseValueLabel.Location = new System.Drawing.Point(178, 19);
             this.ChooseValueLabel.Name = "ChooseValueLabel";
             this.ChooseValueLabel.Size = new System.Drawing.Size(81, 15);
             this.ChooseValueLabel.TabIndex = 3;
@@ -235,7 +235,7 @@ namespace Programming.View
             // 
             this.ValuesListBox.FormattingEnabled = true;
             this.ValuesListBox.ItemHeight = 15;
-            this.ValuesListBox.Location = new System.Drawing.Point(194, 37);
+            this.ValuesListBox.Location = new System.Drawing.Point(178, 37);
             this.ValuesListBox.Name = "ValuesListBox";
             this.ValuesListBox.ScrollAlwaysVisible = true;
             this.ValuesListBox.Size = new System.Drawing.Size(158, 229);
@@ -301,7 +301,7 @@ namespace Programming.View
             // 
             this.MovieRatingTextBox.Location = new System.Drawing.Point(248, 216);
             this.MovieRatingTextBox.Name = "MovieRatingTextBox";
-            this.MovieRatingTextBox.Size = new System.Drawing.Size(160, 23);
+            this.MovieRatingTextBox.Size = new System.Drawing.Size(157, 23);
             this.MovieRatingTextBox.TabIndex = 11;
             this.MovieRatingTextBox.TextChanged += new System.EventHandler(this.MovieRatingTextBox_TextChanged);
             // 
@@ -318,7 +318,7 @@ namespace Programming.View
             // 
             this.MovieDurationTextBox.Location = new System.Drawing.Point(248, 172);
             this.MovieDurationTextBox.Name = "MovieDurationTextBox";
-            this.MovieDurationTextBox.Size = new System.Drawing.Size(160, 23);
+            this.MovieDurationTextBox.Size = new System.Drawing.Size(157, 23);
             this.MovieDurationTextBox.TabIndex = 9;
             this.MovieDurationTextBox.TextChanged += new System.EventHandler(this.MovieDurationTextBox_TextChanged);
             // 
@@ -335,7 +335,7 @@ namespace Programming.View
             // 
             this.MovieFindButton.Location = new System.Drawing.Point(248, 378);
             this.MovieFindButton.Name = "MovieFindButton";
-            this.MovieFindButton.Size = new System.Drawing.Size(160, 23);
+            this.MovieFindButton.Size = new System.Drawing.Size(157, 23);
             this.MovieFindButton.TabIndex = 7;
             this.MovieFindButton.Text = "Find";
             this.MovieFindButton.UseVisualStyleBackColor = true;
@@ -345,7 +345,7 @@ namespace Programming.View
             // 
             this.MovieYearTextBox.Location = new System.Drawing.Point(248, 128);
             this.MovieYearTextBox.Name = "MovieYearTextBox";
-            this.MovieYearTextBox.Size = new System.Drawing.Size(160, 23);
+            this.MovieYearTextBox.Size = new System.Drawing.Size(157, 23);
             this.MovieYearTextBox.TabIndex = 6;
             this.MovieYearTextBox.TextChanged += new System.EventHandler(this.MovieYearTextBox_TextChanged);
             // 
@@ -362,7 +362,7 @@ namespace Programming.View
             // 
             this.MovieGenreTextBox.Location = new System.Drawing.Point(248, 84);
             this.MovieGenreTextBox.Name = "MovieGenreTextBox";
-            this.MovieGenreTextBox.Size = new System.Drawing.Size(160, 23);
+            this.MovieGenreTextBox.Size = new System.Drawing.Size(157, 23);
             this.MovieGenreTextBox.TabIndex = 4;
             this.MovieGenreTextBox.TextChanged += new System.EventHandler(this.MovieGenreTextBox_TextChanged);
             // 
@@ -379,7 +379,7 @@ namespace Programming.View
             // 
             this.MovieTitleTextBox.Location = new System.Drawing.Point(248, 40);
             this.MovieTitleTextBox.Name = "MovieTitleTextBox";
-            this.MovieTitleTextBox.Size = new System.Drawing.Size(160, 23);
+            this.MovieTitleTextBox.Size = new System.Drawing.Size(157, 23);
             this.MovieTitleTextBox.TabIndex = 2;
             this.MovieTitleTextBox.TextChanged += new System.EventHandler(this.MovieTitleTextBox_TextChanged);
             // 
@@ -423,7 +423,7 @@ namespace Programming.View
             // 
             this.RectangleFindButton.Location = new System.Drawing.Point(248, 378);
             this.RectangleFindButton.Name = "RectangleFindButton";
-            this.RectangleFindButton.Size = new System.Drawing.Size(160, 23);
+            this.RectangleFindButton.Size = new System.Drawing.Size(157, 23);
             this.RectangleFindButton.TabIndex = 7;
             this.RectangleFindButton.Text = "Find";
             this.RectangleFindButton.UseVisualStyleBackColor = true;
@@ -433,7 +433,7 @@ namespace Programming.View
             // 
             this.RectangleColorTextBox.Location = new System.Drawing.Point(248, 128);
             this.RectangleColorTextBox.Name = "RectangleColorTextBox";
-            this.RectangleColorTextBox.Size = new System.Drawing.Size(160, 23);
+            this.RectangleColorTextBox.Size = new System.Drawing.Size(157, 23);
             this.RectangleColorTextBox.TabIndex = 6;
             this.RectangleColorTextBox.TextChanged += new System.EventHandler(this.RectangleColorTextBox_TextChanged);
             // 
@@ -450,7 +450,7 @@ namespace Programming.View
             // 
             this.RectangleWidthTextBox.Location = new System.Drawing.Point(248, 84);
             this.RectangleWidthTextBox.Name = "RectangleWidthTextBox";
-            this.RectangleWidthTextBox.Size = new System.Drawing.Size(160, 23);
+            this.RectangleWidthTextBox.Size = new System.Drawing.Size(157, 23);
             this.RectangleWidthTextBox.TabIndex = 4;
             this.RectangleWidthTextBox.TextChanged += new System.EventHandler(this.RectangleWidthTextBox_TextChanged);
             // 
@@ -467,7 +467,7 @@ namespace Programming.View
             // 
             this.RectangleLengthTextBox.Location = new System.Drawing.Point(248, 40);
             this.RectangleLengthTextBox.Name = "RectangleLengthTextBox";
-            this.RectangleLengthTextBox.Size = new System.Drawing.Size(160, 23);
+            this.RectangleLengthTextBox.Size = new System.Drawing.Size(157, 23);
             this.RectangleLengthTextBox.TabIndex = 2;
             this.RectangleLengthTextBox.TextChanged += new System.EventHandler(this.RectangleLengthTextBox_TextChanged);
             // 
