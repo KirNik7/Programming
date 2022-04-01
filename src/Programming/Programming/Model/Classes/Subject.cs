@@ -23,12 +23,12 @@ namespace Programming.Model.Classes
 
 		public string Title { get; set; }
 
-		public string TeachersLastName { get; set; }
+		public string TeacherLastName { get; set; }
 
 		public Subject(string title, string teachersLastName, int mark)
         {
 			Title = title;
-			TeachersLastName = teachersLastName;
+			TeacherLastName = teachersLastName;
 			Mark = mark;
         }
 

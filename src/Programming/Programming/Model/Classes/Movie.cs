@@ -5,26 +5,13 @@ namespace Programming.Model.Classes
     public class Movie
     {
         private static int _count;
-
-        private string _title;
-
         private int _durationMinutes;
 
         private int _releaseYear;
 
         private double _rating;
 
-        public string Title
-        {
-            get 
-            { 
-                return _title; 
-            }
-            set 
-            { 
-                _title = value; 
-            }
-        }
+        public string Title { get; set; }
 
         public int DurationMinutes
         {
@@ -54,7 +41,7 @@ namespace Programming.Model.Classes
                 if (value < 1900 || value > DateTime.Now.Year)
                 {
                     throw new ArgumentException(
-                        "Ожидается год выпуска больше 1900 и меньше или равно 2022.");
+                        "Ожидается год выпуска больше 1900 и меньше или равно текущему году.");
                 }
                 _releaseYear = value;
             }
