@@ -107,7 +107,7 @@ namespace Programming.View
             // 
             // SeasonHandleButton
             // 
-            this.SeasonHandleButton.Location = new System.Drawing.Point(197, 41);
+            this.SeasonHandleButton.Location = new System.Drawing.Point(196, 41);
             this.SeasonHandleButton.Name = "SeasonHandleButton";
             this.SeasonHandleButton.Size = new System.Drawing.Size(75, 23);
             this.SeasonHandleButton.TabIndex = 2;
@@ -118,7 +118,7 @@ namespace Programming.View
             // SeasonHandleComboBox
             // 
             this.SeasonHandleComboBox.FormattingEnabled = true;
-            this.SeasonHandleComboBox.Location = new System.Drawing.Point(16, 41);
+            this.SeasonHandleComboBox.Location = new System.Drawing.Point(15, 41);
             this.SeasonHandleComboBox.Name = "SeasonHandleComboBox";
             this.SeasonHandleComboBox.Size = new System.Drawing.Size(175, 23);
             this.SeasonHandleComboBox.TabIndex = 1;
@@ -126,7 +126,7 @@ namespace Programming.View
             // ChooseSeasonLabel
             // 
             this.ChooseSeasonLabel.AutoSize = true;
-            this.ChooseSeasonLabel.Location = new System.Drawing.Point(16, 23);
+            this.ChooseSeasonLabel.Location = new System.Drawing.Point(15, 23);
             this.ChooseSeasonLabel.Name = "ChooseSeasonLabel";
             this.ChooseSeasonLabel.Size = new System.Drawing.Size(89, 15);
             this.ChooseSeasonLabel.TabIndex = 0;
@@ -157,7 +157,7 @@ namespace Programming.View
             // 
             // WeekdayParsingButton
             // 
-            this.WeekdayParsingButton.Location = new System.Drawing.Point(277, 41);
+            this.WeekdayParsingButton.Location = new System.Drawing.Point(276, 41);
             this.WeekdayParsingButton.Name = "WeekdayParsingButton";
             this.WeekdayParsingButton.Size = new System.Drawing.Size(75, 23);
             this.WeekdayParsingButton.TabIndex = 2;
@@ -167,7 +167,7 @@ namespace Programming.View
             // 
             // WeekdayParsingTextBox
             // 
-            this.WeekdayParsingTextBox.Location = new System.Drawing.Point(16, 41);
+            this.WeekdayParsingTextBox.Location = new System.Drawing.Point(15, 41);
             this.WeekdayParsingTextBox.Name = "WeekdayParsingTextBox";
             this.WeekdayParsingTextBox.Size = new System.Drawing.Size(255, 23);
             this.WeekdayParsingTextBox.TabIndex = 1;
@@ -175,7 +175,7 @@ namespace Programming.View
             // WeekdayParsingLabel
             // 
             this.WeekdayParsingLabel.AutoSize = true;
-            this.WeekdayParsingLabel.Location = new System.Drawing.Point(16, 23);
+            this.WeekdayParsingLabel.Location = new System.Drawing.Point(15, 23);
             this.WeekdayParsingLabel.Name = "WeekdayParsingLabel";
             this.WeekdayParsingLabel.Size = new System.Drawing.Size(125, 15);
             this.WeekdayParsingLabel.TabIndex = 0;
@@ -199,7 +199,7 @@ namespace Programming.View
             // IntValueTextBox
             // 
             this.IntValueTextBox.Enabled = false;
-            this.IntValueTextBox.Location = new System.Drawing.Point(342, 37);
+            this.IntValueTextBox.Location = new System.Drawing.Point(341, 37);
             this.IntValueTextBox.Name = "IntValueTextBox";
             this.IntValueTextBox.Size = new System.Drawing.Size(125, 23);
             this.IntValueTextBox.TabIndex = 5;
@@ -207,7 +207,7 @@ namespace Programming.View
             // IntValueLabel
             // 
             this.IntValueLabel.AutoSize = true;
-            this.IntValueLabel.Location = new System.Drawing.Point(342, 19);
+            this.IntValueLabel.Location = new System.Drawing.Point(341, 19);
             this.IntValueLabel.Name = "IntValueLabel";
             this.IntValueLabel.Size = new System.Drawing.Size(55, 15);
             this.IntValueLabel.TabIndex = 4;
@@ -216,7 +216,7 @@ namespace Programming.View
             // ChooseValueLabel
             // 
             this.ChooseValueLabel.AutoSize = true;
-            this.ChooseValueLabel.Location = new System.Drawing.Point(178, 19);
+            this.ChooseValueLabel.Location = new System.Drawing.Point(177, 19);
             this.ChooseValueLabel.Name = "ChooseValueLabel";
             this.ChooseValueLabel.Size = new System.Drawing.Size(81, 15);
             this.ChooseValueLabel.TabIndex = 3;
@@ -225,7 +225,7 @@ namespace Programming.View
             // ChooseEnumsLabel
             // 
             this.ChooseEnumsLabel.AutoSize = true;
-            this.ChooseEnumsLabel.Location = new System.Drawing.Point(16, 19);
+            this.ChooseEnumsLabel.Location = new System.Drawing.Point(15, 19);
             this.ChooseEnumsLabel.Name = "ChooseEnumsLabel";
             this.ChooseEnumsLabel.Size = new System.Drawing.Size(121, 15);
             this.ChooseEnumsLabel.TabIndex = 2;
@@ -235,7 +235,7 @@ namespace Programming.View
             // 
             this.ValuesListBox.FormattingEnabled = true;
             this.ValuesListBox.ItemHeight = 15;
-            this.ValuesListBox.Location = new System.Drawing.Point(178, 37);
+            this.ValuesListBox.Location = new System.Drawing.Point(175, 37);
             this.ValuesListBox.Name = "ValuesListBox";
             this.ValuesListBox.ScrollAlwaysVisible = true;
             this.ValuesListBox.Size = new System.Drawing.Size(158, 229);
@@ -246,7 +246,7 @@ namespace Programming.View
             // 
             this.EnumsListBox.FormattingEnabled = true;
             this.EnumsListBox.ItemHeight = 15;
-            this.EnumsListBox.Location = new System.Drawing.Point(16, 37);
+            this.EnumsListBox.Location = new System.Drawing.Point(15, 37);
             this.EnumsListBox.Name = "EnumsListBox";
             this.EnumsListBox.ScrollAlwaysVisible = true;
             this.EnumsListBox.Size = new System.Drawing.Size(156, 229);
