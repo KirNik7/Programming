@@ -177,7 +177,7 @@ namespace Programming.View
             this.WeekdayParsingLabel.AutoSize = true;
             this.WeekdayParsingLabel.Location = new System.Drawing.Point(16, 23);
             this.WeekdayParsingLabel.Name = "WeekdayParsingLabel";
-            this.WeekdayParsingLabel.Size = new System.Drawing.Size(127, 15);
+            this.WeekdayParsingLabel.Size = new System.Drawing.Size(125, 15);
             this.WeekdayParsingLabel.TabIndex = 0;
             this.WeekdayParsingLabel.Text = "Type value for parsing:";
             // 
@@ -354,7 +354,7 @@ namespace Programming.View
             this.MovieYearLabel.AutoSize = true;
             this.MovieYearLabel.Location = new System.Drawing.Point(248, 110);
             this.MovieYearLabel.Name = "MovieYearLabel";
-            this.MovieYearLabel.Size = new System.Drawing.Size(33, 15);
+            this.MovieYearLabel.Size = new System.Drawing.Size(32, 15);
             this.MovieYearLabel.TabIndex = 5;
             this.MovieYearLabel.Text = "Year:";
             // 
@@ -388,7 +388,7 @@ namespace Programming.View
             this.MovieTitleLabel.AutoSize = true;
             this.MovieTitleLabel.Location = new System.Drawing.Point(248, 22);
             this.MovieTitleLabel.Name = "MovieTitleLabel";
-            this.MovieTitleLabel.Size = new System.Drawing.Size(33, 15);
+            this.MovieTitleLabel.Size = new System.Drawing.Size(32, 15);
             this.MovieTitleLabel.TabIndex = 1;
             this.MovieTitleLabel.Text = "Title:";
             // 
