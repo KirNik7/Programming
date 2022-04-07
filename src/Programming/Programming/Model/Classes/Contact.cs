@@ -1,21 +1,56 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Programming.Model.Classes
 {
 	public class Contact
 	{
-		public string FirstName { get; set; }
+		private string _name;
 
-		public string LastName { get; set; }
+		private string _surname;
+		
+		private void AssertStringContainsOnlyLetters(string value)
+        {
+			if (!Regex.IsMatch(value, @"^[a-zA-Z]+$"))
+			{
+				throw new ArgumentException("Строка должна содержать только символы английского алфавита.");
+			}
+		}
+
+		public string Name 
+		{
+            get
+            {
+				return _name;
+            }
+            set
+            {
+				AssertStringContainsOnlyLetters(value);
+				_name = value;
+            }
+		}
+
+		public string Surname
+		{
+			get
+			{
+				return _surname;
+			}
+			set
+			{
+				AssertStringContainsOnlyLetters(value);
+				_surname = value;
+			}
+		}
 
 		public string PhoneNumber { get; set; }
 
 		public string Email { get; set; }
 
-		public Contact(string firstName, string lastName, string phoneNumber, string email)
+		public Contact(string name, string surname, string phoneNumber, string email)
         {
-			FirstName = firstName;
-			LastName = lastName;
+			Name = name;
+			Surname = surname;
 			PhoneNumber = phoneNumber;
 			Email = email;
         }
