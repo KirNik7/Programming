@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming.Model
 {
-    static class Validator
+    public static class Validator
     {
         public static void AssertOnPositiveValue(string property, int value)
         {
@@ -27,16 +27,6 @@ namespace Programming.Model
         }
 
         public static void AssertValueInRange(string property, int value, int min, int max)
-        {
-            if (value < min || value > max)
-            {
-                throw new System.ArgumentException(
-                        $"Значение поля {property} должно находиться " +
-                        $"в диапозоне от {min} до {max} включительно");
-            }
-        }
-
-        public static void AssertValueInRange(string property, double value, int min, int max)
         {
             if (value < min || value > max)
             {
