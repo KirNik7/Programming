@@ -18,10 +18,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0.0)
-                {
-                    throw new ArgumentException("Ожидается длина прямоугольника больше 0.");
-                }
+                Validator.AssertOnPositiveValue(nameof(Length), value);
                 _length = value;
             }
         }
@@ -34,15 +31,14 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0.0)
-                {
-                    throw new ArgumentException("Ожидается ширина прямоугольника больше 0.");
-                }
+                Validator.AssertOnPositiveValue(nameof(Width), value);
                 _width = value;
             }
         }
 
         public string Color { get; set; }
+
+        public Point2D Center { get; set; }
 
         public Rectangle(double length, double width, string color)
         {

@@ -21,11 +21,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException(
-                        "Ожидается продолжительность фильма больше 0.");
-                }
+                Validator.AssertOnPositiveValue(nameof(DurationMinutes), value);
                 _durationMinutes = value;
             }
         }
@@ -38,11 +34,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 1900 || value > DateTime.Now.Year)
-                {
-                    throw new ArgumentException(
-                        "Ожидается год выпуска больше 1900 и меньше или равно текущему году.");
-                }
+                Validator.AssertValueInRange(nameof(ReleaseYear), value, 1900, DateTime.Now.Year);
                 _releaseYear = value;
             }
         }
@@ -57,11 +49,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0.0 || value > 10.0)
-                {
-                    throw new ArgumentException(
-                        "Ожидается рейтинг больше 0 и меньше или равно 10.");
-                }
+                Validator.AssertValueInRange(nameof(Rating), value, 0.0, 10.0);
                 _rating = value;
             }
         }

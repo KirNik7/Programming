@@ -14,10 +14,7 @@ namespace Programming.Model.Classes
 			}
             set
             {
-				if (value < 0)
-                {
-					throw new ArgumentException("Ожидается продолжительность песни больше 0.");
-				}
+				Validator.AssertOnPositiveValue(nameof(Duration), value);
 				_duration = value;
             }
         }

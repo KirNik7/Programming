@@ -18,10 +18,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Ожидается время полёта больше 0.");
-                }
+                Validator.AssertOnPositiveValue(nameof(FlightTime), value);
                 _flightTime = value;
             }
         }

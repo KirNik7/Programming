@@ -9,11 +9,12 @@ namespace Programming.Model.Classes
 
 		private string _surname;
 		
-		private void AssertStringContainsOnlyLetters(string value)
+		private void AssertStringContainsOnlyLetters(string property, string value)
         {
 			if (!Regex.IsMatch(value, @"^[a-zA-Z]+$"))
 			{
-				throw new ArgumentException("Строка должна содержать только символы английского алфавита.");
+				throw new ArgumentException($"Поле {property} должно " +
+					$"содержать только символы английского алфавита.");
 			}
 		}
 
@@ -25,7 +26,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-				AssertStringContainsOnlyLetters(value);
+				AssertStringContainsOnlyLetters(nameof(Name), value);
 				_name = value;
             }
 		}
@@ -38,7 +39,7 @@ namespace Programming.Model.Classes
 			}
 			set
 			{
-				AssertStringContainsOnlyLetters(value);
+				AssertStringContainsOnlyLetters(nameof(Surname), value);
 				_surname = value;
 			}
 		}

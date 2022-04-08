@@ -14,10 +14,8 @@ namespace Programming.Model.Classes
 			}
             set
             {
-				if (value < 0 || value > 5)
-                {
-					throw new ArgumentException("Ожидается оценка больше 0 и меньше или равно 5.");
-				}
+				Validator.AssertValueInRange(nameof(Mark), value, 0, 5);
+				_mark = value;
             }
         }
 
