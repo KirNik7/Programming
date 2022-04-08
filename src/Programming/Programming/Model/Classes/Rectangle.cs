@@ -4,7 +4,9 @@ namespace Programming.Model.Classes
 {
     public class Rectangle
     {
-        private static int _count = 0;
+        private static int _countRectangles = 0;
+
+        public int _id = _countRectangles;
 
         private double _length;
 
@@ -40,21 +42,39 @@ namespace Programming.Model.Classes
 
         public Point2D Center { get; set; }
 
-        public Rectangle(double length, double width, string color)
+        public int Id
         {
-            _count++;
+            get
+            {
+                return _id;
+            }
+        }
+        public static int CountRectangles
+        {
+            get
+            {
+                return _countRectangles;
+            }
+        }
+
+        public Rectangle(double length, double width, string color, Point2D center)
+        {
+            _countRectangles++;
+            _id = _countRectangles;
             Length = length;
             Width = width;
             Color = color;
+            Center = center;
         }
 
         public Rectangle()
         {
-            _count++;
+            _countRectangles++;
+            _id = _countRectangles;
         }
         public override string ToString()
         {
-            return $"Rectangle {_count}";
+            return $"Rectangle {_countRectangles}";
         }
     }
 }

@@ -5,6 +5,7 @@ using Programming.Model.Enums;
 using Color = Programming.Model.Enums.Color;
 using SystemColor = System.Drawing.Color;
 using Programming.Model.Classes;
+using Programming.Model;
 using Rectangle = Programming.Model.Classes.Rectangle;
 
 namespace Programming.View
@@ -60,8 +61,11 @@ namespace Programming.View
 
             for (int i = 0; i < _rectangles.Length; i++)
             {
-                _rectangles[i] = new Rectangle(random.Next(0, 1000), random.Next(0, 1000),
-                                               _colors[random.Next(_colors.Length)]);
+                Point2D center = new Point2D(random.Next(1, 100), random.Next(1, 100));
+                _rectangles[i] = new Rectangle(random.Next(0, 1000),
+                                               random.Next(0, 1000),
+                                               _colors[random.Next(_colors.Length)],
+                                               center);
                 RectanglesListBox.Items.Add(_rectangles[i].ToString());
             }
         }
@@ -197,6 +201,9 @@ namespace Programming.View
             RectangleLengthTextBox.Text = _currentRectangle.Length.ToString();
             RectangleWidthTextBox.Text = _currentRectangle.Width.ToString();
             RectangleColorTextBox.Text = _currentRectangle.Color;
+            XRectangleTextBox.Text = _currentRectangle.Center.X.ToString();
+            YRectangleTextBox.Text = _currentRectangle.Center.Y.ToString();
+            IdRectangleTextBox.Text = _currentRectangle.Id.ToString();
         }
 
         private void RectangleFindButton_Click(object sender, EventArgs e)
