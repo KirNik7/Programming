@@ -26,9 +26,11 @@ namespace Programming.Model
             }
             private set
             {
-                Validator.AssertOnPositiveValue(nameof(OuterRadius), value);
+                Validator.AssertOnPositiveValue(nameof(OuterRadius),
+                                                value);
                 Validator.AssertValueInRange(nameof(OuterRadius),
-                    value, _innerRadius, double.MaxValue);
+                                             value, _innerRadius,
+                                             double.MaxValue);
                 _outerRadius = value;
             }
         }
@@ -41,8 +43,12 @@ namespace Programming.Model
             }
             private set
             {
-                Validator.AssertOnPositiveValue(nameof(InnerRadius), value);
-                Validator.AssertValueInRange(nameof(InnerRadius), value, 0, _outerRadius);
+                Validator.AssertOnPositiveValue(nameof(InnerRadius),
+                                                value);
+                Validator.AssertValueInRange(nameof(InnerRadius),
+                                             value,
+                                             0,
+                                             _outerRadius);
                 _innerRadius = value;
             }
         }

@@ -5,6 +5,7 @@ namespace Programming.Model.Classes
     public class Movie
     {
         private static int _count;
+
         private int _durationMinutes;
 
         private int _releaseYear;
@@ -21,7 +22,8 @@ namespace Programming.Model.Classes
             }
             set
             {
-                Validator.AssertOnPositiveValue(nameof(DurationMinutes), value);
+                Validator.AssertOnPositiveValue(nameof(DurationMinutes),
+                                                value);
                 _durationMinutes = value;
             }
         }
@@ -34,7 +36,10 @@ namespace Programming.Model.Classes
             }
             set
             {
-                Validator.AssertValueInRange(nameof(ReleaseYear), value, 1900, DateTime.Now.Year);
+                Validator.AssertValueInRange(nameof(ReleaseYear),
+                                             value,
+                                             1900,
+                                             DateTime.Now.Year);
                 _releaseYear = value;
             }
         }
@@ -49,12 +54,19 @@ namespace Programming.Model.Classes
             }
             set
             {
-                Validator.AssertValueInRange(nameof(Rating), value, 0d, 10d);
+                Validator.AssertValueInRange(nameof(Rating),
+                                             value,
+                                             0d,
+                                             10d);
                 _rating = value;
             }
         }
 
-        public Movie(string title, int duration, int year, string genre, double rating)
+        public Movie(string title,
+                     int duration,
+                     int year,
+                     string genre,
+                     double rating)
         {
             Title = title;
             DurationMinutes = duration;

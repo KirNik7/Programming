@@ -6,7 +6,6 @@ namespace Programming.Model.Classes
     {
         private static int _allRectanglesCount;
 
-
         public int _id = _allRectanglesCount;
 
         private double _length;
@@ -73,6 +72,7 @@ namespace Programming.Model.Classes
             _allRectanglesCount++;
             _id = _allRectanglesCount;
         }
+
         public override string ToString()
         {
             return $"Rectangle {_allRectanglesCount}";
