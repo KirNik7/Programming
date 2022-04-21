@@ -306,5 +306,45 @@ namespace Programming.View
         {
             MoviesListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
         }
+
+        private void AddRectanglePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            AddRectanglePictureBox.BackgroundImage = Properties.Resources.rectangle_add_24x24;
+        }
+
+        private void AddRectanglePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            AddRectanglePictureBox.BackgroundImage = Properties.Resources.rectangle_add_24x24_uncolor;
+        }
+
+        private void AddRectanglePictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            AddRectanglePictureBox.BackColor = SystemColor.LightGray;
+        }
+
+        private void AddRectanglePictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            AddRectanglePictureBox.BackColor = RectanglesTabPage.BackColor;
+        }
+
+        private void RemoveRectanglePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            RemoveRectanglePictureBox.BackgroundImage = Properties.Resources.rectangle_remove_24x24;
+        }
+
+        private void RemoveRectanglePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            RemoveRectanglePictureBox.BackgroundImage = Properties.Resources.rectangle_remove_24x24_uncolor;
+        }
+
+        private void RemoveRectanglePictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            RemoveRectanglePictureBox.BackColor = SystemColor.LightGray;
+        }
+
+        private void RemoveRectanglePictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            RemoveRectanglePictureBox.BackColor = RectanglesTabPage.BackColor;
+        }
     }
 }
