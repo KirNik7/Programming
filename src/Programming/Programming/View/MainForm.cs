@@ -7,6 +7,7 @@ using SystemColor = System.Drawing.Color;
 using Programming.Model.Classes;
 using Programming.Model;
 using System.Collections.Generic;
+using Programming.Model.Geometry;
 using Rectangle = Programming.Model.Classes.Rectangle;
 
 namespace Programming.View
@@ -166,37 +167,6 @@ namespace Programming.View
             YRectangleTextBox.BackColor = _currentBackColor;
             RectangleWidthTextBox.BackColor = _currentBackColor;
             RectangleHeightTextBox.BackColor = _currentBackColor;
-        }
-
-        private void UpdateCanvasPanel()
-        {
-            CanvasPanel.Controls.Clear();
-            for (int n = 0; n < _rectangles.Count; n++)
-            {
-                _rectangles[n].Color = _unIntersect;
-            }
-
-            for (int i = 0; i < _rectangles.Count; i++)
-            {
-                for (int j = i + 1; j < _rectangles.Count; j++)
-                {
-                    if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
-                    {
-                        _rectangles[i].Color = _intersect;
-                        _rectangles[j].Color = _intersect;
-                    }
-                }
-            }
-
-            foreach (var rectangle in _rectangles)
-            {
-                Panel panel = new Panel();
-                panel.Location = new System.Drawing.Point(rectangle.Center.X, rectangle.Center.Y);
-                panel.BackColor = rectangle.Color;
-                panel.Size = new System.Drawing.Size(rectangle.Width, rectangle.Height);
-                _rectanglePanels.Add(panel);
-                CanvasPanel.Controls.Add(panel);
-            }
         }
 
         private void FindCollisions()
@@ -459,20 +429,19 @@ namespace Programming.View
 
         private void AddRectanglePictureBox_Click(object sender, EventArgs e)
         {
-            var rectangleHeight = _random.Next(0, 200);
-            var rectangleWidth = _random.Next(0, 100);
-            var rectangleX = _random.Next(0, 425);
-            var rectangleY = _random.Next(0, 425);
-            var rectanglePosition = new Point2D(rectangleX, rectangleY);
+            var newRectangle = RectangleFactory.Randomize();
+            _rectangles.Add(newRectangle);
 
-            _rectangles.Add(new Rectangle(
-                rectangleHeight,
-                rectangleWidth,
-                _unIntersect,
-                rectanglePosition
-                )); ;
+            Panel rectanglePanel = new Panel();
+            rectanglePanel.Width = newRectangle.Width;
+            rectanglePanel.Height = newRectangle.Height;
+            rectanglePanel.Location = new Point(newRectangle.Center.X, newRectangle.Center.Y);
+            rectanglePanel.BackColor = _unIntersect;
+
+            _rectanglePanels.Add(rectanglePanel);
+            CanvasPanel.Controls.Add(rectanglePanel);
+
             UpdateListBoxes();
-            UpdateCanvasPanel();
         }
 
         private void RemoveRectanglePictureBox_Click(object sender, EventArgs e)

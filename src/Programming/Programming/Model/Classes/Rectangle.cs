@@ -38,7 +38,7 @@ namespace Programming.Model.Classes
             }
         }
 
-        public Color Color { get; set; }
+        public string Color { get; set; }
 
         public Point2D Center { get; set; }
 
@@ -57,7 +57,7 @@ namespace Programming.Model.Classes
             }
         }
 
-        public Rectangle(int height, int width, Color color, Point2D center)
+        public Rectangle(int height, int width, string color, Point2D center)
         {
             _allRectanglesCount++;
             _id = _allRectanglesCount;
