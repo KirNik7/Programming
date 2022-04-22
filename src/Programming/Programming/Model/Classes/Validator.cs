@@ -10,7 +10,7 @@ namespace Programming.Model.Classes
     {
         public static void AssertOnPositiveValue(string property, int value)
         {
-            if (value <= 0)
+            if (value < 0)
             {
                 throw new System.ArgumentException(
                     $"Значение поля {property} должно быть положительным");
@@ -19,7 +19,7 @@ namespace Programming.Model.Classes
 
         public static void AssertOnPositiveValue(string property, double value)
         {
-            if (value <= 0)
+            if (value < 0)
             {
                 throw new System.ArgumentException(
                     $"Значение поля {property} должно быть положительным");

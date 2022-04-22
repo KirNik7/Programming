@@ -1,4 +1,4 @@
-using System;
+using System.Drawing;
 
 namespace Programming.Model.Classes
 {
@@ -8,24 +8,24 @@ namespace Programming.Model.Classes
 
         public int _id = _allRectanglesCount;
 
-        private double _length;
+        private int _height;
 
-        private double _width;
+        private int _width;
 
-        public double Length
+        public int Height
         {
             get 
             { 
-                return _length; 
+                return _height; 
             }
             set
             {
-                Validator.AssertOnPositiveValue(nameof(Length), value);
-                _length = value;
+                Validator.AssertOnPositiveValue(nameof(Height), value);
+                _height = value;
             }
         }
 
-        public double Width
+        public int Width
         {
             get 
             { 
@@ -38,7 +38,7 @@ namespace Programming.Model.Classes
             }
         }
 
-        public string Color { get; set; }
+        public Color Color { get; set; }
 
         public Point2D Center { get; set; }
 
@@ -57,11 +57,11 @@ namespace Programming.Model.Classes
             }
         }
 
-        public Rectangle(double length, double width, string color, Point2D center)
+        public Rectangle(int height, int width, Color color, Point2D center)
         {
             _allRectanglesCount++;
             _id = _allRectanglesCount;
-            Length = length;
+            Height = height;
             Width = width;
             Color = color;
             Center = center;
@@ -76,6 +76,11 @@ namespace Programming.Model.Classes
         public override string ToString()
         {
             return $"Rectangle {_allRectanglesCount}";
+        }
+
+        public string GetRectangleInfo()
+        {
+            return $"{_id}: (X={Center.X}; Y={Center.Y}; W={_width}; H={_height})";
         }
     }
 }
