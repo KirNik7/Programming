@@ -157,23 +157,11 @@ namespace Programming.View
             WidthSelectedRectangleTextBox.Clear();
             HeightSelectedRectangleTextBox.Clear();
 
-            IdSelectedRectangleTextBox.BackColor = _currentBackColor;
-            XSelectedRectangleTextBox.BackColor = _currentBackColor;
-            YSelectedRectangleTextBox.BackColor = _currentBackColor;
-            WidthSelectedRectangleTextBox.BackColor = _currentBackColor;
-            HeightSelectedRectangleTextBox.BackColor = _currentBackColor;
-
             IdRectangleTextBox.Clear();
             XRectangleTextBox.Clear();
             YRectangleTextBox.Clear();
             RectangleWidthTextBox.Clear();
             RectangleHeightTextBox.Clear();
-
-            IdRectangleTextBox.BackColor = _currentBackColor;
-            XRectangleTextBox.BackColor = _currentBackColor;
-            YRectangleTextBox.BackColor = _currentBackColor;
-            RectangleWidthTextBox.BackColor = _currentBackColor;
-            RectangleHeightTextBox.BackColor = _currentBackColor;
         }
 
         private void FindCollisions()
@@ -491,6 +479,8 @@ namespace Programming.View
 
         private void WidthSelectedRectangleTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (AddingRectanglesListBox.SelectedIndex == -1) return;
+
             try
             {
                 _currentRectangle.Width = int.Parse(WidthSelectedRectangleTextBox.Text);
@@ -507,6 +497,8 @@ namespace Programming.View
 
         private void HeightSelectedRectangleTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (AddingRectanglesListBox.SelectedIndex == -1) return;
+
             try
             {
                 _currentRectangle.Height = int.Parse(HeightSelectedRectangleTextBox.Text);
@@ -523,6 +515,8 @@ namespace Programming.View
 
         private void XSelectedRectangleTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (AddingRectanglesListBox.SelectedIndex == -  1) return;
+
             try
             {
                 _currentRectangle.Center.X = int.Parse(XSelectedRectangleTextBox.Text);
@@ -539,6 +533,8 @@ namespace Programming.View
 
         private void YSelectedRectangleTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (AddingRectanglesListBox.SelectedIndex == -1) return;
+
             try
             {
                 if (AddingRectanglesListBox.SelectedIndex >= 0)
