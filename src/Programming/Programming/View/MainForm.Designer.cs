@@ -473,9 +473,9 @@ namespace Programming.View
             // 
             this.YRectangleTextBox.Location = new System.Drawing.Point(248, 216);
             this.YRectangleTextBox.Name = "YRectangleTextBox";
-            this.YRectangleTextBox.ReadOnly = true;
             this.YRectangleTextBox.Size = new System.Drawing.Size(157, 23);
             this.YRectangleTextBox.TabIndex = 11;
+            this.YRectangleTextBox.TextChanged += new System.EventHandler(this.YRectangleTextBox_TextChanged);
             // 
             // YRectangleLabel
             // 
@@ -490,9 +490,9 @@ namespace Programming.View
             // 
             this.XRectangleTextBox.Location = new System.Drawing.Point(248, 172);
             this.XRectangleTextBox.Name = "XRectangleTextBox";
-            this.XRectangleTextBox.ReadOnly = true;
             this.XRectangleTextBox.Size = new System.Drawing.Size(157, 23);
             this.XRectangleTextBox.TabIndex = 9;
+            this.XRectangleTextBox.TextChanged += new System.EventHandler(this.XRectangleTextBox_TextChanged);
             // 
             // XRectangleLabel
             // 
@@ -517,6 +517,7 @@ namespace Programming.View
             // 
             this.RectangleColorTextBox.Location = new System.Drawing.Point(248, 128);
             this.RectangleColorTextBox.Name = "RectangleColorTextBox";
+            this.RectangleColorTextBox.ReadOnly = true;
             this.RectangleColorTextBox.Size = new System.Drawing.Size(157, 23);
             this.RectangleColorTextBox.TabIndex = 6;
             // 

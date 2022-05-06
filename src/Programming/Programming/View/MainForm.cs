@@ -143,7 +143,7 @@ namespace Programming.View
             for (int i = 0; i < _rectangles.Count; i++)
             {
                 AddingRectanglesListBox.Items.Add(_rectangles[i].GetRectangleInfo());
-                RectanglesListBox.Items.Add(_rectangles[i].GetRectangleInfo());
+                RectanglesListBox.Items.Add("Rectangle "+(i+1));
             }
 
             AddingRectanglesListBox.SelectedIndex = _rectangles.Count - 1;
@@ -182,6 +182,7 @@ namespace Programming.View
             for (int n = 0; n < _rectangles.Count; n++)
             {
                 CanvasPanel.Controls[n].BackColor = _unIntersect;
+                _rectangles[n].Color = "Green";
             }
 
             for (int i = 0; i < _rectangles.Count; i++)
@@ -190,6 +191,9 @@ namespace Programming.View
                 {
                     if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
                     {
+                        _rectangles[i].Color = "Red";
+                        _rectangles[j].Color = "Red";
+
                         CanvasPanel.Controls[i].BackColor = _intersect;
                         CanvasPanel.Controls[j].BackColor = _intersect;
                     }
@@ -282,13 +286,16 @@ namespace Programming.View
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int indexRectangle = RectanglesListBox.SelectedIndex;
-            _currentRectangle = _rectangles[indexRectangle];
-            RectangleHeightTextBox.Text = _currentRectangle.Height.ToString();
-            RectangleWidthTextBox.Text = _currentRectangle.Width.ToString();
-            RectangleColorTextBox.Text = _currentRectangle.Color.ToString();
-            XRectangleTextBox.Text = _currentRectangle.Center.X.ToString();
-            YRectangleTextBox.Text = _currentRectangle.Center.Y.ToString();
-            IdRectangleTextBox.Text = _currentRectangle.Id.ToString();
+            if (indexRectangle != -1)
+            {
+                _currentRectangle = _rectangles[indexRectangle];
+                RectangleHeightTextBox.Text = _currentRectangle.Height.ToString();
+                RectangleWidthTextBox.Text = _currentRectangle.Width.ToString();
+                RectangleColorTextBox.Text = _currentRectangle.Color.ToString();
+                XRectangleTextBox.Text = _currentRectangle.Center.X.ToString();
+                YRectangleTextBox.Text = _currentRectangle.Center.Y.ToString();
+                IdRectangleTextBox.Text = _currentRectangle.Id.ToString();
+            }
         }
 
         private void RectangleFindButton_Click(object sender, EventArgs e)
@@ -553,6 +560,32 @@ namespace Programming.View
         {
             canvasHeight = CanvasPanel.Height;
             canvasWidth = CanvasPanel.Width;
+        }
+
+        private void XRectangleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentRectangle.Center.X = int.Parse(XRectangleTextBox.Text);
+                XRectangleTextBox.BackColor = _currentBackColor;
+            }
+            catch
+            {
+                XRectangleTextBox.BackColor = _errorBackColor;
+            }
+        }
+
+        private void YRectangleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentRectangle.Center.Y = int.Parse(YRectangleTextBox.Text);
+                YRectangleTextBox.BackColor = _currentBackColor;
+            }
+            catch
+            {
+                YRectangleTextBox.BackColor = _errorBackColor;
+            }
         }
     }
 }
