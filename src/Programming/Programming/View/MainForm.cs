@@ -41,6 +41,10 @@ namespace Programming.View
 
         private string[] _genres;
 
+        public int canvasWidth;
+
+        public int canvasHeight;
+
         public MainForm()
         {
             InitializeComponent();
@@ -56,6 +60,9 @@ namespace Programming.View
             {
                 SeasonHandleComboBox.Items.Add(value);
             }
+
+            canvasWidth = CanvasPanel.Width;
+            canvasHeight = CanvasPanel.Height;
 
             //InitRectangles();
             InitMovies();
@@ -429,7 +436,7 @@ namespace Programming.View
 
         private void AddRectanglePictureBox_Click(object sender, EventArgs e)
         {
-            var newRectangle = RectangleFactory.Randomize();
+            var newRectangle = RectangleFactory.Randomize(canvasHeight, canvasWidth);
             _rectangles.Add(newRectangle);
 
             Panel rectanglePanel = new Panel();
@@ -540,6 +547,12 @@ namespace Programming.View
             {
                 YSelectedRectangleTextBox.BackColor = _errorBackColor;
             }
+        }
+
+        private void CanvasPanel_SizeChanged(object sender, EventArgs e)
+        {
+            canvasHeight = CanvasPanel.Height;
+            canvasWidth = CanvasPanel.Width;
         }
     }
 }
