@@ -17,9 +17,9 @@ namespace Programming.View
 
         private readonly SystemColor _correctBackColor = SystemColor.White;
 
-        private readonly SystemColor _intersectColor = SystemColor.FromArgb(127, 255, 127, 127);
+        private readonly SystemColor _collisionColor = SystemColor.FromArgb(127, 255, 127, 127);
 
-        private readonly SystemColor _unIntersectColor = SystemColor.FromArgb(127, 127, 255, 127);
+        private readonly SystemColor _notCollisionColor = SystemColor.FromArgb(127, 127, 255, 127);
 
         private Random _random = new Random();
 
@@ -139,7 +139,7 @@ namespace Programming.View
 
             for (int n = 0; n < _rectangles.Count; n++)
             {
-                CanvasPanel.Controls[n].BackColor = _unIntersectColor;
+                CanvasPanel.Controls[n].BackColor = _notCollisionColor;
                 _rectangles[n].Color = "Green";
             }
 
@@ -152,8 +152,8 @@ namespace Programming.View
                         _rectangles[i].Color = "Red";
                         _rectangles[j].Color = "Red";
 
-                        CanvasPanel.Controls[i].BackColor = _intersectColor;
-                        CanvasPanel.Controls[j].BackColor = _intersectColor;
+                        CanvasPanel.Controls[i].BackColor = _collisionColor;
+                        CanvasPanel.Controls[j].BackColor = _collisionColor;
                     }
                 }
             }
@@ -401,7 +401,7 @@ namespace Programming.View
             rectanglePanel.Width = newRectangle.Width;
             rectanglePanel.Height = newRectangle.Height;
             rectanglePanel.Location = new Point(newRectangle.Center.X, newRectangle.Center.Y);
-            rectanglePanel.BackColor = _unIntersectColor;
+            rectanglePanel.BackColor = _notCollisionColor;
 
             _rectanglePanels.Add(rectanglePanel);
             CanvasPanel.Controls.Add(rectanglePanel);
