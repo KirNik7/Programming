@@ -64,28 +64,8 @@ namespace Programming.View
             canvasWidth = CanvasPanel.Width;
             canvasHeight = CanvasPanel.Height;
 
-            //InitRectangles();
             InitMovies();
         }
-
-        /*
-        private void InitRectangles()
-        {
-            _colors = Enum.GetNames(typeof(Color));
-            
-            _rectangles = new Rectangle[5];
-
-            for (int i = 0; i < _rectangles.Length; i++)
-            {
-                Point2D center = new Point2D(_random.Next(1, 100), _random.Next(1, 100));
-                _rectangles[i] = new Rectangle(_random.Next(0, 1000),
-                                               _random.Next(0, 1000),
-                                               _colors[_random.Next(_colors.Length)],
-                                               center);
-                RectanglesListBox.Items.Add(_rectangles[i].ToString());
-            }
-        }
-        */
 
         private void InitMovies()
         {
@@ -316,13 +296,6 @@ namespace Programming.View
                 RectangleWidthTextBox.BackColor = _errorBackColor;
             }
         }
-
-        /*
-        private void RectangleColorTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _currentRectangle.Color = RectangleColorTextBox.Text;
-        }
-        */
 
         private void MoviesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
