@@ -29,8 +29,6 @@ namespace Programming.View
 
         private List<Panel> _rectanglePanels = new List<Panel>();
 
-        private string[] _colors;
-
         private Movie[] _movies;
 
         private string[] _titlesMovies = { "Leading The Beginning", "Smile At The Champions", 
