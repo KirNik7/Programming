@@ -5,7 +5,6 @@ using Programming.Model.Enums;
 using Color = Programming.Model.Enums.Color;
 using SystemColor = System.Drawing.Color;
 using Programming.Model.Classes;
-using Programming.Model;
 using System.Collections.Generic;
 using Programming.Model.Geometry;
 using Rectangle = Programming.Model.Classes.Rectangle;

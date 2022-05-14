@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Rectangle = Programming.Model.Classes.Rectangle;
 using Point2D = Programming.Model.Classes.Point2D;
-using Programming.View;
 
 
 namespace Programming.Model.Geometry
