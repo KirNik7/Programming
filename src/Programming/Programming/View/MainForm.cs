@@ -16,11 +16,11 @@ namespace Programming.View
     {
         private readonly SystemColor _errorBackColor = SystemColor.LightPink;
 
-        private readonly SystemColor _currentBackColor = SystemColor.White;
+        private readonly SystemColor _correctBackColor = SystemColor.White;
 
-        private readonly SystemColor _intersect = SystemColor.FromArgb(127, 255, 127, 127);
+        private readonly SystemColor _intersectColor = SystemColor.FromArgb(127, 255, 127, 127);
 
-        private readonly SystemColor _unIntersect = SystemColor.FromArgb(127, 127, 255, 127);
+        private readonly SystemColor _unIntersectColor = SystemColor.FromArgb(127, 127, 255, 127);
 
         private Random _random = new Random();
 
@@ -41,10 +41,6 @@ namespace Programming.View
 
         private string[] _genres;
 
-        public int canvasWidth;
-
-        public int canvasHeight;
-
         public MainForm()
         {
             InitializeComponent();
@@ -60,9 +56,6 @@ namespace Programming.View
             {
                 SeasonHandleComboBox.Items.Add(value);
             }
-
-            canvasWidth = CanvasPanel.Width;
-            canvasHeight = CanvasPanel.Height;
 
             InitMovies();
         }
@@ -149,7 +142,7 @@ namespace Programming.View
 
             for (int n = 0; n < _rectangles.Count; n++)
             {
-                CanvasPanel.Controls[n].BackColor = _unIntersect;
+                CanvasPanel.Controls[n].BackColor = _unIntersectColor;
                 _rectangles[n].Color = "Green";
             }
 
@@ -162,8 +155,8 @@ namespace Programming.View
                         _rectangles[i].Color = "Red";
                         _rectangles[j].Color = "Red";
 
-                        CanvasPanel.Controls[i].BackColor = _intersect;
-                        CanvasPanel.Controls[j].BackColor = _intersect;
+                        CanvasPanel.Controls[i].BackColor = _intersectColor;
+                        CanvasPanel.Controls[j].BackColor = _intersectColor;
                     }
                 }
             }
@@ -276,7 +269,7 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Height = int.Parse(RectangleHeightTextBox.Text);
-                RectangleHeightTextBox.BackColor = _currentBackColor;
+                RectangleHeightTextBox.BackColor = _correctBackColor;
             }
             catch
             {
@@ -289,7 +282,7 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Width = int.Parse(RectangleWidthTextBox.Text);
-                RectangleWidthTextBox.BackColor = _currentBackColor;
+                RectangleWidthTextBox.BackColor = _correctBackColor;
             }
             catch
             {
@@ -323,7 +316,7 @@ namespace Programming.View
             try
             {
                 _currentMovie.ReleaseYear = int.Parse(MovieYearTextBox.Text);
-                MovieYearTextBox.BackColor = _currentBackColor;
+                MovieYearTextBox.BackColor = _correctBackColor;
             }
             catch
             {
@@ -336,7 +329,7 @@ namespace Programming.View
             try
             {
                 _currentMovie.DurationMinutes = int.Parse(MovieDurationTextBox.Text);
-                MovieDurationTextBox.BackColor = _currentBackColor;
+                MovieDurationTextBox.BackColor = _correctBackColor;
             }
             catch
             {
@@ -349,7 +342,7 @@ namespace Programming.View
             try
             {
                 _currentMovie.Rating = double.Parse(MovieRatingTextBox.Text);
-                MovieRatingTextBox.BackColor = _currentBackColor;
+                MovieRatingTextBox.BackColor = _correctBackColor;
             }
             catch
             {
@@ -404,14 +397,14 @@ namespace Programming.View
 
         private void AddRectanglePictureBox_Click(object sender, EventArgs e)
         {
-            var newRectangle = RectangleFactory.Randomize(canvasHeight, canvasWidth);
+            var newRectangle = RectangleFactory.Randomize(CanvasPanel.Height, CanvasPanel.Width);
             _rectangles.Add(newRectangle);
 
             Panel rectanglePanel = new Panel();
             rectanglePanel.Width = newRectangle.Width;
             rectanglePanel.Height = newRectangle.Height;
             rectanglePanel.Location = new Point(newRectangle.Center.X, newRectangle.Center.Y);
-            rectanglePanel.BackColor = _unIntersect;
+            rectanglePanel.BackColor = _unIntersectColor;
 
             _rectanglePanels.Add(rectanglePanel);
             CanvasPanel.Controls.Add(rectanglePanel);
@@ -457,7 +450,7 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Width = int.Parse(WidthSelectedRectangleTextBox.Text);
-                WidthSelectedRectangleTextBox.BackColor = _currentBackColor;
+                WidthSelectedRectangleTextBox.BackColor = _correctBackColor;
                 CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Width = _currentRectangle.Width;
                 FindCollisions();
                 UpdateRectangleInfo(_currentRectangle);
@@ -475,7 +468,7 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Height = int.Parse(HeightSelectedRectangleTextBox.Text);
-                HeightSelectedRectangleTextBox.BackColor = _currentBackColor;
+                HeightSelectedRectangleTextBox.BackColor = _correctBackColor;
                 CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Height = _currentRectangle.Height;
                 FindCollisions();
                 UpdateRectangleInfo(_currentRectangle);
@@ -493,7 +486,7 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Center.X = int.Parse(XSelectedRectangleTextBox.Text);
-                XSelectedRectangleTextBox.BackColor = _currentBackColor;
+                XSelectedRectangleTextBox.BackColor = _correctBackColor;
                 CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Location = new Point(_currentRectangle.Center.X, _currentRectangle.Center.Y);
                 FindCollisions();
                 UpdateRectangleInfo(_currentRectangle);
@@ -513,7 +506,7 @@ namespace Programming.View
                 if (AddingRectanglesListBox.SelectedIndex >= 0)
                 {
                     _currentRectangle.Center.Y = int.Parse(YSelectedRectangleTextBox.Text);
-                    YSelectedRectangleTextBox.BackColor = _currentBackColor;
+                    YSelectedRectangleTextBox.BackColor = _correctBackColor;
                     CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Location = new Point(_currentRectangle.Center.X, _currentRectangle.Center.Y);
                     FindCollisions();
                     UpdateRectangleInfo(_currentRectangle);
@@ -525,18 +518,12 @@ namespace Programming.View
             }
         }
 
-        private void CanvasPanel_SizeChanged(object sender, EventArgs e)
-        {
-            canvasHeight = CanvasPanel.Height;
-            canvasWidth = CanvasPanel.Width;
-        }
-
         private void XRectangleTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 _currentRectangle.Center.X = int.Parse(XRectangleTextBox.Text);
-                XRectangleTextBox.BackColor = _currentBackColor;
+                XRectangleTextBox.BackColor = _correctBackColor;
             }
             catch
             {
@@ -549,7 +536,7 @@ namespace Programming.View
             try
             {
                 _currentRectangle.Center.Y = int.Parse(YRectangleTextBox.Text);
-                YRectangleTextBox.BackColor = _currentBackColor;
+                YRectangleTextBox.BackColor = _correctBackColor;
             }
             catch
             {

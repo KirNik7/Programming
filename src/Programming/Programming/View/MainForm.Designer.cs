@@ -610,7 +610,6 @@ namespace Programming.View
             this.CanvasPanel.Name = "CanvasPanel";
             this.CanvasPanel.Size = new System.Drawing.Size(593, 417);
             this.CanvasPanel.TabIndex = 16;
-            this.CanvasPanel.SizeChanged += new System.EventHandler(this.CanvasPanel_SizeChanged);
             // 
             // HeightSelectedRectangleLabel
             // 

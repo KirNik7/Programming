@@ -12,13 +12,15 @@ namespace Programming.Model.Geometry
 {
     public static class RectangleFactory
     {
+        private const int MaxSizeRectangle = 200;
+        private const int Margin = 15;
         public static Rectangle Randomize(int canvasHeight, int canvasWidth)
         {
             Random random = new Random();
-            var rectangleHeight = random.Next(1, 200);
-            var rectangleWidth = random.Next(1, 200);
-            var rectangleX = random.Next(15, canvasWidth - 200 - 15);
-            var rectangleY = random.Next(15, canvasHeight - 200 - 15);
+            var rectangleHeight = random.Next(1, MaxSizeRectangle);
+            var rectangleWidth = random.Next(1, MaxSizeRectangle);
+            var rectangleX = random.Next(Margin, canvasWidth - MaxSizeRectangle - Margin);
+            var rectangleY = random.Next(Margin, canvasHeight - MaxSizeRectangle - Margin);
             var rectanglePosition = new Point2D(rectangleX, rectangleY);
 
             return new Rectangle(
