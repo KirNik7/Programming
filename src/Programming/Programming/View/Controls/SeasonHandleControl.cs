@@ -2,6 +2,7 @@
 using Programming.Model.Enums;
 using System;
 using System.Windows.Forms;
+using SystemColor = System.Drawing.Color;
 
 namespace Programming.View.Controls
 {
@@ -10,11 +11,6 @@ namespace Programming.View.Controls
     /// </summary>
     public partial class SeasonHandleControl : UserControl
     {
-        /// <summary>
-        /// Событие при изменении цвета.
-        /// </summary>
-        public event EventHandler<ColorSelectedEventArgs> ColorSelected;
-
         /// <summary>
         /// Создаёт экземпляр класса <see cref="SeasonHandleControl"/>.
         /// </summary>
@@ -35,23 +31,25 @@ namespace Programming.View.Controls
             switch (SeasonNamesComboBox.SelectedItem)
             {
                 case Season.Winter:
-                    ColorSelected?.Invoke(this, new ColorSelectedEventArgs(AppColors.Winter));
+                    this.BackColor = SystemColor.Transparent;
+                    MessageBox.Show("Бррр! Холодно!");
                     break;
                 case Season.Summer:
-                    ColorSelected?.Invoke(this, new ColorSelectedEventArgs(AppColors.Summer));
+                    this.BackColor = SystemColor.Transparent;
+                    MessageBox.Show("Ура! Солнце!");
                     break;
                 case Season.Spring:
-                    ColorSelected?.Invoke(this, new ColorSelectedEventArgs(AppColors.Spring));
+                    this.BackColor = AppColors.Spring;
                     break;
                 case Season.Autumn:
-                    ColorSelected?.Invoke(this, new ColorSelectedEventArgs(AppColors.Autumn));
+                    this.BackColor = AppColors.Autumn;
                     break;
             }
         }
 
-        private void ClearColorButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
-            ColorSelected?.Invoke(this, new ColorSelectedEventArgs(DefaultBackColor));
+            this.BackColor = SystemColor.Transparent;
         }
     }
 }

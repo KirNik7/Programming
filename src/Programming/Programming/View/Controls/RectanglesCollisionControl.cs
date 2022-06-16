@@ -1,41 +1,60 @@
-﻿using System;
+﻿using Programming.Model.Classes;
+using Programming.Model.Geometry;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using SystemColor = System.Drawing.Color;
-using Programming.Model.Classes;
-using Programming.Model.Geometry;
 using Rectangle = Programming.Model.Geometry.Rectangle;
+using SystemColor = System.Drawing.Color;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Предоставялет реализацию представления прямоугольников.
+    /// </summary>
     public partial class RectanglesCollisionControl : UserControl
     {
+        /// <summary>
+        /// Коллекция прямоугольников.
+        /// </summary>
         private List<Rectangle> _rectangles = new List<Rectangle>();
 
+        /// <summary>
+        /// Выбранный прямоугольник.
+        /// </summary>
         private Rectangle _currentRectangle;
 
+        /// <summary>
+        /// Коллекция отображаемых прямоугольников.
+        /// </summary>
         private List<Panel> _rectanglePanels = new List<Panel>();
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="RectanglesCollisionControl"/>.
+        /// </summary>
         public RectanglesCollisionControl()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Обновляет коллекцию прямоугольников в интерфейсе.
+        /// </summary>
         private void UpdateListBoxes()
         {
             AddingRectanglesListBox.Items.Clear();
-            //RectanglesListBox.Items.Clear();
 
             for (int i = 0; i < _rectangles.Count; i++)
             {
                 AddingRectanglesListBox.Items.Add(_rectangles[i].GetRectangleInfo());
-                //RectanglesListBox.Items.Add("Rectangle " + (i + 1));
             }
 
             AddingRectanglesListBox.SelectedIndex = _rectangles.Count - 1;
         }
 
+        /// <summary>
+        /// Очищает информацию с текстовых полей и со списка.
+        /// </summary>
         private void ClearRectangleInfo()
         {
             IdSelectedRectangleTextBox.Clear();
@@ -43,15 +62,11 @@ namespace Programming.View.Controls
             YSelectedRectangleTextBox.Clear();
             WidthSelectedRectangleTextBox.Clear();
             HeightSelectedRectangleTextBox.Clear();
-            /*
-            IdRectangleTextBox.Clear();
-            XRectangleTextBox.Clear();
-            YRectangleTextBox.Clear();
-            RectangleWidthTextBox.Clear();
-            RectangleHeightTextBox.Clear();
-            */
         }
 
+        /// <summary>
+        /// Находит пересекающиеся прямоугольники и прекрашивает их.
+        /// </summary>
         private void FindCollisions()
         {
 
@@ -77,6 +92,9 @@ namespace Programming.View.Controls
             }
         }
 
+        /// <summary>
+        /// Обновляет информацию в списке.
+        /// </summary>
         private void UpdateRectangleInfo(Rectangle rectangle)
         {
             int index = AddingRectanglesListBox.FindString(rectangle.Id.ToString());
@@ -100,7 +118,7 @@ namespace Programming.View.Controls
 
         private void AddRectanglePictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            AddRectanglePictureBox.BackColor = Color.Transparent;
+            AddRectanglePictureBox.BackColor = SystemColor.Transparent;
         }
 
         private void RemoveRectanglePictureBox_MouseEnter(object sender, EventArgs e)
@@ -120,7 +138,7 @@ namespace Programming.View.Controls
 
         private void RemoveRectanglePictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            RemoveRectanglePictureBox.BackColor = Color.Transparent;
+            RemoveRectanglePictureBox.BackColor = SystemColor.Transparent;
         }
 
         private void AddRectanglePictureBox_Click(object sender, EventArgs e)

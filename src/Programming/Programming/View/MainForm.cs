@@ -1,6 +1,4 @@
-﻿using Programming.Model.Classes;
-using Programming.View.Controls;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Programming.View
 {
@@ -15,13 +13,6 @@ namespace Programming.View
         public MainForm()
         {
             InitializeComponent();
-
-            //SeasonHandleControl.ColorSelected += SeasonHandleControl_ColorSelected;
-        }
-
-        public void SeasonHandleControl_ColorSelected(object sender, ColorSelectedEventArgs args)
-        {
-            BackColor = args.Color;
         }
     }
 }

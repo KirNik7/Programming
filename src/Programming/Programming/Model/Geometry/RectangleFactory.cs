@@ -1,6 +1,5 @@
-﻿using System;
-using Programming.Model.Enums;
-using Programming.Model.Geometry;
+﻿using Programming.Model.Enums;
+using System;
 
 
 namespace Programming.Model.Geometry
@@ -10,7 +9,25 @@ namespace Programming.Model.Geometry
     /// </summary>
     public static class RectangleFactory
     {
+        /// <summary>
+        /// Максимальное значение для размера прямоугольника.
+        /// </summary>
         private const int MaxSizeRectangle = 200;
+
+        /// <summary>
+        /// Минимальное значение для размера прямоугольника.
+        /// </summary>
+        private const int MinSizeRectangle = 10;
+
+        /// <summary>
+        /// Минимальное значение для точек X и Y прямоугольника.
+        /// </summary>
+        private const int MinPoint2DValue = 1;
+
+        /// <summary>
+        /// Максимальное значение для точек X и Y прямоугольника. 
+        /// </summary>
+        private const int MaxPoint2DValue = 1000;
 
         /// <summary>
         /// Отступ внутри элемента размещения прямоугольников.
@@ -41,8 +58,8 @@ namespace Programming.Model.Geometry
 
             Rectangle rectangle = new Rectangle();
             var colors = Enum.GetValues(typeof(Color));
-            rectangle.Height = _random.Next(1, MaxSizeRectangle);
-            rectangle.Width = _random.Next(1, MaxSizeRectangle);
+            rectangle.Height = _random.Next(MinSizeRectangle, MaxSizeRectangle);
+            rectangle.Width = _random.Next(MinSizeRectangle, MaxSizeRectangle);
             rectangle.Center = new Point2D(_random.Next(Margin, canvasWidth - rectangle.Width - Margin),
                                            _random.Next(Margin, canvasHeight - rectangle.Height - Margin));
             rectangle.Color = colors.GetValue(_random.Next(0, colors.Length)).ToString();
@@ -57,9 +74,10 @@ namespace Programming.Model.Geometry
         {
             var colors = Enum.GetValues(typeof(Color));
             Rectangle rectangle = new Rectangle();
-            rectangle.Center = new Point2D(_random.Next(1, 500), _random.Next(1, 500));
-            rectangle.Width = _random.Next(30, 100);
-            rectangle.Height = _random.Next(30, 100);
+            rectangle.Center = new Point2D(_random.Next(MinPoint2DValue, MaxPoint2DValue),
+                                           _random.Next(MinPoint2DValue, MaxPoint2DValue));
+            rectangle.Width = _random.Next(MinSizeRectangle, MaxSizeRectangle);
+            rectangle.Height = _random.Next(MinSizeRectangle, MaxSizeRectangle);
             rectangle.Color = colors.GetValue(_random.Next(0, colors.Length)).ToString();
             return rectangle;
         }

@@ -90,8 +90,9 @@
             // 
             // MovieFindButton
             // 
-            this.MovieFindButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MovieFindButton.Location = new System.Drawing.Point(236, 355);
+            this.MovieFindButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MovieFindButton.Location = new System.Drawing.Point(236, 226);
             this.MovieFindButton.Name = "MovieFindButton";
             this.MovieFindButton.Size = new System.Drawing.Size(157, 27);
             this.MovieFindButton.TabIndex = 19;
@@ -118,7 +119,7 @@
             this.MovieYearLabel.AutoSize = true;
             this.MovieYearLabel.Location = new System.Drawing.Point(236, 91);
             this.MovieYearLabel.Name = "MovieYearLabel";
-            this.MovieYearLabel.Size = new System.Drawing.Size(32, 15);
+            this.MovieYearLabel.Size = new System.Drawing.Size(33, 15);
             this.MovieYearLabel.TabIndex = 17;
             this.MovieYearLabel.Text = "Year:";
             // 
@@ -164,7 +165,7 @@
             this.MovieTitleLabel.AutoSize = true;
             this.MovieTitleLabel.Location = new System.Drawing.Point(236, 3);
             this.MovieTitleLabel.Name = "MovieTitleLabel";
-            this.MovieTitleLabel.Size = new System.Drawing.Size(32, 15);
+            this.MovieTitleLabel.Size = new System.Drawing.Size(33, 15);
             this.MovieTitleLabel.TabIndex = 13;
             this.MovieTitleLabel.Text = "Title:";
             // 
@@ -197,7 +198,7 @@
             this.Controls.Add(this.MovieTitleLabel);
             this.Controls.Add(this.MoviesListBox);
             this.Name = "MoviesControl";
-            this.Size = new System.Drawing.Size(396, 385);
+            this.Size = new System.Drawing.Size(402, 385);
             this.ResumeLayout(false);
             this.PerformLayout();
 
