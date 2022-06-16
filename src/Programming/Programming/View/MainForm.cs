@@ -16,7 +16,7 @@ namespace Programming.View
         {
             InitializeComponent();
 
-            SeasonHandleControl.ColorSelected += SeasonHandleControl_ColorSelected;
+            //SeasonHandleControl.ColorSelected += SeasonHandleControl_ColorSelected;
         }
 
         public void SeasonHandleControl_ColorSelected(object sender, ColorSelectedEventArgs args)
