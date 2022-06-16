@@ -162,6 +162,7 @@
             this.RemoveRectanglePictureBox.Size = new System.Drawing.Size(75, 24);
             this.RemoveRectanglePictureBox.TabIndex = 20;
             this.RemoveRectanglePictureBox.TabStop = false;
+            this.RemoveRectanglePictureBox.Click += new System.EventHandler(this.RemoveRectanglePictureBox_Click);
             this.RemoveRectanglePictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RemoveRectanglePictureBox_MouseDown);
             this.RemoveRectanglePictureBox.MouseEnter += new System.EventHandler(this.RemoveRectanglePictureBox_MouseEnter);
             this.RemoveRectanglePictureBox.MouseLeave += new System.EventHandler(this.RemoveRectanglePictureBox_MouseLeave);

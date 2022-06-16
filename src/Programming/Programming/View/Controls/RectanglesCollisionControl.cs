@@ -5,22 +5,12 @@ using System.Windows.Forms;
 using SystemColor = System.Drawing.Color;
 using Programming.Model.Classes;
 using Programming.Model.Geometry;
-using Rectangle = Programming.Model.Classes.Rectangle;
+using Rectangle = Programming.Model.Geometry.Rectangle;
 
 namespace Programming.View.Controls
 {
     public partial class RectanglesCollisionControl : UserControl
     {
-        private readonly SystemColor _errorBackColor = SystemColor.LightPink;
-
-        private readonly SystemColor _correctBackColor = SystemColor.White;
-
-        private readonly SystemColor _collisionColor = SystemColor.FromArgb(127, 255, 127, 127);
-
-        private readonly SystemColor _notCollisionColor = SystemColor.FromArgb(127, 127, 255, 127);
-
-        private Random _random = new Random();
-
         private List<Rectangle> _rectangles = new List<Rectangle>();
 
         private Rectangle _currentRectangle;
@@ -67,7 +57,7 @@ namespace Programming.View.Controls
 
             for (int n = 0; n < _rectangles.Count; n++)
             {
-                CanvasPanel.Controls[n].BackColor = _notCollisionColor;
+                CanvasPanel.Controls[n].BackColor = AppColors.IsNotCollision;
                 _rectangles[n].Color = "Green";
             }
 
@@ -80,8 +70,8 @@ namespace Programming.View.Controls
                         _rectangles[i].Color = "Red";
                         _rectangles[j].Color = "Red";
 
-                        CanvasPanel.Controls[i].BackColor = _collisionColor;
-                        CanvasPanel.Controls[j].BackColor = _collisionColor;
+                        CanvasPanel.Controls[i].BackColor = AppColors.IsCollision;
+                        CanvasPanel.Controls[j].BackColor = AppColors.IsCollision;
                     }
                 }
             }
@@ -110,7 +100,7 @@ namespace Programming.View.Controls
 
         private void AddRectanglePictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            AddRectanglePictureBox.BackColor = DefaultBackColor;
+            AddRectanglePictureBox.BackColor = Color.Transparent;
         }
 
         private void RemoveRectanglePictureBox_MouseEnter(object sender, EventArgs e)
@@ -130,7 +120,7 @@ namespace Programming.View.Controls
 
         private void RemoveRectanglePictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            RemoveRectanglePictureBox.BackColor = DefaultBackColor;
+            RemoveRectanglePictureBox.BackColor = Color.Transparent;
         }
 
         private void AddRectanglePictureBox_Click(object sender, EventArgs e)
@@ -142,7 +132,7 @@ namespace Programming.View.Controls
             rectanglePanel.Width = newRectangle.Width;
             rectanglePanel.Height = newRectangle.Height;
             rectanglePanel.Location = new Point(newRectangle.Center.X, newRectangle.Center.Y);
-            rectanglePanel.BackColor = _notCollisionColor;
+            rectanglePanel.BackColor = AppColors.IsNotCollision;
 
             _rectanglePanels.Add(rectanglePanel);
             CanvasPanel.Controls.Add(rectanglePanel);
@@ -188,14 +178,14 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Width = int.Parse(WidthSelectedRectangleTextBox.Text);
-                WidthSelectedRectangleTextBox.BackColor = _correctBackColor;
+                WidthSelectedRectangleTextBox.BackColor = AppColors.CorrectColor;
                 CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Width = _currentRectangle.Width;
                 FindCollisions();
                 UpdateRectangleInfo(_currentRectangle);
             }
             catch
             {
-                WidthSelectedRectangleTextBox.BackColor = _errorBackColor;
+                WidthSelectedRectangleTextBox.BackColor = AppColors.ErrorColor;
             }
         }
 
@@ -206,14 +196,14 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Height = int.Parse(HeightSelectedRectangleTextBox.Text);
-                HeightSelectedRectangleTextBox.BackColor = _correctBackColor;
+                HeightSelectedRectangleTextBox.BackColor = AppColors.CorrectColor;
                 CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Height = _currentRectangle.Height;
                 FindCollisions();
                 UpdateRectangleInfo(_currentRectangle);
             }
             catch
             {
-                HeightSelectedRectangleTextBox.BackColor = _errorBackColor;
+                HeightSelectedRectangleTextBox.BackColor = AppColors.ErrorColor;
             }
         }
 
@@ -224,14 +214,14 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Center.X = int.Parse(XSelectedRectangleTextBox.Text);
-                XSelectedRectangleTextBox.BackColor = _correctBackColor;
+                XSelectedRectangleTextBox.BackColor = AppColors.CorrectColor;
                 CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Location = new Point(_currentRectangle.Center.X, _currentRectangle.Center.Y);
                 FindCollisions();
                 UpdateRectangleInfo(_currentRectangle);
             }
             catch
             {
-                XSelectedRectangleTextBox.BackColor = _errorBackColor;
+                XSelectedRectangleTextBox.BackColor = AppColors.ErrorColor;
             }
         }
 
@@ -244,7 +234,7 @@ namespace Programming.View.Controls
                 if (AddingRectanglesListBox.SelectedIndex >= 0)
                 {
                     _currentRectangle.Center.Y = int.Parse(YSelectedRectangleTextBox.Text);
-                    YSelectedRectangleTextBox.BackColor = _correctBackColor;
+                    YSelectedRectangleTextBox.BackColor = AppColors.CorrectColor;
                     CanvasPanel.Controls[AddingRectanglesListBox.SelectedIndex].Location = new Point(_currentRectangle.Center.X, _currentRectangle.Center.Y);
                     FindCollisions();
                     UpdateRectangleInfo(_currentRectangle);
@@ -252,7 +242,7 @@ namespace Programming.View.Controls
             }
             catch
             {
-                YSelectedRectangleTextBox.BackColor = _errorBackColor;
+                YSelectedRectangleTextBox.BackColor = AppColors.ErrorColor;
             }
         }
     }

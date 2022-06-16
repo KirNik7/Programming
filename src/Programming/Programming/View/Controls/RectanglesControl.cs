@@ -1,131 +1,139 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using SystemColor = System.Drawing.Color;
-using Rectangle = Programming.Model.Classes.Rectangle;
+using Programming.Model.Classes;
 using Programming.Model.Geometry;
+using Rectangle = Programming.Model.Geometry.Rectangle;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Представляет реализацию по представлению прямоугольников, генерируемых программой.
+    /// </summary>
     public partial class RectanglesControl : UserControl
     {
-        private const int MaxSizeRectangle = 200;
-
-        private readonly SystemColor _errorBackColor = SystemColor.LightPink;
-
-        private readonly SystemColor _correctBackColor = SystemColor.White;
-
-        private List<Rectangle> _rectangles = new List<Rectangle>();
-
-        private Rectangle _currentRectangle;
-
+        /// <summary>
+        /// Количество элементов.
+        /// </summary>
         private const int CountElements = 5;
 
+        /// <summary>
+        /// Коллекция прямоугольников.
+        /// </summary>
+        private Rectangle[] _rectangles;
+
+        /// <summary>
+        /// Выбранный прямоугольник.
+        /// </summary>
+        private Rectangle _currentRectangle;
+
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="RectanglesControl"/>.
+        /// </summary>
         public RectanglesControl()
         {
             InitializeComponent();
 
             _rectangles = CreateRectangles();
-            RectanglesListBox.SelectedIndex = 0;
+            RectangleListBox.SelectedIndex = 0;
         }
 
-        private int FindRectangleWithMaxWidth(List<Rectangle> rectangles)
+        /// <summary>
+        /// Инициализирует коллекцию прямоугольников.
+        /// </summary>
+        /// <returns>Возвращает коллекцию прямоугольников.</returns>
+        private Rectangle[] CreateRectangles()
         {
-            int indexMaxWidth = 0;
-            double maxWidth = 0;
-            for (int i = 0; i < rectangles.Count; i++)
-            {
-                if (rectangles[i].Width > maxWidth)
-                {
-                    maxWidth = rectangles[i].Width;
-                    indexMaxWidth = i;
-                }
-            }
-            return indexMaxWidth;
-        }
-
-        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int indexRectangle = RectanglesListBox.SelectedIndex;
-            if (indexRectangle != -1)
-            {
-                _currentRectangle = _rectangles[indexRectangle];
-                RectangleHeightTextBox.Text = _currentRectangle.Height.ToString();
-                RectangleWidthTextBox.Text = _currentRectangle.Width.ToString();
-                RectangleColorTextBox.Text = _currentRectangle.Color.ToString();
-                XRectangleTextBox.Text = _currentRectangle.Center.X.ToString();
-                YRectangleTextBox.Text = _currentRectangle.Center.Y.ToString();
-                IdRectangleTextBox.Text = _currentRectangle.Id.ToString();
-            }
-        }
-
-        private List<Rectangle> CreateRectangles()
-        {
-            List<Rectangle> rectangles = new List<Rectangle>(CountElements);
+            Rectangle[] rectangles = new Rectangle[CountElements];
             for (int i = 0; i < CountElements; i++)
             {
-                _currentRectangle = RectangleFactory.Randomize(MaxSizeRectangle, MaxSizeRectangle);
+                _currentRectangle = RectangleFactory.Randomize();
                 rectangles[i] = _currentRectangle;
-                RectanglesListBox.Items.Add($"Rectangle {_currentRectangle.Id}");
+                RectangleListBox.Items.Add($"Rectangle {_currentRectangle.Id}");
             }
             return rectangles;
         }
 
-        private void RectangleFindButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Находит прямоугольник, чья ширина больше остальных.
+        /// </summary>
+        /// <param name="rectangles">Прямоугольник.</param>
+        /// <returns>Индекс элемента коллекции, чья ширина больше остальных.</returns>
+        private int FindRectangleWithMaxWidth(Rectangle[] rectangles)
         {
-            RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
+            int maxWidthIndex = 0;
+            double maxValue = 0;
+            for (int i = 0; i < CountElements; i++)
+            {
+                if (!(rectangles[i].Width > maxValue)) continue;
+
+                maxValue = rectangles[i].Width;
+                maxWidthIndex = i;
+            }
+            return maxWidthIndex;
         }
 
-        private void RectangleLengthTextBox_TextChanged(object sender, EventArgs e)
+        private void RectangleListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (RectangleListBox.SelectedIndex == -1) return;
+
+            int selectedIndexRectangle = RectangleListBox.SelectedIndex;
+            _currentRectangle = _rectangles[selectedIndexRectangle];
+            HeightRectangleTextBox.Text = _currentRectangle.Height.ToString();
+            WidthRectangleTextBox.Text = _currentRectangle.Width.ToString();
+            ColorRectangleTextBox.Text = _currentRectangle.Color;
+            XRectangleTextBox.Text = _currentRectangle.Center.X.ToString();
+            YRectangleTextBox.Text = _currentRectangle.Center.Y.ToString();
+            IdRectangleTextBox.Text = _currentRectangle.Id.ToString();
+        }
+
+        private void HeightRectangleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (RectangleListBox.SelectedIndex == -1) return;
+
             try
             {
-                _currentRectangle.Height = int.Parse(RectangleHeightTextBox.Text);
-                RectangleHeightTextBox.BackColor = _correctBackColor;
+                string currentLengthLength = HeightRectangleTextBox.Text;
+                int lengthRectangleValue = int.Parse(currentLengthLength);
+                _currentRectangle.Height = lengthRectangleValue;
             }
             catch
             {
-                RectangleHeightTextBox.BackColor = _errorBackColor;
+                HeightRectangleTextBox.BackColor = AppColors.ErrorColor;
+                return;
             }
+            HeightRectangleTextBox.BackColor = AppColors.CorrectColor;
         }
 
-        private void RectangleWidthTextBox_TextChanged(object sender, EventArgs e)
+        private void WidthRectangleTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (RectangleListBox.SelectedIndex == -1) return;
+
             try
             {
-                _currentRectangle.Width = int.Parse(RectangleWidthTextBox.Text);
-                RectangleWidthTextBox.BackColor = _correctBackColor;
+                string currentWidthRectangle = WidthRectangleTextBox.Text;
+                int widthRectangleValue = int.Parse(currentWidthRectangle);
+                _currentRectangle.Width = widthRectangleValue;
             }
             catch
             {
-                RectangleWidthTextBox.BackColor = _errorBackColor;
+                WidthRectangleTextBox.BackColor = AppColors.ErrorColor;
+                return;
             }
+            WidthRectangleTextBox.BackColor = AppColors.CorrectColor;
         }
 
-        private void XRectangleTextBox_TextChanged(object sender, EventArgs e)
+        private void ColorRectangleTextBox_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                _currentRectangle.Center.X = int.Parse(XRectangleTextBox.Text);
-                XRectangleTextBox.BackColor = _correctBackColor;
-            }
-            catch
-            {
-                XRectangleTextBox.BackColor = _errorBackColor;
-            }
+            string colorRectangleValue = ColorRectangleTextBox.Text;
+            _currentRectangle.Color = colorRectangleValue;
         }
 
-        private void YRectangleTextBox_TextChanged(object sender, EventArgs e)
+        private void FindRectangleButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                _currentRectangle.Center.Y = int.Parse(YRectangleTextBox.Text);
-                YRectangleTextBox.BackColor = _correctBackColor;
-            }
-            catch
-            {
-                YRectangleTextBox.BackColor = _errorBackColor;
-            }
+            if (RectangleListBox.Items.Count == 0) return;
+
+            int findMaxWidthIndex = FindRectangleWithMaxWidth(_rectangles);
+            RectangleListBox.SelectedIndex = findMaxWidthIndex;
         }
     }
 }
