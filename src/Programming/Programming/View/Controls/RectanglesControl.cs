@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using Programming.Model.Classes;
+﻿using Programming.Model.Classes;
 using Programming.Model.Geometry;
+using System;
+using System.Windows.Forms;
 using Rectangle = Programming.Model.Geometry.Rectangle;
 
 namespace Programming.View.Controls

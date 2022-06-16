@@ -46,6 +46,9 @@
             // 
             // IdRectangleTextBox
             // 
+            this.IdRectangleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.IdRectangleTextBox.Enabled = false;
             this.IdRectangleTextBox.Location = new System.Drawing.Point(238, 246);
             this.IdRectangleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -65,6 +68,9 @@
             // 
             // YRectangleTextBox
             // 
+            this.YRectangleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.YRectangleTextBox.Enabled = false;
             this.YRectangleTextBox.Location = new System.Drawing.Point(238, 201);
             this.YRectangleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -84,6 +90,9 @@
             // 
             // XRectangleTextBox
             // 
+            this.XRectangleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.XRectangleTextBox.Enabled = false;
             this.XRectangleTextBox.Location = new System.Drawing.Point(238, 156);
             this.XRectangleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -103,7 +112,9 @@
             // 
             // FindRectangleButton
             // 
-            this.FindRectangleButton.Location = new System.Drawing.Point(237, 355);
+            this.FindRectangleButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FindRectangleButton.Location = new System.Drawing.Point(238, 275);
             this.FindRectangleButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.FindRectangleButton.Name = "FindRectangleButton";
             this.FindRectangleButton.Size = new System.Drawing.Size(157, 27);
@@ -114,6 +125,9 @@
             // 
             // ColorRectangleTextBox
             // 
+            this.ColorRectangleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ColorRectangleTextBox.Location = new System.Drawing.Point(238, 111);
             this.ColorRectangleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ColorRectangleTextBox.Name = "ColorRectangleTextBox";
@@ -133,6 +147,9 @@
             // 
             // WidthRectangleTextBox
             // 
+            this.WidthRectangleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.WidthRectangleTextBox.Location = new System.Drawing.Point(238, 66);
             this.WidthRectangleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.WidthRectangleTextBox.Name = "WidthRectangleTextBox";
@@ -152,8 +169,10 @@
             // 
             // HeightRectangleTextBox
             // 
+            this.HeightRectangleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.HeightRectangleTextBox.Location = new System.Drawing.Point(238, 21);
-            this.HeightRectangleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.HeightRectangleTextBox.Name = "HeightRectangleTextBox";
             this.HeightRectangleTextBox.Size = new System.Drawing.Size(157, 23);
             this.HeightRectangleTextBox.TabIndex = 16;
@@ -171,6 +190,8 @@
             // 
             // RectangleListBox
             // 
+            this.RectangleListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.RectangleListBox.FormattingEnabled = true;
             this.RectangleListBox.ItemHeight = 15;
             this.RectangleListBox.Location = new System.Drawing.Point(3, 3);

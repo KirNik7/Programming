@@ -31,12 +31,12 @@
             this.GoButton = new System.Windows.Forms.Button();
             this.SeasonNamesComboBox = new System.Windows.Forms.ComboBox();
             this.ChooseSeasonLabel = new System.Windows.Forms.Label();
-            this.ClearColorButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GoButton
             // 
-            this.GoButton.Location = new System.Drawing.Point(152, 17);
+            this.GoButton.Location = new System.Drawing.Point(150, 14);
             this.GoButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(88, 27);
@@ -64,28 +64,28 @@
             this.ChooseSeasonLabel.TabIndex = 12;
             this.ChooseSeasonLabel.Text = "Choose season:";
             // 
-            // ClearColorButton
+            // ClearButton
             // 
-            this.ClearColorButton.Location = new System.Drawing.Point(246, 17);
-            this.ClearColorButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ClearColorButton.Name = "ClearColorButton";
-            this.ClearColorButton.Size = new System.Drawing.Size(88, 27);
-            this.ClearColorButton.TabIndex = 14;
-            this.ClearColorButton.Text = "Очистить";
-            this.ClearColorButton.UseVisualStyleBackColor = true;
-            this.ClearColorButton.Click += new System.EventHandler(this.ClearColorButton_Click);
+            this.ClearButton.Location = new System.Drawing.Point(246, 14);
+            this.ClearButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(88, 27);
+            this.ClearButton.TabIndex = 14;
+            this.ClearButton.Text = "Сбросить";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // SeasonHandleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ClearColorButton);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.GoButton);
             this.Controls.Add(this.SeasonNamesComboBox);
             this.Controls.Add(this.ChooseSeasonLabel);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "SeasonHandleControl";
-            this.Size = new System.Drawing.Size(334, 44);
+            this.Size = new System.Drawing.Size(337, 44);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,6 +96,6 @@
         private System.Windows.Forms.Button GoButton;
         private System.Windows.Forms.ComboBox SeasonNamesComboBox;
         private System.Windows.Forms.Label ChooseSeasonLabel;
-        private System.Windows.Forms.Button ClearColorButton;
+        private System.Windows.Forms.Button ClearButton;
     }
 }

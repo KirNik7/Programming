@@ -37,17 +37,19 @@
             // OutputWeekdayLabel
             // 
             this.OutputWeekdayLabel.AutoSize = true;
-            this.OutputWeekdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OutputWeekdayLabel.Location = new System.Drawing.Point(22, 54);
+            this.OutputWeekdayLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OutputWeekdayLabel.Location = new System.Drawing.Point(4, 44);
+            this.OutputWeekdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OutputWeekdayLabel.Name = "OutputWeekdayLabel";
-            this.OutputWeekdayLabel.Size = new System.Drawing.Size(0, 20);
+            this.OutputWeekdayLabel.Size = new System.Drawing.Size(0, 15);
             this.OutputWeekdayLabel.TabIndex = 12;
             // 
             // ParseWeekdayButton
             // 
-            this.ParseWeekdayButton.Location = new System.Drawing.Point(228, 14);
+            this.ParseWeekdayButton.Location = new System.Drawing.Point(266, 16);
+            this.ParseWeekdayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ParseWeekdayButton.Name = "ParseWeekdayButton";
-            this.ParseWeekdayButton.Size = new System.Drawing.Size(75, 23);
+            this.ParseWeekdayButton.Size = new System.Drawing.Size(88, 27);
             this.ParseWeekdayButton.TabIndex = 11;
             this.ParseWeekdayButton.Text = "Parse";
             this.ParseWeekdayButton.UseVisualStyleBackColor = true;
@@ -55,30 +57,33 @@
             // 
             // WeekdayTextBox
             // 
-            this.WeekdayTextBox.Location = new System.Drawing.Point(3, 16);
+            this.WeekdayTextBox.Location = new System.Drawing.Point(4, 18);
+            this.WeekdayTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.WeekdayTextBox.Name = "WeekdayTextBox";
-            this.WeekdayTextBox.Size = new System.Drawing.Size(219, 20);
+            this.WeekdayTextBox.Size = new System.Drawing.Size(255, 23);
             this.WeekdayTextBox.TabIndex = 9;
             // 
             // TryParsingLabel
             // 
             this.TryParsingLabel.AutoSize = true;
             this.TryParsingLabel.Location = new System.Drawing.Point(0, 0);
+            this.TryParsingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TryParsingLabel.Name = "TryParsingLabel";
-            this.TryParsingLabel.Size = new System.Drawing.Size(115, 13);
+            this.TryParsingLabel.Size = new System.Drawing.Size(127, 15);
             this.TryParsingLabel.TabIndex = 10;
             this.TryParsingLabel.Text = "Type value for parsing:";
             // 
             // WeekdayParsingControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OutputWeekdayLabel);
             this.Controls.Add(this.ParseWeekdayButton);
             this.Controls.Add(this.WeekdayTextBox);
             this.Controls.Add(this.TryParsingLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "WeekdayParsingControl";
-            this.Size = new System.Drawing.Size(303, 74);
+            this.Size = new System.Drawing.Size(354, 85);
             this.ResumeLayout(false);
             this.PerformLayout();
 

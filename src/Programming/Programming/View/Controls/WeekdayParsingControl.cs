@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Programming.Model.Enums;
+using System;
 using System.Windows.Forms;
-using Programming.Model.Enums;
 
 namespace Programming.View.Controls
 {
     /// <summary>
-    /// Предоставляет реализацию по парсингу дней недели из перечисления.
+    /// Предоставляет реализацию парсинга дней недели из перечисления.
     /// </summary>
     public partial class WeekdayParsingControl : UserControl
     {

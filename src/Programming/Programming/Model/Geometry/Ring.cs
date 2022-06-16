@@ -1,14 +1,31 @@
-﻿using System;
-using Programming.Model.Classes;
+﻿using Programming.Model.Classes;
+using System;
 
 namespace Programming.Model.Geometry
 {
+    /// <summary>
+    /// Хранит данные о кольце.
+    /// </summary>
     public class Ring
     {
+        /// <summary>
+        /// Внешний радиус кольца.
+        /// </summary>
         private double _outerRadius;
 
+        /// <summary>
+        /// Внутренний радиус кольца.
+        /// </summary>
         private double _innerRadius;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Ring"/>.
+        /// </summary>
+        /// <param name="center">Координаты центра кольца.</param>
+        /// <param name="outerRadius">Внешний радиус кольца. Должен быть положительным числом. 
+        /// Должен быть больше внутреннего радиуса кольца.</param>
+        /// <param name="innerRadius">Внутренний радиус кольца. Должен быть положительным числом. 
+        /// Должен быть меньше внешнего радиуса кольца.</param>
         public Ring(Point2D center, double outerRadius, double innerRadius)
         {
             Center = center;
@@ -17,8 +34,15 @@ namespace Programming.Model.Geometry
 
         }
 
+        /// <summary>
+        /// Возвращает и задаёт координаты центра кольца.
+        /// </summary>
         public Point2D Center { get; set; }
 
+        /// <summary>
+        /// Возвращает и задаёт внешний радиус кольца. Должен быть положительным числом. 
+        /// Должен быть больше внутреннего радиуса кольца.
+        /// </summary>
         public double OuterRadius
         {
             get
@@ -36,6 +60,10 @@ namespace Programming.Model.Geometry
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт внутренний радиус кольца. Должен быть положительным числом. 
+        /// Должен быть меньше внешнего радиуса кольца.
+        /// </summary>
         public double InnerRadius
         {
             get
@@ -54,6 +82,9 @@ namespace Programming.Model.Geometry
             }
         }
 
+        /// <summary>
+        /// Возвращает площадь кольца.
+        /// </summary>
         public double Area
         {
             get

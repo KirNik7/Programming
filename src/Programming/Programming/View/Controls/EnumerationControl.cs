@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Programming.Model.Enums;
+using System;
 using System.Windows.Forms;
-using Programming.Model.Enums;
 
 namespace Programming.View.Controls
 {
     /// <summary>
-    /// Предоставляет реализацию по представлению перечислений.
+    /// Предоставляет реализацию представления перечислений.
     /// </summary>
     public partial class EnumerationControl : UserControl
     {
