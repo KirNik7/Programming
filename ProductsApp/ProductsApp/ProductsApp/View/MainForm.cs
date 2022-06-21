@@ -114,6 +114,7 @@ namespace ProductsApp.View
             _products = (from product in _products
                          orderby product.Name
                          select product).ToList();
+            UpdateListBox(-1);
         }
 
         /// <summary>
