@@ -31,12 +31,12 @@ namespace Programming.View
         {
             this.EnumsTabPage = new System.Windows.Forms.TabPage();
             this.SeasonHandleGroupBox = new System.Windows.Forms.GroupBox();
-            this.seasonHandleControl1 = new Programming.View.Controls.SeasonHandleControl();
+            this.SeasonHandleControl = new Programming.View.Controls.SeasonHandleControl();
             this.WeekdayParsingGroupBox = new System.Windows.Forms.GroupBox();
-            this.weekdayParsingControl1 = new Programming.View.Controls.WeekdayParsingControl();
+            this.WeekdayParsingControl = new Programming.View.Controls.WeekdayParsingControl();
             this.ItsWeekdayLabel = new System.Windows.Forms.Label();
             this.EnumsGroupBox = new System.Windows.Forms.GroupBox();
-            this.enumerationControl1 = new Programming.View.Controls.EnumerationControl();
+            this.EnumerationControl = new Programming.View.Controls.EnumerationControl();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.ClassesTabPage = new System.Windows.Forms.TabPage();
             this.MoviesGroupBox = new System.Windows.Forms.GroupBox();
@@ -72,7 +72,7 @@ namespace Programming.View
             // SeasonHandleGroupBox
             // 
             this.SeasonHandleGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SeasonHandleGroupBox.Controls.Add(this.seasonHandleControl1);
+            this.SeasonHandleGroupBox.Controls.Add(this.SeasonHandleControl);
             this.SeasonHandleGroupBox.Location = new System.Drawing.Point(440, 293);
             this.SeasonHandleGroupBox.Name = "SeasonHandleGroupBox";
             this.SeasonHandleGroupBox.Size = new System.Drawing.Size(413, 130);
@@ -80,19 +80,19 @@ namespace Programming.View
             this.SeasonHandleGroupBox.TabStop = false;
             this.SeasonHandleGroupBox.Text = "Season Handle";
             // 
-            // seasonHandleControl1
+            // SeasonHandleControl
             // 
-            this.seasonHandleControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seasonHandleControl1.Location = new System.Drawing.Point(3, 19);
-            this.seasonHandleControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.seasonHandleControl1.Name = "seasonHandleControl1";
-            this.seasonHandleControl1.Size = new System.Drawing.Size(407, 108);
-            this.seasonHandleControl1.TabIndex = 0;
+            this.SeasonHandleControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SeasonHandleControl.Location = new System.Drawing.Point(3, 19);
+            this.SeasonHandleControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.SeasonHandleControl.Name = "SeasonHandleControl";
+            this.SeasonHandleControl.Size = new System.Drawing.Size(407, 108);
+            this.SeasonHandleControl.TabIndex = 0;
             // 
             // WeekdayParsingGroupBox
             // 
             this.WeekdayParsingGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.WeekdayParsingGroupBox.Controls.Add(this.weekdayParsingControl1);
+            this.WeekdayParsingGroupBox.Controls.Add(this.WeekdayParsingControl);
             this.WeekdayParsingGroupBox.Controls.Add(this.ItsWeekdayLabel);
             this.WeekdayParsingGroupBox.Location = new System.Drawing.Point(8, 293);
             this.WeekdayParsingGroupBox.Name = "WeekdayParsingGroupBox";
@@ -101,14 +101,14 @@ namespace Programming.View
             this.WeekdayParsingGroupBox.TabStop = false;
             this.WeekdayParsingGroupBox.Text = "Weekday Parsing";
             // 
-            // weekdayParsingControl1
+            // WeekdayParsingControl
             // 
-            this.weekdayParsingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.weekdayParsingControl1.Location = new System.Drawing.Point(3, 19);
-            this.weekdayParsingControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.weekdayParsingControl1.Name = "weekdayParsingControl1";
-            this.weekdayParsingControl1.Size = new System.Drawing.Size(420, 108);
-            this.weekdayParsingControl1.TabIndex = 4;
+            this.WeekdayParsingControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WeekdayParsingControl.Location = new System.Drawing.Point(3, 19);
+            this.WeekdayParsingControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.WeekdayParsingControl.Name = "WeekdayParsingControl";
+            this.WeekdayParsingControl.Size = new System.Drawing.Size(420, 108);
+            this.WeekdayParsingControl.TabIndex = 4;
             // 
             // ItsWeekdayLabel
             // 
@@ -125,7 +125,7 @@ namespace Programming.View
             this.EnumsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EnumsGroupBox.Controls.Add(this.enumerationControl1);
+            this.EnumsGroupBox.Controls.Add(this.EnumerationControl);
             this.EnumsGroupBox.Location = new System.Drawing.Point(8, 7);
             this.EnumsGroupBox.Name = "EnumsGroupBox";
             this.EnumsGroupBox.Size = new System.Drawing.Size(845, 280);
@@ -133,14 +133,14 @@ namespace Programming.View
             this.EnumsGroupBox.TabStop = false;
             this.EnumsGroupBox.Text = "Enumerations";
             // 
-            // enumerationControl1
+            // EnumerationControl
             // 
-            this.enumerationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.enumerationControl1.Location = new System.Drawing.Point(3, 19);
-            this.enumerationControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.enumerationControl1.Name = "enumerationControl1";
-            this.enumerationControl1.Size = new System.Drawing.Size(839, 258);
-            this.enumerationControl1.TabIndex = 0;
+            this.EnumerationControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnumerationControl.Location = new System.Drawing.Point(3, 19);
+            this.EnumerationControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EnumerationControl.Name = "EnumerationControl";
+            this.EnumerationControl.Size = new System.Drawing.Size(839, 258);
+            this.EnumerationControl.TabIndex = 0;
             // 
             // TabControl
             // 
@@ -264,9 +264,9 @@ namespace Programming.View
         private System.Windows.Forms.GroupBox RectanglesGroupBox;
         private Controls.RectanglesControl RectanglesControl;
         private System.Windows.Forms.GroupBox MoviesGroupBox;
-        private Controls.EnumerationControl enumerationControl1;
-        private Controls.SeasonHandleControl seasonHandleControl1;
-        private Controls.WeekdayParsingControl weekdayParsingControl1;
+        private Controls.EnumerationControl EnumerationControl;
+        private Controls.SeasonHandleControl SeasonHandleControl;
+        private Controls.WeekdayParsingControl WeekdayParsingControl;
     }
 }
 

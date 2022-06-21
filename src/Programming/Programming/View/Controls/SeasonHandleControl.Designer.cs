@@ -36,7 +36,7 @@
             // 
             // GoButton
             // 
-            this.GoButton.Location = new System.Drawing.Point(150, 14);
+            this.GoButton.Location = new System.Drawing.Point(206, 14);
             this.GoButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(88, 27);
@@ -51,7 +51,7 @@
             this.SeasonNamesComboBox.Location = new System.Drawing.Point(4, 17);
             this.SeasonNamesComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SeasonNamesComboBox.Name = "SeasonNamesComboBox";
-            this.SeasonNamesComboBox.Size = new System.Drawing.Size(140, 23);
+            this.SeasonNamesComboBox.Size = new System.Drawing.Size(194, 23);
             this.SeasonNamesComboBox.TabIndex = 13;
             // 
             // ChooseSeasonLabel
@@ -66,7 +66,7 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(246, 14);
+            this.ClearButton.Location = new System.Drawing.Point(302, 14);
             this.ClearButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(88, 27);
@@ -85,7 +85,7 @@
             this.Controls.Add(this.ChooseSeasonLabel);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "SeasonHandleControl";
-            this.Size = new System.Drawing.Size(337, 44);
+            this.Size = new System.Drawing.Size(394, 44);
             this.ResumeLayout(false);
             this.PerformLayout();
 
