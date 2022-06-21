@@ -259,11 +259,6 @@ namespace ProductsApp.View
             UpdateListBox(-1);
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Serializer.Serialize(_products);
-        }
-
         private void AddPictureBox_MouseEnter(object sender, EventArgs e)
         {
             AddPictureBox.Image = Properties.Resources.add_24x24_black;
@@ -282,6 +277,11 @@ namespace ProductsApp.View
         private void RemovePictureBox_MouseLeave(object sender, EventArgs e)
         {
             RemovePictureBox.Image = Properties.Resources.cross_circle_24x24;
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Serializer.Serialize(_products);
         }
     }
 }
