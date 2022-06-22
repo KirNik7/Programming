@@ -1,4 +1,6 @@
-﻿namespace ProductsApp.Model
+﻿using System.Drawing;
+
+namespace ProductsApp.Model
 {
     /// <summary>
     /// Хранит данные о товаре.
@@ -127,5 +129,7 @@
         /// Возвращает и задаёт категорию товара.
         /// </summary>
         public string Category { get; set; }
+
+        public string ImageInBase64 { get; set; }
     }
 }

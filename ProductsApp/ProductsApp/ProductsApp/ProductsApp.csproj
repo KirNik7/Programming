@@ -109,6 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\remove_image_32x32.png" />
+    <None Include="Resources\remove_image_32x32_black.png" />
+    <None Include="Resources\add_image_32x32_black.png" />
+    <None Include="Resources\add_image_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

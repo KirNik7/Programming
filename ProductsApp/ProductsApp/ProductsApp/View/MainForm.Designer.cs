@@ -31,7 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ProductsListBox = new System.Windows.Forms.ListBox();
             this.ProductGroupBox = new System.Windows.Forms.GroupBox();
+            this.RemoveProductImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.AddProductImagePictureBox = new System.Windows.Forms.PictureBox();
             this.ProductCountInStockLabel = new System.Windows.Forms.Label();
+            this.ProductImagePictureBox = new System.Windows.Forms.PictureBox();
             this.ProductCategoryLabel = new System.Windows.Forms.Label();
             this.ProductManufacturerLabel = new System.Windows.Forms.Label();
             this.ProductNameLabel = new System.Windows.Forms.Label();
@@ -42,6 +45,9 @@
             this.AddPictureBox = new System.Windows.Forms.PictureBox();
             this.RemovePictureBox = new System.Windows.Forms.PictureBox();
             this.ProductGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RemoveProductImagePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProductImagePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductImagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +63,10 @@
             // 
             // ProductGroupBox
             // 
+            this.ProductGroupBox.Controls.Add(this.RemoveProductImagePictureBox);
+            this.ProductGroupBox.Controls.Add(this.AddProductImagePictureBox);
             this.ProductGroupBox.Controls.Add(this.ProductCountInStockLabel);
+            this.ProductGroupBox.Controls.Add(this.ProductImagePictureBox);
             this.ProductGroupBox.Controls.Add(this.ProductCategoryLabel);
             this.ProductGroupBox.Controls.Add(this.ProductManufacturerLabel);
             this.ProductGroupBox.Controls.Add(this.ProductNameLabel);
@@ -67,10 +76,37 @@
             this.ProductGroupBox.Controls.Add(this.ProductNameTextBox);
             this.ProductGroupBox.Location = new System.Drawing.Point(253, 12);
             this.ProductGroupBox.Name = "ProductGroupBox";
-            this.ProductGroupBox.Size = new System.Drawing.Size(435, 127);
+            this.ProductGroupBox.Size = new System.Drawing.Size(399, 276);
             this.ProductGroupBox.TabIndex = 1;
             this.ProductGroupBox.TabStop = false;
             this.ProductGroupBox.Text = "Selected Product";
+            // 
+            // RemoveProductImagePictureBox
+            // 
+            this.RemoveProductImagePictureBox.Image = global::ProductsApp.Properties.Resources.remove_image_32x32;
+            this.RemoveProductImagePictureBox.Location = new System.Drawing.Point(351, 227);
+            this.RemoveProductImagePictureBox.Name = "RemoveProductImagePictureBox";
+            this.RemoveProductImagePictureBox.Size = new System.Drawing.Size(39, 39);
+            this.RemoveProductImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.RemoveProductImagePictureBox.TabIndex = 9;
+            this.RemoveProductImagePictureBox.TabStop = false;
+            this.RemoveProductImagePictureBox.Click += new System.EventHandler(this.RemoveProductImagePictureBox_Click);
+            this.RemoveProductImagePictureBox.MouseEnter += new System.EventHandler(this.RemoveProductImagePictureBox_MouseEnter);
+            this.RemoveProductImagePictureBox.MouseLeave += new System.EventHandler(this.RemoveProductImagePictureBox_MouseLeave);
+            // 
+            // AddProductImagePictureBox
+            // 
+            this.AddProductImagePictureBox.Image = global::ProductsApp.Properties.Resources.add_image_32x32;
+            this.AddProductImagePictureBox.ImageLocation = "";
+            this.AddProductImagePictureBox.Location = new System.Drawing.Point(306, 227);
+            this.AddProductImagePictureBox.Name = "AddProductImagePictureBox";
+            this.AddProductImagePictureBox.Size = new System.Drawing.Size(39, 39);
+            this.AddProductImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.AddProductImagePictureBox.TabIndex = 8;
+            this.AddProductImagePictureBox.TabStop = false;
+            this.AddProductImagePictureBox.Click += new System.EventHandler(this.AddProductImagePictureBox_Click);
+            this.AddProductImagePictureBox.MouseEnter += new System.EventHandler(this.AddProductImagePictureBox_MouseEnter);
+            this.AddProductImagePictureBox.MouseLeave += new System.EventHandler(this.AddProductImagePictureBox_MouseLeave);
             // 
             // ProductCountInStockLabel
             // 
@@ -80,6 +116,16 @@
             this.ProductCountInStockLabel.Size = new System.Drawing.Size(78, 13);
             this.ProductCountInStockLabel.TabIndex = 7;
             this.ProductCountInStockLabel.Text = "Count in stock:";
+            // 
+            // ProductImagePictureBox
+            // 
+            this.ProductImagePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProductImagePictureBox.Location = new System.Drawing.Point(240, 71);
+            this.ProductImagePictureBox.Name = "ProductImagePictureBox";
+            this.ProductImagePictureBox.Size = new System.Drawing.Size(150, 150);
+            this.ProductImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductImagePictureBox.TabIndex = 5;
+            this.ProductImagePictureBox.TabStop = false;
             // 
             // ProductCategoryLabel
             // 
@@ -113,7 +159,7 @@
             this.ProductCategoryComboBox.FormattingEnabled = true;
             this.ProductCategoryComboBox.Location = new System.Drawing.Point(90, 71);
             this.ProductCategoryComboBox.Name = "ProductCategoryComboBox";
-            this.ProductCategoryComboBox.Size = new System.Drawing.Size(168, 21);
+            this.ProductCategoryComboBox.Size = new System.Drawing.Size(144, 21);
             this.ProductCategoryComboBox.TabIndex = 3;
             this.ProductCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductCategoryComboBox_SelectedIndexChanged);
             // 
@@ -121,7 +167,7 @@
             // 
             this.ProductCountInStockTextBox.Location = new System.Drawing.Point(90, 98);
             this.ProductCountInStockTextBox.Name = "ProductCountInStockTextBox";
-            this.ProductCountInStockTextBox.Size = new System.Drawing.Size(168, 20);
+            this.ProductCountInStockTextBox.Size = new System.Drawing.Size(144, 20);
             this.ProductCountInStockTextBox.TabIndex = 2;
             this.ProductCountInStockTextBox.TextChanged += new System.EventHandler(this.ProductInStockTextBox_TextChanged);
             // 
@@ -129,7 +175,7 @@
             // 
             this.ProductManufacturerTextBox.Location = new System.Drawing.Point(90, 45);
             this.ProductManufacturerTextBox.Name = "ProductManufacturerTextBox";
-            this.ProductManufacturerTextBox.Size = new System.Drawing.Size(339, 20);
+            this.ProductManufacturerTextBox.Size = new System.Drawing.Size(300, 20);
             this.ProductManufacturerTextBox.TabIndex = 1;
             this.ProductManufacturerTextBox.TextChanged += new System.EventHandler(this.ProductManufacturerTextBox_TextChanged);
             // 
@@ -137,7 +183,7 @@
             // 
             this.ProductNameTextBox.Location = new System.Drawing.Point(90, 19);
             this.ProductNameTextBox.Name = "ProductNameTextBox";
-            this.ProductNameTextBox.Size = new System.Drawing.Size(339, 20);
+            this.ProductNameTextBox.Size = new System.Drawing.Size(300, 20);
             this.ProductNameTextBox.TabIndex = 0;
             this.ProductNameTextBox.TextChanged += new System.EventHandler(this.ProductNameTextBox_TextChanged);
             // 
@@ -171,17 +217,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 423);
+            this.ClientSize = new System.Drawing.Size(664, 423);
             this.Controls.Add(this.RemovePictureBox);
             this.Controls.Add(this.AddPictureBox);
             this.Controls.Add(this.ProductGroupBox);
             this.Controls.Add(this.ProductsListBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductsApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ProductGroupBox.ResumeLayout(false);
             this.ProductGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RemoveProductImagePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProductImagePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductImagePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -202,6 +252,9 @@
         private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.PictureBox AddPictureBox;
         private System.Windows.Forms.PictureBox RemovePictureBox;
+        private System.Windows.Forms.PictureBox ProductImagePictureBox;
+        private System.Windows.Forms.PictureBox RemoveProductImagePictureBox;
+        private System.Windows.Forms.PictureBox AddProductImagePictureBox;
     }
 }
 

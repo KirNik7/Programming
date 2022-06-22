@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing;
 
 namespace ProductsApp.View
 {
@@ -29,6 +31,8 @@ namespace ProductsApp.View
         public MainForm()
         {
             InitializeComponent();
+
+            ProductGroupBox.Enabled = false;
 
             var items = Enum.GetValues(typeof(Category));
 
@@ -98,6 +102,19 @@ namespace ProductsApp.View
             ProductCountInStockTextBox.Clear();
         }
 
+        /// <summary>
+        /// Конвертирует строку Base64 в изображение Image.
+        /// </summary>
+        /// <param name="base64">Строка в Base64.</param>
+        /// <returns>Объект класса <see cref="Image"/>.</returns>
+        private Image ConvertFromBase64StringToImage(string base64String)
+        {
+            if (base64String == null) return null;
+
+            var byteArrayImage = Convert.FromBase64String(base64String);
+            return Image.FromStream(new MemoryStream(byteArrayImage));
+        }
+
         private void AddPictureBox_Click(object sender, EventArgs e)
         {
             var product = new Product();
@@ -136,11 +153,13 @@ namespace ProductsApp.View
                 return;
             }
 
+            ProductGroupBox.Enabled = true;
             _currentProduct = _products[ProductsListBox.SelectedIndex];
             ProductNameTextBox.Text = _currentProduct.Name;
             ProductManufacturerTextBox.Text = _currentProduct.Manufacturer;
             ProductCategoryComboBox.Text = _currentProduct.Category;
             ProductCountInStockTextBox.Text = _currentProduct.CountInStock.ToString();
+            ProductImagePictureBox.Image = ConvertFromBase64StringToImage(_currentProduct.ImageInBase64);
         }
 
         private void ProductNameTextBox_TextChanged(object sender, EventArgs e)
@@ -234,6 +253,65 @@ namespace ProductsApp.View
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Serializer.Serialize(_products);
+        }
+
+        private void AddProductImagePictureBox_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Выберите изображение для товара";
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "PNG Image files (*.png)|*.png|JPEG Image " +
+                    "files (*.jpg)|*.jpg|Bitmap files (*.bmp)|*.bmp|All files (*.*)|*.*";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    _currentProduct.ImageInBase64 = Convert.ToBase64String(
+                                                    File.ReadAllBytes(
+                                                    openFileDialog.FileName));
+                }
+            }
+            ProductImagePictureBox.Image = ConvertFromBase64StringToImage(
+                                           _currentProduct.ImageInBase64);
+        }
+
+        private void AddProductImagePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            AddProductImagePictureBox.Image = Properties.Resources.add_image_32x32_black;
+        }
+
+        private void AddProductImagePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            AddProductImagePictureBox.Image = Properties.Resources.add_image_32x32;
+        }
+
+        private void RemoveProductImagePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            RemoveProductImagePictureBox.Image = Properties.Resources.remove_image_32x32_black;
+        }
+
+        private void RemoveProductImagePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            RemoveProductImagePictureBox.Image = Properties.Resources.remove_image_32x32;
+        }
+
+        private void RemoveProductImagePictureBox_Click(object sender, EventArgs e)
+        {
+            const string message =
+        "Вы действительно хотите удалить изображение этого товара?";
+            const string caption = "Удаление изображение товара";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+            
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            _currentProduct.ImageInBase64 = null;
+            ProductImagePictureBox.Image = ConvertFromBase64StringToImage(
+                                           _currentProduct.ImageInBase64);
         }
     }
 }
