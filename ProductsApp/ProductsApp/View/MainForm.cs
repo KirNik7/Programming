@@ -3,10 +3,10 @@ using ProductsApp.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.IO;
-using System.Drawing;
 
 namespace ProductsApp.View
 {
@@ -159,7 +159,8 @@ namespace ProductsApp.View
             ProductManufacturerTextBox.Text = _currentProduct.Manufacturer;
             ProductCategoryComboBox.Text = _currentProduct.Category;
             ProductCountInStockTextBox.Text = _currentProduct.CountInStock.ToString();
-            ProductImagePictureBox.Image = ConvertFromBase64StringToImage(_currentProduct.ImageInBase64);
+            ProductImagePictureBox.Image = ConvertFromBase64StringToImage(
+                                           _currentProduct.ImageInBase64);
         }
 
         private void ProductNameTextBox_TextChanged(object sender, EventArgs e)
@@ -230,31 +231,6 @@ namespace ProductsApp.View
             }
         }
 
-        private void AddPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            AddPictureBox.Image = Properties.Resources.add_24x24_black;
-        }
-
-        private void AddPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            AddPictureBox.Image = Properties.Resources.add_24x24;
-        }
-
-        private void RemovePictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            RemovePictureBox.Image = Properties.Resources.cross_circle_24x24_black;
-        }
-
-        private void RemovePictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            RemovePictureBox.Image = Properties.Resources.cross_circle_24x24;
-        }
-
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Serializer.Serialize(_products);
-        }
-
         private void AddProductImagePictureBox_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -271,6 +247,25 @@ namespace ProductsApp.View
                                                     openFileDialog.FileName));
                 }
             }
+            ProductImagePictureBox.Image = ConvertFromBase64StringToImage(
+                                           _currentProduct.ImageInBase64);
+        }
+
+        private void RemoveProductImagePictureBox_Click(object sender, EventArgs e)
+        {
+            const string message =
+        "Вы действительно хотите удалить изображение этого товара?";
+            const string caption = "Удаление изображение товара";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Warning);
+            
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            _currentProduct.ImageInBase64 = null;
             ProductImagePictureBox.Image = ConvertFromBase64StringToImage(
                                            _currentProduct.ImageInBase64);
         }
@@ -295,23 +290,29 @@ namespace ProductsApp.View
             RemoveProductImagePictureBox.Image = Properties.Resources.remove_image_32x32;
         }
 
-        private void RemoveProductImagePictureBox_Click(object sender, EventArgs e)
+        private void AddPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            const string message =
-        "Вы действительно хотите удалить изображение этого товара?";
-            const string caption = "Удаление изображение товара";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-            
-            if (result == DialogResult.No)
-            {
-                return;
-            }
+            AddPictureBox.Image = Properties.Resources.add_24x24_black;
+        }
 
-            _currentProduct.ImageInBase64 = null;
-            ProductImagePictureBox.Image = ConvertFromBase64StringToImage(
-                                           _currentProduct.ImageInBase64);
+        private void AddPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            AddPictureBox.Image = Properties.Resources.add_24x24;
+        }
+
+        private void RemovePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            RemovePictureBox.Image = Properties.Resources.cross_circle_24x24_black;
+        }
+
+        private void RemovePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            RemovePictureBox.Image = Properties.Resources.cross_circle_24x24;
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Serializer.Serialize(_products);
         }
     }
 }

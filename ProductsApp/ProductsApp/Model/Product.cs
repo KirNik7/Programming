@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace ProductsApp.Model
+﻿namespace ProductsApp.Model
 {
     /// <summary>
     /// Хранит данные о товаре.
@@ -130,6 +128,9 @@ namespace ProductsApp.Model
         /// </summary>
         public string Category { get; set; }
 
+        /// <summary>
+        /// Возвращает и задаёт изображение в формате строки Base64
+        /// </summary>
         public string ImageInBase64 { get; set; }
     }
 }

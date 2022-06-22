@@ -30,7 +30,7 @@ namespace ProductsApp.Model
         /// </summary>
         /// <param name="property">Имя свойства, откуда был вызван метод.</param>
         /// <param name="value">Число.</param>
-        /// <exception cref="System.ArgumentException">Выбрасывается, 
+        /// <exception cref="ArgumentException">Выбрасывается, 
         /// если число меньше нуля.</exception>
         public static void AssertOnPositiveValue(string property, int value)
         {
