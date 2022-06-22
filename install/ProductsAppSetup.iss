@@ -28,7 +28,7 @@ DisableProgramGroupPage=yes
 ;PrivilegesRequired=lowest
 OutputDir=..\install
 OutputBaseFilename=ProductsAppSetup
-SetupIconFile=G:\Кирилл\Для университета\Программирование\Repos\Programming\ProductsApp\ProductsApp\ProductsApp\Resources\icon.ico
+SetupIconFile=..\ProductsApp\ProductsApp\Resources\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -41,8 +41,8 @@ Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "G:\Кирилл\Для университета\Программирование\Repos\Programming\ProductsApp\ProductsApp\ProductsApp\bin\Release\ProductsApp.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "G:\Кирилл\Для университета\Программирование\Repos\Programming\ProductsApp\ProductsApp\ProductsApp\bin\Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\ProductsApp\ProductsApp\bin\Release\ProductsApp.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\ProductsApp\ProductsApp\bin\Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
