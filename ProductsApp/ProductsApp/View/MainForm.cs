@@ -82,7 +82,7 @@ namespace ProductsApp.View
         /// <summary>
         /// Сортировка _products.
         /// </summary>
-        private void SortingProducts()
+        private void SortProducts()
         {
             _products = (from product in _products
                          orderby product.Name
@@ -119,7 +119,7 @@ namespace ProductsApp.View
         {
             var product = new Product();
             _products.Add(product);
-            SortingProducts();
+            SortProducts();
             UpdateListBox(_products.IndexOf(product));
             ProductGroupBox.Enabled = true;
         }
@@ -171,7 +171,7 @@ namespace ProductsApp.View
             {
                 _currentProduct.Name = ProductNameTextBox.Text;
                 ProductNameTextBox.BackColor = AppColors.CorrectColor;
-                SortingProducts();
+                SortProducts();
                 UpdateListBox(_products.IndexOf(_currentProduct));
             }
             catch
@@ -188,7 +188,7 @@ namespace ProductsApp.View
             {
                 _currentProduct.Manufacturer = ProductManufacturerTextBox.Text;
                 ProductManufacturerTextBox.BackColor = AppColors.CorrectColor;
-                SortingProducts();
+                SortProducts();
                 UpdateListBox(_products.IndexOf(_currentProduct));
             }
             catch
@@ -205,7 +205,7 @@ namespace ProductsApp.View
             {
                 _currentProduct.Category = ProductCategoryComboBox.SelectedItem.ToString();
                 ProductCategoryComboBox.BackColor = AppColors.CorrectColor;
-                SortingProducts();
+                SortProducts();
                 UpdateListBox(_products.IndexOf(_currentProduct));
             }
             catch
@@ -222,7 +222,7 @@ namespace ProductsApp.View
             {
                 _currentProduct.CountInStock = int.Parse(ProductCountInStockTextBox.Text);
                 ProductCountInStockTextBox.BackColor = AppColors.CorrectColor;
-                SortingProducts();
+                SortProducts();
                 UpdateListBox(_products.IndexOf(_currentProduct));
             }
             catch
@@ -235,7 +235,7 @@ namespace ProductsApp.View
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Title = "Выберите изображение для товара";
+                openFileDialog.Title = "Choose an image for the product";
                 openFileDialog.InitialDirectory = "c:\\";
                 openFileDialog.Filter = "PNG Image files (*.png)|*.png|JPEG Image " +
                     "files (*.jpg)|*.jpg|Bitmap files (*.bmp)|*.bmp|All files (*.*)|*.*";
@@ -254,8 +254,8 @@ namespace ProductsApp.View
         private void RemoveProductImagePictureBox_Click(object sender, EventArgs e)
         {
             const string message =
-        "Вы действительно хотите удалить изображение этого товара?";
-            const string caption = "Удаление изображение товара";
+        "Do you really want to delete the image of this product?";
+            const string caption = "Deleting a product image";
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNo,
                                          MessageBoxIcon.Warning);
