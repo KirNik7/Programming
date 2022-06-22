@@ -29,6 +29,7 @@ DisableProgramGroupPage=yes
 OutputDir=..\install
 OutputBaseFilename=ProductsAppSetup
 SetupIconFile=..\ProductsApp\ProductsApp\Resources\icon.ico
+LicenseFile=..\LICENSE
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
