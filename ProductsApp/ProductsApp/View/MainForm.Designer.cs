@@ -57,7 +57,7 @@
             this.ProductsListBox.FormattingEnabled = true;
             this.ProductsListBox.Location = new System.Drawing.Point(12, 12);
             this.ProductsListBox.Name = "ProductsListBox";
-            this.ProductsListBox.Size = new System.Drawing.Size(235, 355);
+            this.ProductsListBox.Size = new System.Drawing.Size(235, 277);
             this.ProductsListBox.TabIndex = 0;
             this.ProductsListBox.SelectedIndexChanged += new System.EventHandler(this.ProductsListBox_SelectedIndexChanged);
             // 
@@ -76,7 +76,7 @@
             this.ProductGroupBox.Controls.Add(this.ProductNameTextBox);
             this.ProductGroupBox.Location = new System.Drawing.Point(253, 12);
             this.ProductGroupBox.Name = "ProductGroupBox";
-            this.ProductGroupBox.Size = new System.Drawing.Size(399, 276);
+            this.ProductGroupBox.Size = new System.Drawing.Size(397, 274);
             this.ProductGroupBox.TabIndex = 1;
             this.ProductGroupBox.TabStop = false;
             this.ProductGroupBox.Text = "Selected Product";
@@ -190,7 +190,7 @@
             // AddPictureBox
             // 
             this.AddPictureBox.Image = global::ProductsApp.Properties.Resources.add_24x24;
-            this.AddPictureBox.Location = new System.Drawing.Point(12, 373);
+            this.AddPictureBox.Location = new System.Drawing.Point(12, 295);
             this.AddPictureBox.Name = "AddPictureBox";
             this.AddPictureBox.Size = new System.Drawing.Size(39, 39);
             this.AddPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -203,7 +203,7 @@
             // RemovePictureBox
             // 
             this.RemovePictureBox.Image = global::ProductsApp.Properties.Resources.cross_circle_24x24;
-            this.RemovePictureBox.Location = new System.Drawing.Point(57, 373);
+            this.RemovePictureBox.Location = new System.Drawing.Point(57, 295);
             this.RemovePictureBox.Name = "RemovePictureBox";
             this.RemovePictureBox.Size = new System.Drawing.Size(39, 39);
             this.RemovePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 423);
+            this.ClientSize = new System.Drawing.Size(662, 346);
             this.Controls.Add(this.RemovePictureBox);
             this.Controls.Add(this.AddPictureBox);
             this.Controls.Add(this.ProductGroupBox);
