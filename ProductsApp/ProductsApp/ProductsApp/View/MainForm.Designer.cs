@@ -31,18 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ProductsListBox = new System.Windows.Forms.ListBox();
             this.ProductGroupBox = new System.Windows.Forms.GroupBox();
-            this.ProductInStockLabel = new System.Windows.Forms.Label();
+            this.ProductCountInStockLabel = new System.Windows.Forms.Label();
             this.ProductCategoryLabel = new System.Windows.Forms.Label();
             this.ProductManufacturerLabel = new System.Windows.Forms.Label();
             this.ProductNameLabel = new System.Windows.Forms.Label();
             this.ProductCategoryComboBox = new System.Windows.Forms.ComboBox();
-            this.ProductInStockTextBox = new System.Windows.Forms.TextBox();
+            this.ProductCountInStockTextBox = new System.Windows.Forms.TextBox();
             this.ProductManufacturerTextBox = new System.Windows.Forms.TextBox();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.AddPictureBox = new System.Windows.Forms.PictureBox();
             this.RemovePictureBox = new System.Windows.Forms.PictureBox();
-            this.SearchLabel = new System.Windows.Forms.Label();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ProductGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).BeginInit();
@@ -51,37 +49,37 @@
             // ProductsListBox
             // 
             this.ProductsListBox.FormattingEnabled = true;
-            this.ProductsListBox.Location = new System.Drawing.Point(12, 38);
+            this.ProductsListBox.Location = new System.Drawing.Point(12, 12);
             this.ProductsListBox.Name = "ProductsListBox";
-            this.ProductsListBox.Size = new System.Drawing.Size(235, 329);
+            this.ProductsListBox.Size = new System.Drawing.Size(235, 355);
             this.ProductsListBox.TabIndex = 0;
             this.ProductsListBox.SelectedIndexChanged += new System.EventHandler(this.ProductsListBox_SelectedIndexChanged);
             // 
             // ProductGroupBox
             // 
-            this.ProductGroupBox.Controls.Add(this.ProductInStockLabel);
+            this.ProductGroupBox.Controls.Add(this.ProductCountInStockLabel);
             this.ProductGroupBox.Controls.Add(this.ProductCategoryLabel);
             this.ProductGroupBox.Controls.Add(this.ProductManufacturerLabel);
             this.ProductGroupBox.Controls.Add(this.ProductNameLabel);
             this.ProductGroupBox.Controls.Add(this.ProductCategoryComboBox);
-            this.ProductGroupBox.Controls.Add(this.ProductInStockTextBox);
+            this.ProductGroupBox.Controls.Add(this.ProductCountInStockTextBox);
             this.ProductGroupBox.Controls.Add(this.ProductManufacturerTextBox);
             this.ProductGroupBox.Controls.Add(this.ProductNameTextBox);
-            this.ProductGroupBox.Location = new System.Drawing.Point(253, 38);
+            this.ProductGroupBox.Location = new System.Drawing.Point(253, 12);
             this.ProductGroupBox.Name = "ProductGroupBox";
-            this.ProductGroupBox.Size = new System.Drawing.Size(535, 127);
+            this.ProductGroupBox.Size = new System.Drawing.Size(435, 127);
             this.ProductGroupBox.TabIndex = 1;
             this.ProductGroupBox.TabStop = false;
             this.ProductGroupBox.Text = "Selected Product";
             // 
-            // ProductInStockLabel
+            // ProductCountInStockLabel
             // 
-            this.ProductInStockLabel.AutoSize = true;
-            this.ProductInStockLabel.Location = new System.Drawing.Point(36, 101);
-            this.ProductInStockLabel.Name = "ProductInStockLabel";
-            this.ProductInStockLabel.Size = new System.Drawing.Size(48, 13);
-            this.ProductInStockLabel.TabIndex = 7;
-            this.ProductInStockLabel.Text = "In stock:";
+            this.ProductCountInStockLabel.AutoSize = true;
+            this.ProductCountInStockLabel.Location = new System.Drawing.Point(6, 101);
+            this.ProductCountInStockLabel.Name = "ProductCountInStockLabel";
+            this.ProductCountInStockLabel.Size = new System.Drawing.Size(78, 13);
+            this.ProductCountInStockLabel.TabIndex = 7;
+            this.ProductCountInStockLabel.Text = "Count in stock:";
             // 
             // ProductCategoryLabel
             // 
@@ -119,19 +117,19 @@
             this.ProductCategoryComboBox.TabIndex = 3;
             this.ProductCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductCategoryComboBox_SelectedIndexChanged);
             // 
-            // ProductInStockTextBox
+            // ProductCountInStockTextBox
             // 
-            this.ProductInStockTextBox.Location = new System.Drawing.Point(90, 98);
-            this.ProductInStockTextBox.Name = "ProductInStockTextBox";
-            this.ProductInStockTextBox.Size = new System.Drawing.Size(168, 20);
-            this.ProductInStockTextBox.TabIndex = 2;
-            this.ProductInStockTextBox.TextChanged += new System.EventHandler(this.ProductInStockTextBox_TextChanged);
+            this.ProductCountInStockTextBox.Location = new System.Drawing.Point(90, 98);
+            this.ProductCountInStockTextBox.Name = "ProductCountInStockTextBox";
+            this.ProductCountInStockTextBox.Size = new System.Drawing.Size(168, 20);
+            this.ProductCountInStockTextBox.TabIndex = 2;
+            this.ProductCountInStockTextBox.TextChanged += new System.EventHandler(this.ProductInStockTextBox_TextChanged);
             // 
             // ProductManufacturerTextBox
             // 
             this.ProductManufacturerTextBox.Location = new System.Drawing.Point(90, 45);
             this.ProductManufacturerTextBox.Name = "ProductManufacturerTextBox";
-            this.ProductManufacturerTextBox.Size = new System.Drawing.Size(439, 20);
+            this.ProductManufacturerTextBox.Size = new System.Drawing.Size(339, 20);
             this.ProductManufacturerTextBox.TabIndex = 1;
             this.ProductManufacturerTextBox.TextChanged += new System.EventHandler(this.ProductManufacturerTextBox_TextChanged);
             // 
@@ -139,7 +137,7 @@
             // 
             this.ProductNameTextBox.Location = new System.Drawing.Point(90, 19);
             this.ProductNameTextBox.Name = "ProductNameTextBox";
-            this.ProductNameTextBox.Size = new System.Drawing.Size(439, 20);
+            this.ProductNameTextBox.Size = new System.Drawing.Size(339, 20);
             this.ProductNameTextBox.TabIndex = 0;
             this.ProductNameTextBox.TextChanged += new System.EventHandler(this.ProductNameTextBox_TextChanged);
             // 
@@ -169,30 +167,11 @@
             this.RemovePictureBox.MouseEnter += new System.EventHandler(this.RemovePictureBox_MouseEnter);
             this.RemovePictureBox.MouseLeave += new System.EventHandler(this.RemovePictureBox_MouseLeave);
             // 
-            // SearchLabel
-            // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Location = new System.Drawing.Point(12, 15);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(44, 13);
-            this.SearchLabel.TabIndex = 4;
-            this.SearchLabel.Text = "Search:";
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.Location = new System.Drawing.Point(62, 12);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(185, 20);
-            this.SearchTextBox.TabIndex = 5;
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 423);
-            this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.SearchLabel);
+            this.ClientSize = new System.Drawing.Size(700, 423);
             this.Controls.Add(this.RemovePictureBox);
             this.Controls.Add(this.AddPictureBox);
             this.Controls.Add(this.ProductGroupBox);
@@ -206,7 +185,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -214,18 +192,16 @@
 
         private System.Windows.Forms.ListBox ProductsListBox;
         private System.Windows.Forms.GroupBox ProductGroupBox;
-        private System.Windows.Forms.Label ProductInStockLabel;
+        private System.Windows.Forms.Label ProductCountInStockLabel;
         private System.Windows.Forms.Label ProductCategoryLabel;
         private System.Windows.Forms.Label ProductManufacturerLabel;
         private System.Windows.Forms.Label ProductNameLabel;
         private System.Windows.Forms.ComboBox ProductCategoryComboBox;
-        private System.Windows.Forms.TextBox ProductInStockTextBox;
+        private System.Windows.Forms.TextBox ProductCountInStockTextBox;
         private System.Windows.Forms.TextBox ProductManufacturerTextBox;
         private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.PictureBox AddPictureBox;
         private System.Windows.Forms.PictureBox RemovePictureBox;
-        private System.Windows.Forms.Label SearchLabel;
-        private System.Windows.Forms.TextBox SearchTextBox;
     }
 }
 
