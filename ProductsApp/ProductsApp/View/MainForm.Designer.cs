@@ -111,7 +111,7 @@
             // ProductCountInStockLabel
             // 
             this.ProductCountInStockLabel.AutoSize = true;
-            this.ProductCountInStockLabel.Location = new System.Drawing.Point(6, 101);
+            this.ProductCountInStockLabel.Location = new System.Drawing.Point(6, 74);
             this.ProductCountInStockLabel.Name = "ProductCountInStockLabel";
             this.ProductCountInStockLabel.Size = new System.Drawing.Size(78, 13);
             this.ProductCountInStockLabel.TabIndex = 7;
@@ -130,7 +130,7 @@
             // ProductCategoryLabel
             // 
             this.ProductCategoryLabel.AutoSize = true;
-            this.ProductCategoryLabel.Location = new System.Drawing.Point(32, 74);
+            this.ProductCategoryLabel.Location = new System.Drawing.Point(32, 100);
             this.ProductCategoryLabel.Name = "ProductCategoryLabel";
             this.ProductCategoryLabel.Size = new System.Drawing.Size(52, 13);
             this.ProductCategoryLabel.TabIndex = 6;
@@ -156,8 +156,9 @@
             // 
             // ProductCategoryComboBox
             // 
+            this.ProductCategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductCategoryComboBox.FormattingEnabled = true;
-            this.ProductCategoryComboBox.Location = new System.Drawing.Point(90, 71);
+            this.ProductCategoryComboBox.Location = new System.Drawing.Point(90, 97);
             this.ProductCategoryComboBox.Name = "ProductCategoryComboBox";
             this.ProductCategoryComboBox.Size = new System.Drawing.Size(144, 21);
             this.ProductCategoryComboBox.TabIndex = 3;
@@ -165,7 +166,7 @@
             // 
             // ProductCountInStockTextBox
             // 
-            this.ProductCountInStockTextBox.Location = new System.Drawing.Point(90, 98);
+            this.ProductCountInStockTextBox.Location = new System.Drawing.Point(90, 71);
             this.ProductCountInStockTextBox.Name = "ProductCountInStockTextBox";
             this.ProductCountInStockTextBox.Size = new System.Drawing.Size(144, 20);
             this.ProductCountInStockTextBox.TabIndex = 2;
