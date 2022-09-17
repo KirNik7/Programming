@@ -1,4 +1,5 @@
 ﻿using static ObjectOrientedPractics.Services.IdGenerator;
+using static ObjectOrientedPractics.Services.ValueValidator;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -31,9 +32,9 @@ namespace ObjectOrientedPractics.Model
         /// Создаёт экземпляр класса <see cref="Item"/>.
         /// </summary>
         /// <param name="name">Название товара.
-        /// Должно содержать от 1 до 200 символов (включительно).</param>
+        /// Должно содержать до 200 символов (включительно).</param>
         /// <param name="info">Описание товара.
-        /// Должно содержать от 1 до 1000 символов (включительно).</param>
+        /// Должно содержать до 1000 символов (включительно).</param>
         /// <param name="cost">Стоимость товара.
         /// Должно быть в диапазоне от 0 до 100000 (включительно).</param>
         public Item(string name, string info, double cost)
@@ -57,7 +58,7 @@ namespace ObjectOrientedPractics.Model
 
         /// <summary>
         /// Возвращает и задаёт название товара.
-        /// Должно содержать от 1 до 200 символов (включительно).
+        /// Должно содержать до 200 символов (включительно).
         /// </summary>
         public string Name
         {
@@ -67,14 +68,14 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertValueInRange(value.Length, 1, 200, nameof(Name));
+                AssertStringOnLength(value, 200, nameof(Name));
                 _name = value;
             }
         }
 
         /// <summary>
         /// Возвращает и задаёт описание товара.
-        /// Должно содержать от 1 до 1000 символов (включительно).
+        /// Должно содержать до 1000 символов (включительно).
         /// </summary>
         public string Info
         {
@@ -84,7 +85,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertValueInRange(value.Length, 1, 1000, nameof(Info));
+                AssertStringOnLength(value, 200, nameof(Info));
                 _info = value;
             }
         }
@@ -101,7 +102,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertValueInRange(value, 0, 100000, nameof(Cost));
+                AssertValueInRange(value, 0, 100000, nameof(Cost));
                 _cost = value;
             }
         }

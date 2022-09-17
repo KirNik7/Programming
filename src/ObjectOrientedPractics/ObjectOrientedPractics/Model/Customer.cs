@@ -1,8 +1,11 @@
-﻿using System.Xml.Linq;
-using static ObjectOrientedPractics.Services.IdGenerator;
+﻿using static ObjectOrientedPractics.Services.IdGenerator;
+using static ObjectOrientedPractics.Services.ValueValidator;
 
 namespace ObjectOrientedPractics.Model
 {
+    /// <summary>
+    /// Хранит данные о покупателе.
+    /// </summary>
     public class Customer
     {
         /// <summary>
@@ -20,6 +23,13 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private string _address;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Customer"/>.
+        /// </summary>
+        /// <param name="fullname">Полное имя покупателя.
+        /// Должно содержать до 200 символов (включительно).</param>
+        /// <param name="address">Адрес доставки покупателя.
+        /// Должно содержать до 500 символов (включительно).</param>
         public Customer(string fullname, string address)
         {
             _id = GetNextId();
@@ -28,8 +38,18 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
+        /// Создаёт экземпляр класса <see cref="Customer"/>.
+        /// </summary>
+        public Customer()
+        {
+            _id = GetNextId();
+            Fullname = "Fullname";
+            Address = "Address";
+        }
+
+        /// <summary>
         /// Возвращает и задаёт полное имя покупателя.
-        /// Должно содержать от 1 до 200 символов (включительно).
+        /// Должно содержать до 200 символов (включительно).
         /// </summary>
         public string Fullname
         {
@@ -39,14 +59,14 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertValueInRange(value.Length, 1, 200, nameof(Fullname));
+                AssertStringOnLength(value, 200, nameof(Fullname));
                 _fullname = value;
             }
         }
 
         /// <summary>
-        /// Возвращает и задаёт адресс доставки покупателя.
-        /// Должно содержать от 1 до 500 символов (включительно).
+        /// Возвращает и задаёт адрес доставки покупателя.
+        /// Должно содержать до 500 символов (включительно).
         /// </summary>
         public string Address
         {
@@ -56,7 +76,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertValueInRange(value.Length, 1, 500, nameof(Address));
+                AssertStringOnLength(value, 500, nameof(Address));
                 _address = value;
             }
         }

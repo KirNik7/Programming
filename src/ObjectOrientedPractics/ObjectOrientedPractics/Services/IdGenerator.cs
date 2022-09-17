@@ -1,12 +1,22 @@
 ﻿namespace ObjectOrientedPractics.Services
 {
+    /// <summary>
+    /// Предоставляет метод для генерации уникального идентификатора.
+    /// </summary>
     public class IdGenerator
     {
-        private static int _id = -1;
+        /// <summary>
+        /// Уникальный идентификатор.
+        /// </summary>
+        private static int _id = 0;
+
+        /// <summary>
+        /// Метод для генерации уникального идентификатора.
+        /// </summary>
+        /// <returns>Возвращает уникальный идентификатор.</returns>
         public static int GetNextId()
         {
-            _id++;
-            return _id;
+            return _id++;
         }
     }
 }
