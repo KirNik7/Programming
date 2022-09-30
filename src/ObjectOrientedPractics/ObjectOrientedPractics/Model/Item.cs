@@ -106,5 +106,10 @@ namespace ObjectOrientedPractics.Model
                 _cost = value;
             }
         }
+
+        /// <summary>
+        /// Возвращает ID товара.
+        /// </summary>
+        public int Id { get { return _id; } }
     }
 }

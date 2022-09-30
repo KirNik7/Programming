@@ -33,7 +33,7 @@ namespace ObjectOrientedPractics.Model
         public Customer(string fullname, string address)
         {
             _id = GetNextId();
-            Fullname = fullname;
+            FullName = fullname;
             Address = address;
         }
 
@@ -43,7 +43,7 @@ namespace ObjectOrientedPractics.Model
         public Customer()
         {
             _id = GetNextId();
-            Fullname = "Fullname";
+            FullName = "Full Name";
             Address = "Address";
         }
 
@@ -51,7 +51,7 @@ namespace ObjectOrientedPractics.Model
         /// Возвращает и задаёт полное имя покупателя.
         /// Должно содержать до 200 символов (включительно).
         /// </summary>
-        public string Fullname
+        public string FullName
         {
             get
             {
@@ -59,7 +59,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                AssertStringOnLength(value, 200, nameof(Fullname));
+                AssertStringOnLength(value, 200, nameof(FullName));
                 _fullname = value;
             }
         }
@@ -80,5 +80,10 @@ namespace ObjectOrientedPractics.Model
                 _address = value;
             }
         }
+
+        /// <summary>
+        /// Возвращает ID покупателя.
+        /// </summary>
+        public int Id { get { return _id; } }
     }
 }
