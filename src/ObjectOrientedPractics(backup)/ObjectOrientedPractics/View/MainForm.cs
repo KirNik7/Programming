@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ObjectOrientedPractics.View.Tabs
+namespace ObjectOrientedPractics
 {
-    public partial class ItemsTab : UserControl
+    public partial class MainForm : Form
     {
-        public ItemsTab()
+        public MainForm()
         {
             InitializeComponent();
-            List<Item> _items = new();
         }
     }
 }
