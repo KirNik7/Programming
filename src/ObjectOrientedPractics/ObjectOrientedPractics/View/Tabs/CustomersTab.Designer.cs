@@ -159,7 +159,7 @@
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.CustomerFullNameTextBox);
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.CustomerIDTextBox);
             this.SelectedCustomerContainer.Size = new System.Drawing.Size(363, 565);
-            this.SelectedCustomerContainer.SplitterDistance = 189;
+            this.SelectedCustomerContainer.SplitterDistance = 233;
             this.SelectedCustomerContainer.TabIndex = 7;
             // 
             // SelectedCustomerLabel
@@ -175,13 +175,14 @@
             // 
             // CustomerAddressTextBox
             // 
-            this.CustomerAddressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CustomerAddressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CustomerAddressTextBox.Location = new System.Drawing.Point(74, 97);
             this.CustomerAddressTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CustomerAddressTextBox.Multiline = true;
             this.CustomerAddressTextBox.Name = "CustomerAddressTextBox";
-            this.CustomerAddressTextBox.Size = new System.Drawing.Size(285, 84);
+            this.CustomerAddressTextBox.Size = new System.Drawing.Size(285, 133);
             this.CustomerAddressTextBox.TabIndex = 6;
             this.CustomerAddressTextBox.TextChanged += new System.EventHandler(this.CustomerAddressTextBox_TextChanged);
             // 
