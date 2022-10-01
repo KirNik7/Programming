@@ -153,7 +153,6 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentCustomer.Address = CustomerAddressTextBox.Text;
                 CustomerAddressTextBox.BackColor = AppColors.CorrectColor;
-                //UpdateListBox(_customers.IndexOf(_currentCustomer));
             }
             catch
             {

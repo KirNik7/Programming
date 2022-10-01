@@ -119,10 +119,8 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ItemsListBox.SelectedIndex == -1)
-            {
-                return;
-            }
+            if (ItemsListBox.SelectedIndex == -1) return;
+            
 
             EnabledItemsTextBoxes();
             _currentItem = _items[ItemsListBox.SelectedIndex];
