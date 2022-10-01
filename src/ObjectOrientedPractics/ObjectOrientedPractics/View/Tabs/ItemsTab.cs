@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ObjectOrientedPractics.Model;
+﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -30,7 +24,7 @@ namespace ObjectOrientedPractics.View.Tabs
         public ItemsTab()
         {
             InitializeComponent();
-            EnabledItemsTextBoxes();
+            DisabledItemsTextBoxes();
         }
 
         /// <summary>
@@ -144,9 +138,8 @@ namespace ObjectOrientedPractics.View.Tabs
 
             try
             {
-                _currentItem.Cost = int.Parse(ItemCostTextBox.Text);
+                _currentItem.Cost = double.Parse(ItemCostTextBox.Text);
                 ItemCostTextBox.BackColor = AppColors.CorrectColor;
-                UpdateListBox(_items.IndexOf(_currentItem));
             }
             catch
             {
@@ -178,7 +171,6 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Info = ItemInfoTextBox.Text;
                 ItemInfoTextBox.BackColor = AppColors.CorrectColor;
-                UpdateListBox(_items.IndexOf(_currentItem));
             }
             catch
             {

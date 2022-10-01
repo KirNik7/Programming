@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ObjectOrientedPractics.Model;
+﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -30,7 +24,7 @@ namespace ObjectOrientedPractics.View.Tabs
         public CustomersTab()
         {
             InitializeComponent();
-            
+            DisabledCustomersTextBoxes();
         }
 
         /// <summary>
@@ -102,6 +96,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             if (CustomersListBox.SelectedIndex == -1)
             {
+                DisabledCustomersTextBoxes();
                 return;
             }
 
@@ -158,7 +153,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentCustomer.Address = CustomerAddressTextBox.Text;
                 CustomerAddressTextBox.BackColor = AppColors.CorrectColor;
-                UpdateListBox(_customers.IndexOf(_currentCustomer));
+                //UpdateListBox(_customers.IndexOf(_currentCustomer));
             }
             catch
             {
