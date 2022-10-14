@@ -1,5 +1,6 @@
 ﻿using static ObjectOrientedPractics.Services.IdGenerator;
 using static ObjectOrientedPractics.Services.ValueValidator;
+using ObjectOrientedPractics.Model.Enums;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -37,12 +38,14 @@ namespace ObjectOrientedPractics.Model
         /// Должно содержать до 1000 символов (включительно).</param>
         /// <param name="cost">Стоимость товара.
         /// Должно быть в диапазоне от 0 до 100000 (включительно).</param>
-        public Item(string name, string info, double cost)
+        /// <param name="category">Категория товара.</param>
+        public Item(string name, string info, double cost, string category)
         {
             _id = GetNextId();
             Name = name;
             Info = info;
             Cost = cost;
+            Category = category;
         }
 
         /// <summary>
@@ -54,6 +57,7 @@ namespace ObjectOrientedPractics.Model
             Name = "Item";
             Info = "Info";
             Cost = 0;
+            Category = "Other";
         }
 
         /// <summary>
@@ -111,5 +115,10 @@ namespace ObjectOrientedPractics.Model
         /// Возвращает ID товара.
         /// </summary>
         public int Id { get { return _id; } }
+
+        /// <summary>
+        /// Возвращает и задаёт категорию товара.
+        /// </summary>
+        public string Category { get; set; }
     }
 }

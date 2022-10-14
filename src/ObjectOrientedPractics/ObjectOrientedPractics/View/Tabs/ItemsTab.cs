@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Enums;
 using ObjectOrientedPractics.Services;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,14 @@ namespace ObjectOrientedPractics.View.Tabs
         public ItemsTab()
         {
             InitializeComponent();
+
+            var items = Enum.GetValues(typeof(Category));
+
+            foreach (var item in items)
+            {
+                ItemCategoryComboBox.Items.Add(item);
+            }
+
             DisabledItemsTextBoxes();
         }
 
@@ -63,6 +72,7 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemCostTextBox.Enabled = true;
             ItemNameTextBox.Enabled = true;
             ItemInfoTextBox.Enabled = true;
+            ItemCategoryComboBox.Enabled = true;
         }
 
         /// <summary>
@@ -73,6 +83,7 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemCostTextBox.Enabled = false;
             ItemNameTextBox.Enabled = false;
             ItemInfoTextBox.Enabled = false;
+            ItemCategoryComboBox.Enabled = false;
         }
 
         /// <summary>
@@ -85,6 +96,7 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemCostTextBox.Clear();
             ItemNameTextBox.Clear();
             ItemInfoTextBox.Clear();
+            ItemCategoryComboBox.SelectedIndex = -1;
         }
 
         private void AddItemButton_Click(object sender, EventArgs e)
@@ -128,6 +140,7 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemCostTextBox.Text = _currentItem.Cost.ToString();
             ItemNameTextBox.Text = _currentItem.Name;
             ItemInfoTextBox.Text = _currentItem.Info;
+            ItemCategoryComboBox.Text = _currentItem.Category;
         }
 
         private void ItemCostTextBox_TextChanged(object sender, EventArgs e)
@@ -173,6 +186,21 @@ namespace ObjectOrientedPractics.View.Tabs
             catch
             {
                 ItemInfoTextBox.BackColor = AppColors.ErrorColor;
+            }
+        }
+
+        private void ItemCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ItemsListBox.SelectedIndex == -1) return;
+
+            try
+            {
+                _currentItem.Category = ItemCategoryComboBox.SelectedItem.ToString();
+                ItemCategoryComboBox.BackColor = AppColors.CorrectColor;
+            }
+            catch
+            {
+                ItemCategoryComboBox.BackColor = AppColors.ErrorColor;
             }
         }
     }

@@ -43,6 +43,8 @@
             this.ItemsLabel = new System.Windows.Forms.Label();
             this.ItemsSplitContainer = new System.Windows.Forms.SplitContainer();
             this.ItemsButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ItemCategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.ItemCategoryLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsSplitContainer)).BeginInit();
             this.ItemsSplitContainer.Panel1.SuspendLayout();
             this.ItemsSplitContainer.Panel2.SuspendLayout();
@@ -95,11 +97,11 @@
             this.ItemInfoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemInfoTextBox.Location = new System.Drawing.Point(4, 237);
+            this.ItemInfoTextBox.Location = new System.Drawing.Point(4, 272);
             this.ItemInfoTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ItemInfoTextBox.Multiline = true;
             this.ItemInfoTextBox.Name = "ItemInfoTextBox";
-            this.ItemInfoTextBox.Size = new System.Drawing.Size(352, 183);
+            this.ItemInfoTextBox.Size = new System.Drawing.Size(350, 183);
             this.ItemInfoTextBox.TabIndex = 8;
             this.ItemInfoTextBox.TextChanged += new System.EventHandler(this.ItemInfoTextBox_TextChanged);
             // 
@@ -109,7 +111,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemInfoLabel.AutoSize = true;
-            this.ItemInfoLabel.Location = new System.Drawing.Point(4, 218);
+            this.ItemInfoLabel.Location = new System.Drawing.Point(4, 253);
             this.ItemInfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ItemInfoLabel.Name = "ItemInfoLabel";
             this.ItemInfoLabel.Size = new System.Drawing.Size(70, 15);
@@ -120,18 +122,18 @@
             // 
             this.ItemNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemNameTextBox.Location = new System.Drawing.Point(4, 117);
+            this.ItemNameTextBox.Location = new System.Drawing.Point(4, 152);
             this.ItemNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ItemNameTextBox.Multiline = true;
             this.ItemNameTextBox.Name = "ItemNameTextBox";
-            this.ItemNameTextBox.Size = new System.Drawing.Size(352, 84);
+            this.ItemNameTextBox.Size = new System.Drawing.Size(350, 84);
             this.ItemNameTextBox.TabIndex = 6;
             this.ItemNameTextBox.TextChanged += new System.EventHandler(this.ItemNameTextBox_TextChanged);
             // 
             // ItemNameLabel
             // 
             this.ItemNameLabel.AutoSize = true;
-            this.ItemNameLabel.Location = new System.Drawing.Point(4, 98);
+            this.ItemNameLabel.Location = new System.Drawing.Point(4, 133);
             this.ItemNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ItemNameLabel.Name = "ItemNameLabel";
             this.ItemNameLabel.Size = new System.Drawing.Size(42, 15);
@@ -213,6 +215,8 @@
             // 
             // ItemsSplitContainer.Panel2
             // 
+            this.ItemsSplitContainer.Panel2.Controls.Add(this.ItemCategoryComboBox);
+            this.ItemsSplitContainer.Panel2.Controls.Add(this.ItemCategoryLabel);
             this.ItemsSplitContainer.Panel2.Controls.Add(this.SelectedItemLabel);
             this.ItemsSplitContainer.Panel2.Controls.Add(this.ItemIDLabel);
             this.ItemsSplitContainer.Panel2.Controls.Add(this.ItemCostLabel);
@@ -244,6 +248,24 @@
             this.ItemsButtonsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ItemsButtonsTableLayoutPanel.Size = new System.Drawing.Size(353, 58);
             this.ItemsButtonsTableLayoutPanel.TabIndex = 13;
+            // 
+            // ItemCategoryComboBox
+            // 
+            this.ItemCategoryComboBox.FormattingEnabled = true;
+            this.ItemCategoryComboBox.Location = new System.Drawing.Point(74, 90);
+            this.ItemCategoryComboBox.Name = "ItemCategoryComboBox";
+            this.ItemCategoryComboBox.Size = new System.Drawing.Size(116, 23);
+            this.ItemCategoryComboBox.TabIndex = 10;
+            this.ItemCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.ItemCategoryComboBox_SelectedIndexChanged);
+            // 
+            // ItemCategoryLabel
+            // 
+            this.ItemCategoryLabel.AutoSize = true;
+            this.ItemCategoryLabel.Location = new System.Drawing.Point(4, 93);
+            this.ItemCategoryLabel.Name = "ItemCategoryLabel";
+            this.ItemCategoryLabel.Size = new System.Drawing.Size(58, 15);
+            this.ItemCategoryLabel.TabIndex = 9;
+            this.ItemCategoryLabel.Text = "Category:";
             // 
             // ItemsTab
             // 
@@ -280,5 +302,7 @@
         private System.Windows.Forms.Label ItemsLabel;
         private System.Windows.Forms.SplitContainer ItemsSplitContainer;
         private System.Windows.Forms.TableLayoutPanel ItemsButtonsTableLayoutPanel;
+        private System.Windows.Forms.ComboBox ItemCategoryComboBox;
+        private System.Windows.Forms.Label ItemCategoryLabel;
     }
 }
