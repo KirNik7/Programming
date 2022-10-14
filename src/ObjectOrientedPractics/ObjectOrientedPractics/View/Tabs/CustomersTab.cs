@@ -61,7 +61,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void EnabledCustomersTextBoxes()
         {
             CustomerFullNameTextBox.Enabled = true;
-            CustomerAddressTextBox.Enabled = true;
+            //CustomerAddressTextBox.Enabled = true;  //TO DO:
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void DisabledCustomersTextBoxes()
         {
             CustomerFullNameTextBox.Enabled = false;
-            CustomerAddressTextBox.Enabled = false;
+            //CustomerAddressTextBox.Enabled = false; //TO DO:
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace ObjectOrientedPractics.View.Tabs
             CustomersListBox.SelectedIndex = -1;
             CustomerIDTextBox.Clear();
             CustomerFullNameTextBox.Clear();
-            CustomerAddressTextBox.Clear();
+            //CustomerAddressTextBox.Clear(); //TO DO:
         }
 
         private void AddCustomerButton_Click(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace ObjectOrientedPractics.View.Tabs
             _currentCustomer = _customers[CustomersListBox.SelectedIndex];
             CustomerIDTextBox.Text = _currentCustomer.Id.ToString();
             CustomerFullNameTextBox.Text = _currentCustomer.FullName;
-            CustomerAddressTextBox.Text = _currentCustomer.Address;
+            //CustomerAddressTextBox.Text = _currentCustomer.Address; //TO DO:
         }
 
         private void CustomerFullNameTextBox_TextChanged(object sender, EventArgs e)
@@ -142,21 +142,6 @@ namespace ObjectOrientedPractics.View.Tabs
             catch
             {
                 CustomerFullNameTextBox.BackColor = AppColors.ErrorColor;
-            }
-        }
-
-        private void CustomerAddressTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (CustomersListBox.SelectedIndex == -1) return;
-
-            try
-            {
-                _currentCustomer.Address = CustomerAddressTextBox.Text;
-                CustomerAddressTextBox.BackColor = AppColors.CorrectColor;
-            }
-            catch
-            {
-                CustomerAddressTextBox.BackColor = AppColors.ErrorColor;
             }
         }
     }

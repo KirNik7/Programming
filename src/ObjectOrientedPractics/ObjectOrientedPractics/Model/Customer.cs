@@ -21,7 +21,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Адрес доставки покупателя.
         /// </summary>
-        private string _address;
+        private Address _address;
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
@@ -30,7 +30,7 @@ namespace ObjectOrientedPractics.Model
         /// Должно содержать до 200 символов (включительно).</param>
         /// <param name="address">Адрес доставки покупателя.
         /// Должно содержать до 500 символов (включительно).</param>
-        public Customer(string fullname, string address)
+        public Customer(string fullname, Address address)
         {
             _id = GetNextId();
             FullName = fullname;
@@ -44,7 +44,7 @@ namespace ObjectOrientedPractics.Model
         {
             _id = GetNextId();
             FullName = "Full Name";
-            Address = "Address";
+            Address = new Address();
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace ObjectOrientedPractics.Model
         /// Возвращает и задаёт адрес доставки покупателя.
         /// Должно содержать до 500 символов (включительно).
         /// </summary>
-        public string Address
+        public Address Address
         {
             get
             {
@@ -76,7 +76,6 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                AssertStringOnLength(value, 500, nameof(Address));
                 _address = value;
             }
         }
