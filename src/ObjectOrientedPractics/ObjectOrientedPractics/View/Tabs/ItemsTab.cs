@@ -10,11 +10,6 @@ namespace ObjectOrientedPractics.View.Tabs
     public partial class ItemsTab : UserControl
     {
         /// <summary>
-        /// Коллеция товаров.
-        /// </summary>
-        List<Item> _items = new();
-
-        /// <summary>
         /// Текущий товар.
         /// </summary>
         private Item _currentItem;
@@ -42,7 +37,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="index">Индекс выбранного элемента.</param>
         private void UpdateListBox(int index)
         {
-            List<Item> items = _items;
+            List<Item> items = Items;
 
             ItemsListBox.Items.Clear();
 
@@ -99,11 +94,16 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemCategoryComboBox.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Возвращает и задает коллекцию товаоров.
+        /// </summary>
+        public List<Item> Items { get; set; }
+
         private void AddItemButton_Click(object sender, EventArgs e)
         {
             var item = new Item();
-            _items.Add(item);
-            UpdateListBox(_items.IndexOf(item));
+            Items.Add(item);
+            UpdateListBox(Items.IndexOf(item));
             EnabledItemsTextBoxes();
         }
 
@@ -114,9 +114,9 @@ namespace ObjectOrientedPractics.View.Tabs
                 return;
             }
 
-            _items.RemoveAt(ItemsListBox.SelectedIndex);
+            Items.RemoveAt(ItemsListBox.SelectedIndex);
 
-            if (_items.Count == 0)
+            if (Items.Count == 0)
             {
                 DisabledItemsTextBoxes();
                 UpdateListBox(-1);
@@ -135,7 +135,7 @@ namespace ObjectOrientedPractics.View.Tabs
             
 
             EnabledItemsTextBoxes();
-            _currentItem = _items[ItemsListBox.SelectedIndex];
+            _currentItem = Items[ItemsListBox.SelectedIndex];
             ItemIDTextBox.Text = _currentItem.Id.ToString();
             ItemCostTextBox.Text = _currentItem.Cost.ToString();
             ItemNameTextBox.Text = _currentItem.Name;
@@ -166,7 +166,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Name = ItemNameTextBox.Text;
                 ItemNameTextBox.BackColor = AppColors.CorrectColor;
-                UpdateListBox(_items.IndexOf(_currentItem));
+                UpdateListBox(Items.IndexOf(_currentItem));
             }
             catch
             {

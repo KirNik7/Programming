@@ -101,7 +101,7 @@
             this.ItemInfoTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ItemInfoTextBox.Multiline = true;
             this.ItemInfoTextBox.Name = "ItemInfoTextBox";
-            this.ItemInfoTextBox.Size = new System.Drawing.Size(350, 183);
+            this.ItemInfoTextBox.Size = new System.Drawing.Size(349, 183);
             this.ItemInfoTextBox.TabIndex = 8;
             this.ItemInfoTextBox.TextChanged += new System.EventHandler(this.ItemInfoTextBox_TextChanged);
             // 
@@ -126,7 +126,7 @@
             this.ItemNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ItemNameTextBox.Multiline = true;
             this.ItemNameTextBox.Name = "ItemNameTextBox";
-            this.ItemNameTextBox.Size = new System.Drawing.Size(350, 84);
+            this.ItemNameTextBox.Size = new System.Drawing.Size(349, 84);
             this.ItemNameTextBox.TabIndex = 6;
             this.ItemNameTextBox.TextChanged += new System.EventHandler(this.ItemNameTextBox_TextChanged);
             // 
@@ -251,6 +251,7 @@
             // 
             // ItemCategoryComboBox
             // 
+            this.ItemCategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ItemCategoryComboBox.FormattingEnabled = true;
             this.ItemCategoryComboBox.Location = new System.Drawing.Point(74, 90);
             this.ItemCategoryComboBox.Name = "ItemCategoryComboBox";

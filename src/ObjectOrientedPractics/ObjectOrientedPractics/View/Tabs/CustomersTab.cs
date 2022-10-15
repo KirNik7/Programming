@@ -10,11 +10,6 @@ namespace ObjectOrientedPractics.View.Tabs
     public partial class CustomersTab : UserControl
     {
         /// <summary>
-        /// Коллекция покупателей.
-        /// </summary>
-        List<Customer> _customers = new();
-
-        /// <summary>
         /// Текущий покупатель.
         /// </summary>
         private Customer _currentCustomer;
@@ -35,7 +30,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="index">Индекс выбранного элемента.</param>
         private void UpdateListBox(int index)
         {
-            List<Customer> customers = _customers;
+            List<Customer> customers = Customers;
 
             CustomersListBox.Items.Clear();
 
@@ -86,11 +81,16 @@ namespace ObjectOrientedPractics.View.Tabs
             AddressCustomerControl.AddressClearInfo();
         }
 
+        /// <summary>
+        /// Возвращает и задает коллекцию покупателей.
+        /// </summary>
+        public List<Customer> Customers { get; set; }
+
         private void AddCustomerButton_Click(object sender, EventArgs e)
         {
             var customer = new Customer();
-            _customers.Add(customer);
-            UpdateListBox(_customers.IndexOf(customer));
+            Customers.Add(customer);
+            UpdateListBox(Customers.IndexOf(customer));
             EnabledCustomersTextBoxes();
         }
 
@@ -102,9 +102,9 @@ namespace ObjectOrientedPractics.View.Tabs
                 return;
             }
 
-            _customers.RemoveAt(CustomersListBox.SelectedIndex);
+            Customers.RemoveAt(CustomersListBox.SelectedIndex);
 
-            if (_customers.Count == 0)
+            if (Customers.Count == 0)
             {
                 DisabledCustomersTextBoxes();
                 UpdateListBox(-1);
@@ -125,7 +125,7 @@ namespace ObjectOrientedPractics.View.Tabs
             }
 
             EnabledCustomersTextBoxes();
-            _currentCustomer = _customers[CustomersListBox.SelectedIndex];
+            _currentCustomer = Customers[CustomersListBox.SelectedIndex];
             CustomerIDTextBox.Text = _currentCustomer.Id.ToString();
             CustomerFullNameTextBox.Text = _currentCustomer.FullName;
             AddressCustomerControl.Address = _currentCustomer.Address;
@@ -139,7 +139,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentCustomer.FullName = CustomerFullNameTextBox.Text;
                 CustomerFullNameTextBox.BackColor = AppColors.CorrectColor;
-                UpdateListBox(_customers.IndexOf(_currentCustomer));
+                UpdateListBox(Customers.IndexOf(_currentCustomer));
             }
             catch
             {
