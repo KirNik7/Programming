@@ -43,7 +43,7 @@ namespace ObjectOrientedPractics.Model
         public Customer()
         {
             _id = GetNextId();
-            FullName = "Full Name";
+            FullName = "";
             Address = new Address();
         }
 

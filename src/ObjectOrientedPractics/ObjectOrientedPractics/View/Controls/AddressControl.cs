@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ObjectOrientedPractics.Model;
+﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using System;
+using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Controls
 {
@@ -25,7 +18,8 @@ namespace ObjectOrientedPractics.View.Controls
             
             set 
             { 
-                _address = value; 
+                _address = value;
+                UpdateAddressTextBoxes(_address);
             }
         }
 
@@ -35,14 +29,25 @@ namespace ObjectOrientedPractics.View.Controls
             Address = new Address();
         }
 
-        private void UpdateAddressTextBoxes()
+        public void UpdateAddressTextBoxes(Address address)
         {
-            AddressIndexTextBox.Text = _address.Index.ToString();
-            AddressCountryTextBox.Text = _address.Country;
-            AddressCityTextBox.Text = _address.City;
-            AddressStreetTextBox.Text = _address.Street;
-            AddressBuildingTextBox.Text = _address.Building;
-            AddressApartmentTextBox.Text = _address.Apartment;
+            AddressIndexTextBox.Text = address.Index.ToString();
+            AddressCountryTextBox.Text = address.Country;
+            AddressCityTextBox.Text = address.City;
+            AddressStreetTextBox.Text = address.Street;
+            AddressBuildingTextBox.Text = address.Building;
+            AddressApartmentTextBox.Text = address.Apartment;
+        }
+
+        public void AddressClearInfo()
+        {
+            AddressIndexTextBox.Clear();
+            AddressCountryTextBox.Clear();
+            AddressCityTextBox.Clear();
+            AddressStreetTextBox.Clear();
+            AddressBuildingTextBox.Clear();
+            AddressApartmentTextBox.Clear();
+            AddressIndexTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void AddressIndexTextBox_TextChanged(object sender, EventArgs e)

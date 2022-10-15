@@ -48,7 +48,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             foreach (var item in items)
             {
-                if (item.Name != "Item")
+                if (item.Name != "")
                 {
                     ItemsListBox.Items.Add(item.Name);
                 }

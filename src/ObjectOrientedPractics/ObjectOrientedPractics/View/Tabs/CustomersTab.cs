@@ -3,6 +3,7 @@ using ObjectOrientedPractics.Services;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using ObjectOrientedPractics.View.Controls;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -24,6 +25,7 @@ namespace ObjectOrientedPractics.View.Tabs
         public CustomersTab()
         {
             InitializeComponent();
+            AddressCustomerControl.AddressClearInfo();
             DisabledCustomersTextBoxes();
         }
 
@@ -39,7 +41,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             foreach (var customer in customers)
             {
-                if (customer.FullName != "Full Name")
+                if (customer.FullName != "")
                 {
                     CustomersListBox.Items.Add(customer.FullName);
                 }
@@ -61,7 +63,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void EnabledCustomersTextBoxes()
         {
             CustomerFullNameTextBox.Enabled = true;
-            //CustomerAddressTextBox.Enabled = true;  //TO DO:
+            AddressCustomerControl.Enabled = true;
         }
 
         /// <summary>
@@ -70,7 +72,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void DisabledCustomersTextBoxes()
         {
             CustomerFullNameTextBox.Enabled = false;
-            //CustomerAddressTextBox.Enabled = false; //TO DO:
+            AddressCustomerControl.Enabled = false;
         }
 
         /// <summary>
@@ -81,7 +83,7 @@ namespace ObjectOrientedPractics.View.Tabs
             CustomersListBox.SelectedIndex = -1;
             CustomerIDTextBox.Clear();
             CustomerFullNameTextBox.Clear();
-            //CustomerAddressTextBox.Clear(); //TO DO:
+            AddressCustomerControl.AddressClearInfo();
         }
 
         private void AddCustomerButton_Click(object sender, EventArgs e)
@@ -126,7 +128,7 @@ namespace ObjectOrientedPractics.View.Tabs
             _currentCustomer = _customers[CustomersListBox.SelectedIndex];
             CustomerIDTextBox.Text = _currentCustomer.Id.ToString();
             CustomerFullNameTextBox.Text = _currentCustomer.FullName;
-            //CustomerAddressTextBox.Text = _currentCustomer.Address; //TO DO:
+            AddressCustomerControl.Address = _currentCustomer.Address;
         }
 
         private void CustomerFullNameTextBox_TextChanged(object sender, EventArgs e)

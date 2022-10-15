@@ -69,11 +69,11 @@ namespace ObjectOrientedPractics.Model
         public Address()
         {
             Index = 100000;
-            Country = "Country";
-            City = "City";
-            Street = "Street";
-            Building = "Building";
-            Apartment = "Apartment";
+            Country = "";
+            City = "";
+            Street = "";
+            Building = "";
+            Apartment = "";
         }
 
         /// <summary>

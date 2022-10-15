@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ObjectOrientedPractics.Model.Address address2 = new ObjectOrientedPractics.Model.Address();
             this.CustomersSplitContainer = new System.Windows.Forms.SplitContainer();
             this.CustomersButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddCustomerButton = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.CustomerFullNameLabel = new System.Windows.Forms.Label();
             this.CustomerFullNameTextBox = new System.Windows.Forms.TextBox();
             this.CustomerIDTextBox = new System.Windows.Forms.TextBox();
+            this.AddressCustomerControl = new ObjectOrientedPractics.View.Controls.AddressControl();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersSplitContainer)).BeginInit();
             this.CustomersSplitContainer.Panel1.SuspendLayout();
             this.CustomersSplitContainer.Panel2.SuspendLayout();
@@ -149,6 +151,7 @@
             // 
             // SelectedCustomerContainer.Panel1
             // 
+            this.SelectedCustomerContainer.Panel1.Controls.Add(this.AddressCustomerControl);
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.SelectedCustomerLabel);
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.CustomerIDLabel);
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.CustomerFullNameLabel);
@@ -207,6 +210,20 @@
             this.CustomerIDTextBox.Size = new System.Drawing.Size(116, 23);
             this.CustomerIDTextBox.TabIndex = 3;
             // 
+            // AddressCustomerControl
+            // 
+            address2.Apartment = "Apartment";
+            address2.Building = "Building";
+            address2.City = "City";
+            address2.Country = "Country";
+            address2.Index = 100000;
+            address2.Street = "Street";
+            this.AddressCustomerControl.Address = address2;
+            this.AddressCustomerControl.Location = new System.Drawing.Point(4, 90);
+            this.AddressCustomerControl.Name = "AddressCustomerControl";
+            this.AddressCustomerControl.Size = new System.Drawing.Size(517, 138);
+            this.AddressCustomerControl.TabIndex = 5;
+            // 
             // CustomersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -243,5 +260,6 @@
         private System.Windows.Forms.Label CustomerFullNameLabel;
         private System.Windows.Forms.TextBox CustomerFullNameTextBox;
         private System.Windows.Forms.TextBox CustomerIDTextBox;
+        private Controls.AddressControl AddressCustomerControl;
     }
 }

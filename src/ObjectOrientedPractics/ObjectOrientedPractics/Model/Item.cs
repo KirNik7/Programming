@@ -54,10 +54,10 @@ namespace ObjectOrientedPractics.Model
         public Item()
         {
             _id = GetNextId();
-            Name = "Item";
-            Info = "Info";
+            Name = "";
+            Info = "";
             Cost = 0;
-            Category = "Other";
+            Category = "";
         }
 
         /// <summary>
