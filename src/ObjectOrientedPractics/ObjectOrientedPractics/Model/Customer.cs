@@ -1,4 +1,5 @@
-﻿using static ObjectOrientedPractics.Services.IdGenerator;
+﻿using System.Collections.Generic;
+using static ObjectOrientedPractics.Services.IdGenerator;
 using static ObjectOrientedPractics.Services.ValueValidator;
 
 namespace ObjectOrientedPractics.Model
@@ -29,17 +30,26 @@ namespace ObjectOrientedPractics.Model
         private Cart _cart;
 
         /// <summary>
+        /// Список заказов покупателя.
+        /// </summary>
+        private List<Order> _orders;
+
+        /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
         /// </summary>
         /// <param name="fullname">Полное имя покупателя.
         /// Должно содержать до 200 символов (включительно).</param>
         /// <param name="address">Адрес доставки покупателя.
         /// Должно содержать до 500 символов (включительно).</param>
-        public Customer(string fullname, Address address)
+        /// <param name="cart">Корзина покупателя.</param>
+        /// <param name="orders">Заказы покупателя.</param>
+        public Customer(string fullname, Address address, Cart cart, List<Order> orders)
         {
             _id = GetNextId();
             FullName = fullname;
             Address = address;
+            Cart = cart;
+            Orders = orders;
         }
 
         /// <summary>
@@ -50,6 +60,8 @@ namespace ObjectOrientedPractics.Model
             _id = GetNextId();
             FullName = "";
             Address = new Address();
+            Cart = new Cart();
+            Orders = new List<Order>();
         }
 
         /// <summary>
@@ -97,6 +109,21 @@ namespace ObjectOrientedPractics.Model
             set
             {
                 _cart = value;
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт список заказов покупателя.
+        /// </summary>
+        public List<Order> Orders
+        {
+            get
+            {
+                return _orders;
+            }
+            set
+            {
+                _orders = value;
             }
         }
 
