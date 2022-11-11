@@ -38,7 +38,7 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
-        /// Возвращает и задаёт товар.
+        /// Возвращает и задаёт товары.
         /// </summary>
         public List<Item> Items
         {
@@ -54,7 +54,7 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
-        /// Возвращает и задаёт покупателя.
+        /// Возвращает и задаёт покупателей.
         /// </summary>
         public List<Customer> Customers
         {

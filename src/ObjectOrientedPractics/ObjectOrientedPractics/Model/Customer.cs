@@ -24,6 +24,11 @@ namespace ObjectOrientedPractics.Model
         private Address _address;
 
         /// <summary>
+        /// Корзина покупателя.
+        /// </summary>
+        private Cart _cart;
+
+        /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
         /// </summary>
         /// <param name="fullname">Полное имя покупателя.
@@ -77,6 +82,21 @@ namespace ObjectOrientedPractics.Model
             set
             {
                 _address = value;
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт корзину покупателя.
+        /// </summary>
+        public Cart Cart
+        {
+            get
+            {
+                return _cart;
+            }
+            set
+            {
+                _cart = value;
             }
         }
 
