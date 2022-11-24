@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ObjectOrientedPractics.Model;
+﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Model.Enums;
+using ObjectOrientedPractics.Services;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -38,7 +33,7 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         /// <summary>
-        /// Обновляет данные в списке ItemsListBox.
+        /// Обновляет данные в списке <see cref="ItemsListBox"/>.
         /// </summary>
         /// <param name="index">Индекс выбранного элемента.</param>
         private void UpdateItemsListBox(int index)
@@ -65,6 +60,10 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Обновляет данные в выпадающем списке <see cref="CartListBox"/>.
+        /// </summary>
+        /// <param name="index">Индекс выбранного элемента.</param>
         private void UpdateCartListBox(int index)
         {
             CartListBox.Items.Clear();
@@ -93,10 +92,20 @@ namespace ObjectOrientedPractics.View.Tabs
                 CustomersComboBox.SelectedIndex = index;
             }
 
+            UpdateAmountLabel();
         }
 
         /// <summary>
-        /// Обновляет данные в выпадающем списке CustomersComboBox.
+        /// Обновляет данные в Label <see cref="AmountLabel"/>.
+        /// </summary>
+        private void UpdateAmountLabel()
+        {
+            if (_currentCustomer == null) AmountLabel.Text = "0,00";
+            else AmountLabel.Text = _currentCustomer.Cart.Amount.ToString("f");
+        }
+
+        /// <summary>
+        /// Обновляет данные в выпадающем списке <see cref="CustomersComboBox"/>.
         /// </summary>
         /// <param name="index">Индекс выбранного элемента.</param>
         private void UpdateComboBox(int index)
@@ -153,17 +162,24 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Обновляет информацию на вкладке <see cref="CartsTab"/>.
+        /// </summary>
         public void RefrechData()
         {
+            _currentCustomer = null;
             UpdateItemsListBox(-1);
             UpdateComboBox(-1);
             UpdateCartListBox(-1);
-            _currentCustomer = null;
+            UpdateAmountLabel();
         }
 
         private void CustomersComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateCartListBox(CustomersComboBox.SelectedIndex);
+
+            if (CustomersComboBox.SelectedIndex == -1) return;
+            
             _currentCustomer = Customers[CustomersComboBox.SelectedIndex];
         }
 
@@ -172,7 +188,32 @@ namespace ObjectOrientedPractics.View.Tabs
             if (ItemsListBox.SelectedIndex == -1 || _currentCustomer == null) return;
 
             _currentCustomer.Cart.Items.Add(Items[ItemsListBox.SelectedIndex]);
-            UpdateCartListBox(-1);
+            UpdateCartListBox(CustomersComboBox.SelectedIndex);
+        }
+
+        private void RemoveItemButton_Click(object sender, EventArgs e)
+        {
+            if (CartListBox.SelectedIndex == -1 || _currentCustomer == null) return;
+
+            _currentCustomer.Cart.Items.Remove(_currentCustomer.Cart.Items[CartListBox.SelectedIndex]);
+            UpdateCartListBox(CustomersComboBox.SelectedIndex);
+        }
+
+        private void ClearCartButton_Click(object sender, EventArgs e)
+        {
+            if (_currentCustomer == null) return;
+
+            _currentCustomer.Cart.Items.Clear();
+            UpdateCartListBox(CustomersComboBox.SelectedIndex);
+        }
+
+        private void CreateOrderButton_Click(object sender, EventArgs e)
+        {
+            if (_currentCustomer == null) return;
+
+            _currentCustomer.Orders.Add(new Order(IdGenerator.GetNextId(), OrderStatus.New, DateTime.Now, _currentCustomer.Address, _currentCustomer.Cart));
+            _currentCustomer.Cart = new Cart();
+            UpdateCartListBox(CustomersComboBox.SelectedIndex);
         }
     }
 }

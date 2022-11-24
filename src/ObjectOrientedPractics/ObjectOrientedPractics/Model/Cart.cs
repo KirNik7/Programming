@@ -13,6 +13,16 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private List<Item> _items;
 
+        public Cart(List<Item> items)
+        {
+            Items = items;
+        }
+
+        public Cart()
+        {
+            Items = new List<Item>();
+        }
+
         /// <summary>
         /// Задаёт и возвращает список товаров.
         /// </summary>
@@ -38,7 +48,7 @@ namespace ObjectOrientedPractics.Model
             {
                 double amount = 0;
                 
-                for (int i = 0; i <= _items.Count(); i++)
+                for (int i = 0; i < _items.Count(); i++)
                 {
                     amount += _items[i].Cost;
                 }
