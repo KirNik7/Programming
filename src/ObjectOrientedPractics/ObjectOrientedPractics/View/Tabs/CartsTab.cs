@@ -14,11 +14,24 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class CartsTab : UserControl
     {
+        /// <summary>
+        /// Текущий покупатель.
+        /// </summary>
         private Customer _currentCustomer;
 
+        /// <summary>
+        /// Список товаров.
+        /// </summary>
         private List<Item> _items = new();
 
+        /// <summary>
+        /// Список покупателей.
+        /// </summary>
         private List<Customer> _customers = new();
+
+        /// <summary>
+        /// Создаёт экзампляр класса <see cref="CartsTab"/>.
+        /// </summary>
         public CartsTab()
         {
             InitializeComponent();
@@ -28,7 +41,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// Обновляет данные в списке ItemsListBox.
         /// </summary>
         /// <param name="index">Индекс выбранного элемента.</param>
-        private void UpdateListBox(int index)
+        private void UpdateItemsListBox(int index)
         {
             var items = Items;
 
@@ -50,6 +63,36 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 ItemsListBox.SelectedIndex = index;
             }
+        }
+
+        private void UpdateCartListBox(int index)
+        {
+            CartListBox.Items.Clear();
+
+            if (CustomersComboBox.SelectedIndex == -1) return;
+
+            _currentCustomer = Customers[CustomersComboBox.SelectedIndex];
+            var items = _currentCustomer.Cart.Items;
+
+            if (items == null) return;
+
+            foreach (var item in items)
+            {
+                if (item.Name != "")
+                {
+                    CartListBox.Items.Add(item.Name);
+                }
+                else
+                {
+                    CartListBox.Items.Add($"Item {item.Id}");
+                }
+            }
+
+            if (-1 <= index && index < CustomersComboBox.Items.Count)
+            {
+                CustomersComboBox.SelectedIndex = index;
+            }
+
         }
 
         /// <summary>
@@ -79,7 +122,10 @@ namespace ObjectOrientedPractics.View.Tabs
                 CustomersComboBox.SelectedIndex = index;
             }
         }
-
+        
+        /// <summary>
+        /// Возвращает и задаёт список товаров.
+        /// </summary>
         public List<Item> Items
         {
             get
@@ -92,6 +138,9 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт список покупателей.
+        /// </summary>
         public List<Customer> Customers
         {
             get
@@ -104,34 +153,26 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void RefrechData()
         {
-            UpdateListBox(-1);
+            UpdateItemsListBox(-1);
             UpdateComboBox(-1);
+            UpdateCartListBox(-1);
+            _currentCustomer = null;
         }
 
         private void CustomersComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ItemsListBox.Items.Clear();
-
-            if (CustomersComboBox.SelectedIndex == -1) return;
-
+            UpdateCartListBox(CustomersComboBox.SelectedIndex);
             _currentCustomer = Customers[CustomersComboBox.SelectedIndex];
-            var items = _currentCustomer.Cart.Items;
+        }
 
-            if (items == null) return;
+        private void AddToCartButton_Click(object sender, EventArgs e)
+        {
+            if (ItemsListBox.SelectedIndex == -1 || _currentCustomer == null) return;
 
-            foreach (var item in items)
-            {
-                if (item.Name != "")
-                {
-                    ItemsListBox.Items.Add(item.Name);
-                }
-                else
-                {
-                    ItemsListBox.Items.Add($"Item {item.Id}");
-                }
-            }
+            _currentCustomer.Cart.Items.Add(Items[ItemsListBox.SelectedIndex]);
+            UpdateCartListBox(-1);
         }
     }
 }

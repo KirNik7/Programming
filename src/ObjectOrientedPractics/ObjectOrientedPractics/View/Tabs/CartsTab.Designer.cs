@@ -33,7 +33,6 @@
             this.AddToCartButton = new System.Windows.Forms.Button();
             this.ItemsListBox = new System.Windows.Forms.ListBox();
             this.ItemsLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.CartButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CreateOrderButton = new System.Windows.Forms.Button();
             this.RemoveItemButton = new System.Windows.Forms.Button();
@@ -66,7 +65,6 @@
             // 
             // CartSplitContainer.Panel2
             // 
-            this.CartSplitContainer.Panel2.Controls.Add(this.button1);
             this.CartSplitContainer.Panel2.Controls.Add(this.CartButtonsTableLayoutPanel);
             this.CartSplitContainer.Panel2.Controls.Add(this.AmountLabel);
             this.CartSplitContainer.Panel2.Controls.Add(this.AmountTextLabel);
@@ -103,6 +101,7 @@
             this.AddToCartButton.TabIndex = 0;
             this.AddToCartButton.Text = "Add To Cart";
             this.AddToCartButton.UseVisualStyleBackColor = true;
+            this.AddToCartButton.Click += new System.EventHandler(this.AddToCartButton_Click);
             // 
             // ItemsListBox
             // 
@@ -125,16 +124,6 @@
             this.ItemsLabel.Size = new System.Drawing.Size(39, 15);
             this.ItemsLabel.TabIndex = 0;
             this.ItemsLabel.Text = "Items";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(109, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CartButtonsTableLayoutPanel
             // 
@@ -288,6 +277,5 @@
         private System.Windows.Forms.Label CartLabel;
         private System.Windows.Forms.ComboBox CustomersComboBox;
         private System.Windows.Forms.Label CustomerLabel;
-        private System.Windows.Forms.Button button1;
     }
 }

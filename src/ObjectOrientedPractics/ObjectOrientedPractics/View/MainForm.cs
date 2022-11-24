@@ -19,5 +19,10 @@ namespace ObjectOrientedPractics
             CartsTab.Items = _store.Items;
             CartsTab.Customers = _store.Customers;
         }
+
+        private void SelectedTabChanged(object sender, System.EventArgs e)
+        {
+            CartsTab.RefrechData();
+        }
     }
 }
