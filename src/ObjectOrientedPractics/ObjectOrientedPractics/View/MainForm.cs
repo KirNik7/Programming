@@ -14,11 +14,26 @@ namespace ObjectOrientedPractics
         public MainForm()
         {
             InitializeComponent();
-            ItemsTab.Items = _store.Items;
-            CustomersTab.Customers = _store.Customers;
-            CartsTab.Items = _store.Items;
-            CartsTab.Customers = _store.Customers;
-            OrdersTab.Customers = _store.Customers;
+            ItemsTab.Items = Store.Items;
+            CustomersTab.Customers = Store.Customers;
+            CartsTab.Items = Store.Items;
+            CartsTab.Customers = Store.Customers;
+            OrdersTab.Customers = Store.Customers;
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт информацию о магазине (товары и покупатели).
+        /// </summary>
+        public Store Store 
+        {
+            get
+            {
+                return _store;
+            }
+            set
+            {
+                _store = value;
+            }
         }
 
         private void SelectedTabChanged(object sender, System.EventArgs e)

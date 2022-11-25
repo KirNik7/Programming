@@ -19,5 +19,17 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         public List<Customer> Customers { get; set; }
+
+        public void UpdateOrders()
+        {
+            List<Customer> customers = Customers;
+
+            List<Order> orders = new List<Order>();
+
+            foreach (var customer in customers)
+            {
+                orders.AddRange(customer.Orders);
+            }
+        }
     }
 }
