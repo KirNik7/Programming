@@ -1,6 +1,7 @@
 ﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Controls
@@ -60,7 +61,12 @@ namespace ObjectOrientedPractics.View.Controls
             catch
             {
                 AddressIndexTextBox.BackColor = AppColors.ErrorColor;
+                AddressControlToolTip.Show("The index is a six-digit integer.", 
+                    AddressIndexTextBox);
+                return;
             }
+
+            AddressControlToolTip.Hide(AddressIndexTextBox);
         }
 
         private void AddressCountryTextBox_TextChanged(object sender, EventArgs e)
@@ -73,7 +79,13 @@ namespace ObjectOrientedPractics.View.Controls
             catch
             {
                 AddressCountryTextBox.BackColor = AppColors.ErrorColor;
+                AddressControlToolTip.Show("The name of the country must " +
+                    "contain no more than 50 characters.",
+                    AddressCountryTextBox);
+                return;
             }
+
+            AddressControlToolTip.Hide(AddressCountryTextBox);
         }
 
         private void AddressCityTextBox_TextChanged(object sender, EventArgs e)
@@ -86,7 +98,13 @@ namespace ObjectOrientedPractics.View.Controls
             catch
             {
                 AddressCityTextBox.BackColor = AppColors.ErrorColor;
+                AddressControlToolTip.Show("The name of the city must " +
+                    "contain no more than 50 characters.",
+                    AddressCityTextBox);
+                return;
             }
+
+            AddressControlToolTip.Hide(AddressCityTextBox);
         }
 
         private void AddressStreetTextBox_TextChanged(object sender, EventArgs e)
@@ -99,7 +117,13 @@ namespace ObjectOrientedPractics.View.Controls
             catch
             {
                 AddressStreetTextBox.BackColor = AppColors.ErrorColor;
+                AddressControlToolTip.Show("The street name must contain " +
+                    "no more than 100 characters.",
+                    AddressCityTextBox);
+                return;
             }
+
+            AddressControlToolTip.Hide(AddressCityTextBox);
         }
 
         private void AddressBuildingTextBox_TextChanged(object sender, EventArgs e)
@@ -112,7 +136,13 @@ namespace ObjectOrientedPractics.View.Controls
             catch
             {
                 AddressBuildingTextBox.BackColor = AppColors.ErrorColor;
+                AddressControlToolTip.Show("The building number must contain " +
+                    "no more than 10 characters.",
+                    AddressBuildingTextBox);
+                return;
             }
+
+            AddressControlToolTip.Hide(AddressBuildingTextBox);
         }
 
         private void AddressApartmentTextBox_TextChanged(object sender, EventArgs e)
@@ -125,7 +155,18 @@ namespace ObjectOrientedPractics.View.Controls
             catch
             {
                 AddressApartmentTextBox.BackColor = AppColors.ErrorColor;
+                AddressControlToolTip.Show("The apartment number must contain " +
+                    "no more than 10 characters.",
+                    AddressApartmentTextBox);
+                return;
             }
+
+            AddressControlToolTip.Hide(AddressApartmentTextBox);
+        }
+
+        private void AddressControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

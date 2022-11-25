@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.AddressIndexTextBox = new System.Windows.Forms.TextBox();
             this.AddressCountryTextBox = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             this.AddressApartmentTextBox = new System.Windows.Forms.TextBox();
             this.AddressBuildingLabel = new System.Windows.Forms.Label();
             this.AddressApartmentLabel = new System.Windows.Forms.Label();
+            this.AddressControlToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // AddressLabel
@@ -82,7 +84,7 @@
             this.AddressIndexLabel.AutoSize = true;
             this.AddressIndexLabel.Location = new System.Drawing.Point(3, 21);
             this.AddressIndexLabel.Name = "AddressIndexLabel";
-            this.AddressIndexLabel.Size = new System.Drawing.Size(65, 15);
+            this.AddressIndexLabel.Size = new System.Drawing.Size(64, 15);
             this.AddressIndexLabel.TabIndex = 4;
             this.AddressIndexLabel.Text = "Post Index:";
             // 
@@ -174,6 +176,7 @@
             this.Controls.Add(this.AddressLabel);
             this.Name = "AddressControl";
             this.Size = new System.Drawing.Size(517, 138);
+            this.Load += new System.EventHandler(this.AddressControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +197,6 @@
         private System.Windows.Forms.TextBox AddressApartmentTextBox;
         private System.Windows.Forms.Label AddressBuildingLabel;
         private System.Windows.Forms.Label AddressApartmentLabel;
+        private System.Windows.Forms.ToolTip AddressControlToolTip;
     }
 }
