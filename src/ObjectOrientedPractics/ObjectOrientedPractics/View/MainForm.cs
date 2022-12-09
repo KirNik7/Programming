@@ -38,7 +38,8 @@ namespace ObjectOrientedPractics
 
         private void SelectedTabChanged(object sender, System.EventArgs e)
         {
-            CartsTab.RefrechData();
+            CartsTab.RefreshData();
+            OrdersTab.RefreshData();
         }
     }
 }

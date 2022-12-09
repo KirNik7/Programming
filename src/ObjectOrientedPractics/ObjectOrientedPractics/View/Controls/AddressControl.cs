@@ -8,28 +8,72 @@ namespace ObjectOrientedPractics.View.Controls
 {
     public partial class AddressControl : UserControl
     {
+        /// <summary>
+        /// Адрес.
+        /// </summary>
         private Address _address;
 
-        public Address Address
-        {
-            get 
-            { 
-                return _address; 
-            }
-            
-            set 
-            { 
-                _address = value;
-                UpdateAddressTextBoxes(_address);
-            }
-        }
+        /// <summary>
+        /// Только для чтения.
+        /// </summary>
+        private bool _readOnly;
 
+        /// <summary>
+        /// Создаёт и экземпляр класса <see cref="AddressControl"/>.
+        /// </summary>
         public AddressControl()
         {
             InitializeComponent();
             Address = new Address();
         }
 
+        /// <summary>
+        /// Возвращает и задаёт адрес.
+        /// </summary>
+        public Address Address
+        {
+            get
+            {
+                return _address;
+            }
+
+            set
+            {
+                _address = value;
+                UpdateAddressTextBoxes(_address);
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт значение, указывающее, может ли 
+        /// пользователь изменять данные в элементе управления.
+        /// </summary>
+        public bool ReadOnly
+        {
+            get
+            {
+                return _readOnly;
+            }
+            set
+            {
+                _readOnly = value;
+
+                if (value)
+                {
+                    AddressIndexTextBox.ReadOnly = true;
+                    AddressCountryTextBox.ReadOnly = true;
+                    AddressCityTextBox.ReadOnly = true;
+                    AddressStreetTextBox.ReadOnly = true;
+                    AddressBuildingTextBox.ReadOnly = true;
+                    AddressApartmentTextBox.ReadOnly = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Обновляет информацию об адресе.
+        /// </summary>
+        /// <param name="address">Адрес.</param>
         public void UpdateAddressTextBoxes(Address address)
         {
             AddressIndexTextBox.Text = address.Index.ToString();
@@ -40,6 +84,9 @@ namespace ObjectOrientedPractics.View.Controls
             AddressApartmentTextBox.Text = address.Apartment;
         }
 
+        /// <summary>
+        /// Очищает информацию об адресе в элементах управления.
+        /// </summary>
         public void AddressClearInfo()
         {
             AddressIndexTextBox.Clear();
@@ -162,11 +209,6 @@ namespace ObjectOrientedPractics.View.Controls
             }
 
             AddressControlToolTip.Hide(AddressApartmentTextBox);
-        }
-
-        private void AddressControl_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

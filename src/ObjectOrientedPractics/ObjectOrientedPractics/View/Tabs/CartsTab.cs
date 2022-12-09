@@ -165,7 +165,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Обновляет информацию на вкладке <see cref="CartsTab"/>.
         /// </summary>
-        public void RefrechData()
+        public void RefreshData()
         {
             _currentCustomer = null;
             UpdateItemsListBox(-1);

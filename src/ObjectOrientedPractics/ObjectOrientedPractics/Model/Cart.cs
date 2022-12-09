@@ -13,11 +13,18 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private List<Item> _items;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Cart"/>.
+        /// </summary>
+        /// <param name="items">Список товаров.</param>
         public Cart(List<Item> items)
         {
             Items = items;
         }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Cart"/>.
+        /// </summary>
         public Cart()
         {
             Items = new List<Item>();
