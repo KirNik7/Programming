@@ -5,6 +5,9 @@ using static ObjectOrientedPractics.Services.IdGenerator;
 
 namespace ObjectOrientedPractics.Model
 {
+    /// <summary>
+    /// Хранит данные о заказе.
+    /// </summary>
     public class Order
     {
         /// <summary>
