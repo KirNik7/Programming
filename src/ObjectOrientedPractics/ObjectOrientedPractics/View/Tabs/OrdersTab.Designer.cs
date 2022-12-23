@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            ObjectOrientedPractics.Model.Address address1 = new ObjectOrientedPractics.Model.Address();
+            ObjectOrientedPractics.Model.Address address2 = new ObjectOrientedPractics.Model.Address();
             this.OrdersLabel = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,8 +40,14 @@
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.storeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.SplitContainer = new System.Windows.Forms.SplitContainer();
             this.OrdersDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Created = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveryAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderStatusComboBox = new System.Windows.Forms.ComboBox();
             this.OrderDateTextBox = new System.Windows.Forms.TextBox();
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
@@ -54,12 +60,6 @@
             this.OrderDateLabel = new System.Windows.Forms.Label();
             this.OrderIdLabel = new System.Windows.Forms.Label();
             this.SelectedOrderLabel = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Created = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeliveryAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
@@ -69,10 +69,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).BeginInit();
+            this.SplitContainer.Panel1.SuspendLayout();
+            this.SplitContainer.Panel2.SuspendLayout();
+            this.SplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,34 +125,34 @@
             this.customersBindingSource.DataMember = "Customers";
             this.customersBindingSource.DataSource = this.storeBindingSource1;
             // 
-            // splitContainer1
+            // SplitContainer
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.SplitContainer.Name = "SplitContainer";
             // 
-            // splitContainer1.Panel1
+            // SplitContainer.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.OrdersDataGridView);
-            this.splitContainer1.Panel1.Controls.Add(this.OrdersLabel);
+            this.SplitContainer.Panel1.Controls.Add(this.OrdersDataGridView);
+            this.SplitContainer.Panel1.Controls.Add(this.OrdersLabel);
             // 
-            // splitContainer1.Panel2
+            // SplitContainer.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.OrderStatusComboBox);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderDateTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderIdTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.AmountLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.AmountTextLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderItemsListBox);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderAddressControl);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderItemsLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderStatusLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderDateLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.OrderIdLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.SelectedOrderLabel);
-            this.splitContainer1.Size = new System.Drawing.Size(1049, 564);
-            this.splitContainer1.SplitterDistance = 506;
-            this.splitContainer1.TabIndex = 2;
+            this.SplitContainer.Panel2.Controls.Add(this.OrderStatusComboBox);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderDateTextBox);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderIdTextBox);
+            this.SplitContainer.Panel2.Controls.Add(this.AmountLabel);
+            this.SplitContainer.Panel2.Controls.Add(this.AmountTextLabel);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderItemsListBox);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderAddressControl);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderItemsLabel);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderStatusLabel);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderDateLabel);
+            this.SplitContainer.Panel2.Controls.Add(this.OrderIdLabel);
+            this.SplitContainer.Panel2.Controls.Add(this.SelectedOrderLabel);
+            this.SplitContainer.Size = new System.Drawing.Size(1049, 564);
+            this.SplitContainer.SplitterDistance = 506;
+            this.SplitContainer.TabIndex = 2;
             // 
             // OrdersDataGridView
             // 
@@ -176,6 +176,48 @@
             this.OrdersDataGridView.Size = new System.Drawing.Size(500, 543);
             this.OrdersDataGridView.TabIndex = 1;
             this.OrdersDataGridView.SelectionChanged += new System.EventHandler(this.OrdersDataGridView_SelectionChanged);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 50;
+            // 
+            // Created
+            // 
+            this.Created.HeaderText = "Created";
+            this.Created.Name = "Created";
+            this.Created.ReadOnly = true;
+            this.Created.Width = 120;
+            // 
+            // OrderStatus
+            // 
+            this.OrderStatus.HeaderText = "Order Status";
+            this.OrderStatus.Name = "OrderStatus";
+            this.OrderStatus.ReadOnly = true;
+            this.OrderStatus.Width = 75;
+            // 
+            // CustomerFullName
+            // 
+            this.CustomerFullName.HeaderText = "Customer Full Name";
+            this.CustomerFullName.Name = "CustomerFullName";
+            this.CustomerFullName.ReadOnly = true;
+            this.CustomerFullName.Width = 125;
+            // 
+            // DeliveryAddress
+            // 
+            this.DeliveryAddress.HeaderText = "Delivery Address";
+            this.DeliveryAddress.Name = "DeliveryAddress";
+            this.DeliveryAddress.ReadOnly = true;
+            this.DeliveryAddress.Width = 200;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Width = 75;
             // 
             // OrderStatusComboBox
             // 
@@ -241,17 +283,18 @@
             // 
             // OrderAddressControl
             // 
-            address1.Apartment = "";
-            address1.Building = "";
-            address1.City = "";
-            address1.Country = "";
-            address1.Index = 100000;
-            address1.Street = "";
-            this.OrderAddressControl.Address = address1;
+            address2.Apartment = "";
+            address2.Building = "";
+            address2.City = "";
+            address2.Country = "";
+            address2.Index = 100000;
+            address2.Street = "";
+            this.OrderAddressControl.Address = address2;
             this.OrderAddressControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OrderAddressControl.Location = new System.Drawing.Point(-1, 108);
             this.OrderAddressControl.Name = "OrderAddressControl";
+            this.OrderAddressControl.ReadOnly = false;
             this.OrderAddressControl.Size = new System.Drawing.Size(519, 138);
             this.OrderAddressControl.TabIndex = 9;
             // 
@@ -302,53 +345,11 @@
             this.SelectedOrderLabel.TabIndex = 1;
             this.SelectedOrderLabel.Text = "Selected Order";
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 50;
-            // 
-            // Created
-            // 
-            this.Created.HeaderText = "Created";
-            this.Created.Name = "Created";
-            this.Created.ReadOnly = true;
-            this.Created.Width = 120;
-            // 
-            // OrderStatus
-            // 
-            this.OrderStatus.HeaderText = "Order Status";
-            this.OrderStatus.Name = "OrderStatus";
-            this.OrderStatus.ReadOnly = true;
-            this.OrderStatus.Width = 75;
-            // 
-            // CustomerFullName
-            // 
-            this.CustomerFullName.HeaderText = "Customer Full Name";
-            this.CustomerFullName.Name = "CustomerFullName";
-            this.CustomerFullName.ReadOnly = true;
-            this.CustomerFullName.Width = 125;
-            // 
-            // DeliveryAddress
-            // 
-            this.DeliveryAddress.HeaderText = "Delivery Address";
-            this.DeliveryAddress.Name = "DeliveryAddress";
-            this.DeliveryAddress.ReadOnly = true;
-            this.DeliveryAddress.Width = 200;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Width = 75;
-            // 
             // OrdersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.SplitContainer);
             this.Name = "OrdersTab";
             this.Size = new System.Drawing.Size(1049, 564);
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
@@ -360,12 +361,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.SplitContainer.Panel1.ResumeLayout(false);
+            this.SplitContainer.Panel1.PerformLayout();
+            this.SplitContainer.Panel2.ResumeLayout(false);
+            this.SplitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).EndInit();
+            this.SplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -383,7 +384,7 @@
         private System.Windows.Forms.BindingSource itemsBindingSource;
         private System.Windows.Forms.BindingSource storeBindingSource1;
         private System.Windows.Forms.BindingSource customersBindingSource;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer SplitContainer;
         private System.Windows.Forms.Label OrderStatusLabel;
         private System.Windows.Forms.Label OrderDateLabel;
         private System.Windows.Forms.Label OrderIdLabel;
