@@ -1,15 +1,37 @@
 ﻿namespace TaskForLab3
 {
+    /// <summary>
+    /// Хранит информацию о воине.
+    /// </summary>
     public class Warrior
     {
+        /// <summary>
+        /// Имя воина.
+        /// </summary>
         private string _name;
 
+        /// <summary>
+        /// Количество здоровья воина.
+        /// </summary>
         private int _HP;
 
+        /// <summary>
+        /// Урон воина.
+        /// </summary>
         private int _damage;
 
+        /// <summary>
+        /// Экипировка воина.
+        /// </summary>
         private List<Armour> _equipment;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Warrior"/>.
+        /// </summary>
+        /// <param name="name">Имя воина.</param>
+        /// <param name="HP">Количество здоровья воина.</param>
+        /// <param name="damage">Урон воина.</param>
+        /// <param name="equipment">Экипировка воина.</param>
         public Warrior(string name, int HP, int damage, List<Armour> equipment)
         {
             _name = name;
@@ -17,36 +39,44 @@
             _damage = damage;
             _equipment = equipment;
         }
-        
+
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Warrior"/>.
+        /// </summary>
         public Warrior()
         {
             
         }
         
+        /// <summary>
+        /// Метод для вывода информации о воине.
+        /// </summary>
+        /// <param name="warrior">Воин.</param>
         public void ShowInfo(Warrior warrior)
         {
-            Console.WriteLine("Name: " + warrior._name);
-            Console.WriteLine("HP: " + warrior._HP);
-            Console.WriteLine("Damage: " + warrior._damage);
-            Console.Write("Equipment: ");
-            for (int i = 0; i < warrior._equipment.Count; i++)
+            Console.WriteLine("Name: " + warrior.Name);
+            Console.WriteLine("HP: " + warrior.HP);
+            Console.WriteLine("Damage: " + warrior.Damage);
+            Console.Write("Equipment (cost):");
+            foreach (var item in warrior.Equipment)
             {
-                Console.Write(warrior._equipment[i].Name + "; ");
+                Console.Write($" {item.Name} ({item.Cost});");
             }
             Console.WriteLine();
-            Console.WriteLine("Cost: " + GetCost(Equipment));
-        }
 
-        private int GetCost(List<Armour> equipment)
-        {
             int cost = 0;
-            foreach (var item in equipment)
+            foreach (var item in warrior.Equipment)
             {
                 cost += item.Cost;
             }
-            return cost;
+
+            Console.WriteLine("Total cost of equipment: " + cost);
+            Console.WriteLine();
         }
 
+        /// <summary>
+        /// Задаёт и возвращает имя воина.
+        /// </summary>
         public string Name
         {
             get 
@@ -60,6 +90,9 @@
             }
         }
 
+        /// <summary>
+        /// Задаёт и возвращает количество здоровья воина.
+        /// </summary>
         public int HP
         {
             get 
@@ -78,6 +111,9 @@
             }
         }
 
+        /// <summary>
+        /// Задаёт и возвращает урон воина.
+        /// </summary>
         public int Damage
         {
             get 
@@ -96,6 +132,9 @@
             }
         }
 
+        /// <summary>
+        /// Задаёт и возвращает экипировку воина.
+        /// </summary>
         public List<Armour> Equipment
         {
             get 
