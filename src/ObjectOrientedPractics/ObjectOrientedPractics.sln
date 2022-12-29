@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectOrientedPractics", "ObjectOrientedPractics\ObjectOrientedPractics.csproj", "{CFE63DFE-F139-405A-B37A-92C120E91B0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectOrientedPractics", "ObjectOrientedPractics\ObjectOrientedPractics.csproj", "{CFE63DFE-F139-405A-B37A-92C120E91B0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
