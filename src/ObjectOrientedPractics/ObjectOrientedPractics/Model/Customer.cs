@@ -35,6 +35,11 @@ namespace ObjectOrientedPractics.Model
         private List<Order> _orders;
 
         /// <summary>
+        /// Приоритетный покупатель.
+        /// </summary>
+        private bool _isPriority;
+
+        /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
         /// </summary>
         /// <param name="fullname">Полное имя покупателя.
@@ -43,13 +48,14 @@ namespace ObjectOrientedPractics.Model
         /// Должно содержать до 500 символов (включительно).</param>
         /// <param name="cart">Корзина покупателя.</param>
         /// <param name="orders">Заказы покупателя.</param>
-        public Customer(string fullname, Address address, Cart cart, List<Order> orders)
+        public Customer(string fullname, Address address, Cart cart, List<Order> orders, bool isPriority)
         {
             _id = GetNextId();
             FullName = fullname;
             Address = address;
             Cart = cart;
             Orders = orders;
+            IsPriority = isPriority;
         }
 
         /// <summary>
@@ -62,6 +68,22 @@ namespace ObjectOrientedPractics.Model
             Address = new Address();
             Cart = new Cart();
             Orders = new List<Order>();
+            IsPriority = false;
+        }
+
+        /// <summary>
+        /// Возвращает и задает булевое значение, является ли покупатель приоритетным или нет.
+        /// </summary>
+        public bool IsPriority
+        {
+            get
+            {
+                return _isPriority;
+            }
+            set
+            {
+                _isPriority = value;
+            }
         }
 
         /// <summary>

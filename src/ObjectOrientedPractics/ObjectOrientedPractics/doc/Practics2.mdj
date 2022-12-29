@@ -981,6 +981,7 @@
 											"top": 80,
 											"width": 305.10009765625,
 											"height": 13,
+											"underline": true,
 											"text": "+AssertStringOnLength(string, int, string)",
 											"horizontalAlignment": 0
 										},
@@ -998,6 +999,7 @@
 											"top": 95,
 											"width": 305.10009765625,
 											"height": 13,
+											"underline": true,
 											"text": "+AssertValueInRange(double, double, double, string)",
 											"horizontalAlignment": 0
 										}
@@ -4095,6 +4097,7 @@
 								"$ref": "AAAAAAGDksIRvkQ8370="
 							},
 							"name": "AssertStringOnLength",
+							"isStatic": true,
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4132,6 +4135,7 @@
 								"$ref": "AAAAAAGDksIRvkQ8370="
 							},
 							"name": "AssertValueInRange",
+							"isStatic": true,
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -4599,7 +4603,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Electronics"
+							"name": "Electronics",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4607,7 +4612,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Clothes"
+							"name": "Clothes",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4615,7 +4621,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Food"
+							"name": "Food",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4623,7 +4630,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Construction"
+							"name": "Construction",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4631,7 +4639,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Home"
+							"name": "Home",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4639,7 +4648,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Cottage"
+							"name": "Cottage",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4647,7 +4657,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Plants"
+							"name": "Plants",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4655,7 +4666,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Pets"
+							"name": "Pets",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4663,7 +4675,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Sports"
+							"name": "Sports",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4671,7 +4684,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Gifts"
+							"name": "Gifts",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4679,7 +4693,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEInYvEbYH2C8="
 							},
-							"name": "Other"
+							"name": "Other",
+							"type": ""
 						}
 					]
 				}

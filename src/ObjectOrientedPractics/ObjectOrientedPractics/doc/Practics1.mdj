@@ -964,6 +964,7 @@
 											"top": 80,
 											"width": 305.10009765625,
 											"height": 13,
+											"underline": true,
 											"text": "+AssertStringOnLength(string, int, string)",
 											"horizontalAlignment": 0
 										},
@@ -981,6 +982,7 @@
 											"top": 95,
 											"width": 305.10009765625,
 											"height": 13,
+											"underline": true,
 											"text": "+AssertValueInRange(double, double, double, string)",
 											"horizontalAlignment": 0
 										}
@@ -1775,6 +1777,7 @@
 								"$ref": "AAAAAAGDksIRvkQ8370="
 							},
 							"name": "AssertStringOnLength",
+							"isStatic": true,
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -1812,6 +1815,7 @@
 								"$ref": "AAAAAAGDksIRvkQ8370="
 							},
 							"name": "AssertValueInRange",
+							"isStatic": true,
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -1819,7 +1823,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGDksLfFER1I30="
 									},
-									"name": "double"
+									"name": "double",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
