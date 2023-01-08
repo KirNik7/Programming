@@ -1,16 +1,8 @@
-﻿using ObjectOrientedPractics.Model.Enums;
-using ObjectOrientedPractics.Model;
-using ObjectOrientedPractics.View.Controls;
+﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Enums;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -86,7 +78,7 @@ namespace ObjectOrientedPractics.View.Tabs
             Item item = Items[_randomForAddItem.Next(Items.Count)];
             _currentPriorityOrder.Items.Add(item);
             OrderItemsListBox.Items.Add(item.Name);
-            AmountSelectedOrderLabel.Text = _currentPriorityOrder.Amount.ToString();
+            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString();
         }
 
         private void RemoveItemButton_Click(object sender, EventArgs e)
@@ -96,12 +88,13 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _currentPriorityOrder.Items.RemoveAt(index);
             OrderItemsListBox.Items.RemoveAt(index);
-            AmountSelectedOrderLabel.Text = _currentPriorityOrder.Amount.ToString();
+            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString();
         }
 
         private void ClearOrderButton_Click(object sender, EventArgs e)
         {
             CreateNewPriorityOrder();
+            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString();
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            ObjectOrientedPractics.Model.Address address2 = new ObjectOrientedPractics.Model.Address();
+            ObjectOrientedPractics.Model.Address address3 = new ObjectOrientedPractics.Model.Address();
             this.OrdersLabel = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,6 +48,10 @@
             this.CustomerFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriorityOptionsPanel = new System.Windows.Forms.Panel();
+            this.PriorityOptionsLabel = new System.Windows.Forms.Label();
+            this.DeliveryTimeSelectedOrderComboBox = new System.Windows.Forms.ComboBox();
+            this.DeliveryTimeSelectedOrderLabel = new System.Windows.Forms.Label();
             this.OrderStatusComboBox = new System.Windows.Forms.ComboBox();
             this.OrderDateTextBox = new System.Windows.Forms.TextBox();
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
@@ -74,6 +78,7 @@
             this.SplitContainer.Panel2.SuspendLayout();
             this.SplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).BeginInit();
+            this.PriorityOptionsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // OrdersLabel
@@ -138,6 +143,7 @@
             // 
             // SplitContainer.Panel2
             // 
+            this.SplitContainer.Panel2.Controls.Add(this.PriorityOptionsPanel);
             this.SplitContainer.Panel2.Controls.Add(this.OrderStatusComboBox);
             this.SplitContainer.Panel2.Controls.Add(this.OrderDateTextBox);
             this.SplitContainer.Panel2.Controls.Add(this.OrderIdTextBox);
@@ -219,6 +225,44 @@
             this.Amount.ReadOnly = true;
             this.Amount.Width = 75;
             // 
+            // PriorityOptionsPanel
+            // 
+            this.PriorityOptionsPanel.Controls.Add(this.PriorityOptionsLabel);
+            this.PriorityOptionsPanel.Controls.Add(this.DeliveryTimeSelectedOrderComboBox);
+            this.PriorityOptionsPanel.Controls.Add(this.DeliveryTimeSelectedOrderLabel);
+            this.PriorityOptionsPanel.Location = new System.Drawing.Point(237, 0);
+            this.PriorityOptionsPanel.Name = "PriorityOptionsPanel";
+            this.PriorityOptionsPanel.Size = new System.Drawing.Size(234, 75);
+            this.PriorityOptionsPanel.TabIndex = 19;
+            // 
+            // PriorityOptionsLabel
+            // 
+            this.PriorityOptionsLabel.AutoSize = true;
+            this.PriorityOptionsLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PriorityOptionsLabel.Location = new System.Drawing.Point(3, 0);
+            this.PriorityOptionsLabel.Name = "PriorityOptionsLabel";
+            this.PriorityOptionsLabel.Size = new System.Drawing.Size(94, 15);
+            this.PriorityOptionsLabel.TabIndex = 16;
+            this.PriorityOptionsLabel.Text = "Priority Options";
+            // 
+            // DeliveryTimeSelectedOrderComboBox
+            // 
+            this.DeliveryTimeSelectedOrderComboBox.FormattingEnabled = true;
+            this.DeliveryTimeSelectedOrderComboBox.Location = new System.Drawing.Point(102, 22);
+            this.DeliveryTimeSelectedOrderComboBox.Name = "DeliveryTimeSelectedOrderComboBox";
+            this.DeliveryTimeSelectedOrderComboBox.Size = new System.Drawing.Size(121, 23);
+            this.DeliveryTimeSelectedOrderComboBox.TabIndex = 18;
+            this.DeliveryTimeSelectedOrderComboBox.SelectedIndexChanged += new System.EventHandler(this.DeliveryTimeSelectedOrderComboBox_SelectedIndexChanged);
+            // 
+            // DeliveryTimeSelectedOrderLabel
+            // 
+            this.DeliveryTimeSelectedOrderLabel.AutoSize = true;
+            this.DeliveryTimeSelectedOrderLabel.Location = new System.Drawing.Point(3, 25);
+            this.DeliveryTimeSelectedOrderLabel.Name = "DeliveryTimeSelectedOrderLabel";
+            this.DeliveryTimeSelectedOrderLabel.Size = new System.Drawing.Size(81, 15);
+            this.DeliveryTimeSelectedOrderLabel.TabIndex = 17;
+            this.DeliveryTimeSelectedOrderLabel.Text = "Delivery Time:";
+            // 
             // OrderStatusComboBox
             // 
             this.OrderStatusComboBox.FormattingEnabled = true;
@@ -283,13 +327,13 @@
             // 
             // OrderAddressControl
             // 
-            address2.Apartment = "";
-            address2.Building = "";
-            address2.City = "";
-            address2.Country = "";
-            address2.Index = 100000;
-            address2.Street = "";
-            this.OrderAddressControl.Address = address2;
+            address3.Apartment = "";
+            address3.Building = "";
+            address3.City = "";
+            address3.Country = "";
+            address3.Index = 100000;
+            address3.Street = "";
+            this.OrderAddressControl.Address = address3;
             this.OrderAddressControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OrderAddressControl.Location = new System.Drawing.Point(-1, 108);
@@ -368,6 +412,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).EndInit();
             this.SplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).EndInit();
+            this.PriorityOptionsPanel.ResumeLayout(false);
+            this.PriorityOptionsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -404,5 +450,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Panel PriorityOptionsPanel;
+        private System.Windows.Forms.Label PriorityOptionsLabel;
+        private System.Windows.Forms.ComboBox DeliveryTimeSelectedOrderComboBox;
+        private System.Windows.Forms.Label DeliveryTimeSelectedOrderLabel;
     }
 }
