@@ -79,7 +79,7 @@ namespace ObjectOrientedPractics.View.Tabs
             Item item = Items[_randomForAddItem.Next(Items.Count)];
             _currentPriorityOrder.Items.Add(item);
             OrderItemsListBox.Items.Add(item.Name);
-            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString();
+            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString("f2");
         }
 
         private void RemoveItemButton_Click(object sender, EventArgs e)
@@ -89,13 +89,13 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _currentPriorityOrder.Items.RemoveAt(index);
             OrderItemsListBox.Items.RemoveAt(index);
-            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString();
+            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString("f2");
         }
 
         private void ClearOrderButton_Click(object sender, EventArgs e)
         {
             CreateNewPriorityOrder();
-            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString();
+            AmountSelectedOrderLabel.Text = _currentPriorityOrder.AmountOrder.ToString("f2");
         }
     }
 }

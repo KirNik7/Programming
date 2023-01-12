@@ -103,12 +103,12 @@ namespace ObjectOrientedPractics.View.Tabs
                 {
                     _orders.Add(order);
                     OrdersDataGridView.Rows.Add(order.Id.ToString(), order.Date.ToString(), order.OrderStatus,
-                        customer.FullName, fullAddress, order.Amount.ToString());
+                        customer.FullName, fullAddress, order.Amount.ToString(), order.Total.ToString());
                 }
             }
         }
 
-        /// <summary>
+        /// <summary>   
         /// Устанавливает значения в элементы управления.
         /// </summary>
         private void SetValueInTextBoxes()
@@ -123,7 +123,8 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 OrderItemsListBox.Items.Add(item.Name);
             }
-            AmountLabel.Text = _currentOrder.Amount.ToString();
+            AmountDigitLabel.Text = _currentOrder.Amount.ToString("f2");
+            TotalAmountDigitLabel.Text = _currentOrder.Total.ToString("f2");
 
             if (_currentOrder is PriorityOrder priority)
             {

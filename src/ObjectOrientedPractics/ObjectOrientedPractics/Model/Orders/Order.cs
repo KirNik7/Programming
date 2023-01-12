@@ -155,5 +155,21 @@ namespace ObjectOrientedPractics.Model.Orders
                 return _amount;
             }
         }
+
+        /// <summary>
+        /// Возвращает и задает скидку на товары.
+        /// </summary>
+        public double DiscountAmount { get; set; }
+
+        /// <summary>
+        /// Возвращает итоговую стоимость заказа.
+        /// </summary>
+        public double Total
+        {
+            get
+            {
+                return Amount - DiscountAmount;
+            }
+        }
     }
 }

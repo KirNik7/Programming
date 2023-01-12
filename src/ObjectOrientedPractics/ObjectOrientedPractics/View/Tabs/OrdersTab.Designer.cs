@@ -31,7 +31,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            ObjectOrientedPractics.Model.Address address3 = new ObjectOrientedPractics.Model.Address();
+            ObjectOrientedPractics.Model.Address address2 = new ObjectOrientedPractics.Model.Address();
             this.OrdersLabel = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,6 +50,9 @@ namespace ObjectOrientedPractics.View.Tabs
             this.CustomerFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmountDigitLabel = new System.Windows.Forms.Label();
+            this.TotalAmountLabel = new System.Windows.Forms.Label();
             this.PriorityOptionsPanel = new System.Windows.Forms.Panel();
             this.PriorityOptionsLabel = new System.Windows.Forms.Label();
             this.DeliveryTimeSelectedOrderComboBox = new System.Windows.Forms.ComboBox();
@@ -57,8 +60,8 @@ namespace ObjectOrientedPractics.View.Tabs
             this.OrderStatusComboBox = new System.Windows.Forms.ComboBox();
             this.OrderDateTextBox = new System.Windows.Forms.TextBox();
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
+            this.AmountDigitLabel = new System.Windows.Forms.Label();
             this.AmountLabel = new System.Windows.Forms.Label();
-            this.AmountTextLabel = new System.Windows.Forms.Label();
             this.OrderItemsListBox = new System.Windows.Forms.ListBox();
             this.OrderAddressControl = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.OrderItemsLabel = new System.Windows.Forms.Label();
@@ -112,7 +115,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // orderBindingSource
             // 
-            this.orderBindingSource.DataSource = typeof(Order);
+            this.orderBindingSource.DataSource = typeof(ObjectOrientedPractics.Model.Orders.Order);
             // 
             // storeBindingSource
             // 
@@ -145,12 +148,14 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // SplitContainer.Panel2
             // 
+            this.SplitContainer.Panel2.Controls.Add(this.TotalAmountDigitLabel);
+            this.SplitContainer.Panel2.Controls.Add(this.TotalAmountLabel);
             this.SplitContainer.Panel2.Controls.Add(this.PriorityOptionsPanel);
             this.SplitContainer.Panel2.Controls.Add(this.OrderStatusComboBox);
             this.SplitContainer.Panel2.Controls.Add(this.OrderDateTextBox);
             this.SplitContainer.Panel2.Controls.Add(this.OrderIdTextBox);
+            this.SplitContainer.Panel2.Controls.Add(this.AmountDigitLabel);
             this.SplitContainer.Panel2.Controls.Add(this.AmountLabel);
-            this.SplitContainer.Panel2.Controls.Add(this.AmountTextLabel);
             this.SplitContainer.Panel2.Controls.Add(this.OrderItemsListBox);
             this.SplitContainer.Panel2.Controls.Add(this.OrderAddressControl);
             this.SplitContainer.Panel2.Controls.Add(this.OrderItemsLabel);
@@ -176,7 +181,8 @@ namespace ObjectOrientedPractics.View.Tabs
             this.OrderStatus,
             this.CustomerFullName,
             this.DeliveryAddress,
-            this.Amount});
+            this.Amount,
+            this.Total});
             this.OrdersDataGridView.Location = new System.Drawing.Point(3, 18);
             this.OrdersDataGridView.Name = "OrdersDataGridView";
             this.OrdersDataGridView.ReadOnly = true;
@@ -226,6 +232,37 @@ namespace ObjectOrientedPractics.View.Tabs
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
             this.Amount.Width = 75;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // TotalAmountDigitLabel
+            // 
+            this.TotalAmountDigitLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalAmountDigitLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TotalAmountDigitLabel.Location = new System.Drawing.Point(3, 485);
+            this.TotalAmountDigitLabel.Name = "TotalAmountDigitLabel";
+            this.TotalAmountDigitLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TotalAmountDigitLabel.Size = new System.Drawing.Size(533, 35);
+            this.TotalAmountDigitLabel.TabIndex = 21;
+            this.TotalAmountDigitLabel.Text = "0,00";
+            this.TotalAmountDigitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TotalAmountLabel
+            // 
+            this.TotalAmountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalAmountLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TotalAmountLabel.Location = new System.Drawing.Point(3, 470);
+            this.TotalAmountLabel.Name = "TotalAmountLabel";
+            this.TotalAmountLabel.Size = new System.Drawing.Size(533, 15);
+            this.TotalAmountLabel.TabIndex = 20;
+            this.TotalAmountLabel.Text = "Total Amount:";
+            this.TotalAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PriorityOptionsPanel
             // 
@@ -290,30 +327,30 @@ namespace ObjectOrientedPractics.View.Tabs
             this.OrderIdTextBox.Size = new System.Drawing.Size(121, 23);
             this.OrderIdTextBox.TabIndex = 13;
             // 
+            // AmountDigitLabel
+            // 
+            this.AmountDigitLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AmountDigitLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmountDigitLabel.Location = new System.Drawing.Point(3, 435);
+            this.AmountDigitLabel.Name = "AmountDigitLabel";
+            this.AmountDigitLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AmountDigitLabel.Size = new System.Drawing.Size(533, 35);
+            this.AmountDigitLabel.TabIndex = 12;
+            this.AmountDigitLabel.Text = "0,00";
+            this.AmountDigitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // AmountLabel
             // 
             this.AmountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AmountLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmountLabel.Location = new System.Drawing.Point(3, 435);
+            this.AmountLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmountLabel.Location = new System.Drawing.Point(3, 420);
             this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AmountLabel.Size = new System.Drawing.Size(533, 35);
-            this.AmountLabel.TabIndex = 12;
-            this.AmountLabel.Text = "0,00";
+            this.AmountLabel.Size = new System.Drawing.Size(533, 15);
+            this.AmountLabel.TabIndex = 11;
+            this.AmountLabel.Text = "Amount:";
             this.AmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // AmountTextLabel
-            // 
-            this.AmountTextLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AmountTextLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmountTextLabel.Location = new System.Drawing.Point(3, 420);
-            this.AmountTextLabel.Name = "AmountTextLabel";
-            this.AmountTextLabel.Size = new System.Drawing.Size(533, 15);
-            this.AmountTextLabel.TabIndex = 11;
-            this.AmountTextLabel.Text = "Amount:";
-            this.AmountTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // OrderItemsListBox
             // 
@@ -329,13 +366,13 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // OrderAddressControl
             // 
-            address3.Apartment = "";
-            address3.Building = "";
-            address3.City = "";
-            address3.Country = "";
-            address3.Index = 100000;
-            address3.Street = "";
-            this.OrderAddressControl.Address = address3;
+            address2.Apartment = "";
+            address2.Building = "";
+            address2.City = "";
+            address2.Country = "";
+            address2.Index = 100000;
+            address2.Street = "";
+            this.OrderAddressControl.Address = address2;
             this.OrderAddressControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OrderAddressControl.Location = new System.Drawing.Point(-1, 108);
@@ -443,18 +480,21 @@ namespace ObjectOrientedPractics.View.Tabs
         private System.Windows.Forms.ComboBox OrderStatusComboBox;
         private System.Windows.Forms.TextBox OrderDateTextBox;
         private System.Windows.Forms.TextBox OrderIdTextBox;
+        private System.Windows.Forms.Label AmountDigitLabel;
         private System.Windows.Forms.Label AmountLabel;
-        private System.Windows.Forms.Label AmountTextLabel;
         private System.Windows.Forms.DataGridView OrdersDataGridView;
+        private System.Windows.Forms.Panel PriorityOptionsPanel;
+        private System.Windows.Forms.Label PriorityOptionsLabel;
+        private System.Windows.Forms.ComboBox DeliveryTimeSelectedOrderComboBox;
+        private System.Windows.Forms.Label DeliveryTimeSelectedOrderLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Created;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.Panel PriorityOptionsPanel;
-        private System.Windows.Forms.Label PriorityOptionsLabel;
-        private System.Windows.Forms.ComboBox DeliveryTimeSelectedOrderComboBox;
-        private System.Windows.Forms.Label DeliveryTimeSelectedOrderLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label TotalAmountDigitLabel;
+        private System.Windows.Forms.Label TotalAmountLabel;
     }
 }

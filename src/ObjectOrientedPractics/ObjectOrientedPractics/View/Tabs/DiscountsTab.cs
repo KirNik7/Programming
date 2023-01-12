@@ -42,12 +42,12 @@ namespace ObjectOrientedPractics.View.Tabs
         private void SetAmount()
         {
 
-            ProductsAmountDigitLabel.Text = _amount.ToString();
+            ProductsAmountDigitLabel.Text = _amount.ToString("f2");
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            DiscountAmountDigitLabel.Text = _discount.Calculate(_items).ToString();
+            DiscountAmountDigitLabel.Text = _discount.Calculate(_items).ToString("f2");
             InfoLabel.Text = $"Info: {_discount.Info}";
         }
 
@@ -55,7 +55,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             _amount -= _discount.Calculate(_items);
             _discount.Apply(_items);
-            ProductsAmountDigitLabel.Text = _amount.ToString();
+            ProductsAmountDigitLabel.Text = _amount.ToString("f2");
             InfoLabel.Text = $"Info: {_discount.Info}";
         }
 
