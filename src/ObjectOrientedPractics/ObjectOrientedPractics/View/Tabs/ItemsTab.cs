@@ -132,7 +132,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ItemsListBox.SelectedIndex == -1) return;
-
+            
             EnabledItemsTextBoxes();
             _currentItem = Items[ItemsListBox.SelectedIndex];
             ItemIDTextBox.Text = _currentItem.Id.ToString();
@@ -140,7 +140,7 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemNameTextBox.Text = _currentItem.Name;
             ItemInfoTextBox.Text = _currentItem.Info;
             ItemCategoryComboBox.Text = _currentItem.Category.ToString();
-            if (_currentItem.Category == "")
+            if (_currentItem.Category == Category.None)
             {
                 ItemCategoryComboBox.SelectedItem = null;
             }
@@ -199,7 +199,7 @@ namespace ObjectOrientedPractics.View.Tabs
             try
             {
                 if (ItemCategoryComboBox.SelectedItem == null) return;
-                _currentItem.Category = ItemCategoryComboBox.SelectedItem.ToString();
+                _currentItem.Category = (Category)ItemCategoryComboBox.SelectedItem;
                 ItemCategoryComboBox.BackColor = AppColors.CorrectColor;
             }
             catch

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ObjectOrientedPractics.Model.Address address3 = new ObjectOrientedPractics.Model.Address();
+            ObjectOrientedPractics.Model.Address address2 = new ObjectOrientedPractics.Model.Address();
             this.CustomersSplitContainer = new System.Windows.Forms.SplitContainer();
             this.CustomersButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddCustomerButton = new System.Windows.Forms.Button();
@@ -43,6 +43,10 @@
             this.CustomerFullNameLabel = new System.Windows.Forms.Label();
             this.CustomerFullNameTextBox = new System.Windows.Forms.TextBox();
             this.CustomerIDTextBox = new System.Windows.Forms.TextBox();
+            this.RemoveDiscountButton = new System.Windows.Forms.Button();
+            this.AddDiscountButton = new System.Windows.Forms.Button();
+            this.DiscountsListBox = new System.Windows.Forms.ListBox();
+            this.DiscountsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersSplitContainer)).BeginInit();
             this.CustomersSplitContainer.Panel1.SuspendLayout();
             this.CustomersSplitContainer.Panel2.SuspendLayout();
@@ -50,6 +54,7 @@
             this.CustomersButtonsTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SelectedCustomerContainer)).BeginInit();
             this.SelectedCustomerContainer.Panel1.SuspendLayout();
+            this.SelectedCustomerContainer.Panel2.SuspendLayout();
             this.SelectedCustomerContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,6 +164,13 @@
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.CustomerFullNameLabel);
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.CustomerFullNameTextBox);
             this.SelectedCustomerContainer.Panel1.Controls.Add(this.CustomerIDTextBox);
+            // 
+            // SelectedCustomerContainer.Panel2
+            // 
+            this.SelectedCustomerContainer.Panel2.Controls.Add(this.RemoveDiscountButton);
+            this.SelectedCustomerContainer.Panel2.Controls.Add(this.AddDiscountButton);
+            this.SelectedCustomerContainer.Panel2.Controls.Add(this.DiscountsListBox);
+            this.SelectedCustomerContainer.Panel2.Controls.Add(this.DiscountsLabel);
             this.SelectedCustomerContainer.Size = new System.Drawing.Size(516, 565);
             this.SelectedCustomerContainer.SplitterDistance = 269;
             this.SelectedCustomerContainer.TabIndex = 7;
@@ -176,13 +188,13 @@
             // 
             // AddressCustomerControl
             // 
-            address3.Apartment = "Apartment";
-            address3.Building = "Building";
-            address3.City = "City";
-            address3.Country = "Country";
-            address3.Index = 100000;
-            address3.Street = "Street";
-            this.AddressCustomerControl.Address = address3;
+            address2.Apartment = "Apartment";
+            address2.Building = "Building";
+            address2.City = "City";
+            address2.Country = "Country";
+            address2.Index = 100000;
+            address2.Street = "Street";
+            this.AddressCustomerControl.Address = address2;
             this.AddressCustomerControl.Location = new System.Drawing.Point(3, 115);
             this.AddressCustomerControl.Name = "AddressCustomerControl";
             this.AddressCustomerControl.ReadOnly = false;
@@ -238,6 +250,45 @@
             this.CustomerIDTextBox.Size = new System.Drawing.Size(116, 23);
             this.CustomerIDTextBox.TabIndex = 3;
             // 
+            // RemoveDiscountButton
+            // 
+            this.RemoveDiscountButton.Location = new System.Drawing.Point(300, 63);
+            this.RemoveDiscountButton.Name = "RemoveDiscountButton";
+            this.RemoveDiscountButton.Size = new System.Drawing.Size(103, 39);
+            this.RemoveDiscountButton.TabIndex = 3;
+            this.RemoveDiscountButton.Text = "Remove";
+            this.RemoveDiscountButton.UseVisualStyleBackColor = true;
+            this.RemoveDiscountButton.Click += new System.EventHandler(this.RemoveDiscountButton_Click);
+            // 
+            // AddDiscountButton
+            // 
+            this.AddDiscountButton.Location = new System.Drawing.Point(300, 18);
+            this.AddDiscountButton.Name = "AddDiscountButton";
+            this.AddDiscountButton.Size = new System.Drawing.Size(103, 39);
+            this.AddDiscountButton.TabIndex = 2;
+            this.AddDiscountButton.Text = "Add";
+            this.AddDiscountButton.UseVisualStyleBackColor = true;
+            this.AddDiscountButton.Click += new System.EventHandler(this.AddDiscountButton_Click);
+            // 
+            // DiscountsListBox
+            // 
+            this.DiscountsListBox.FormattingEnabled = true;
+            this.DiscountsListBox.ItemHeight = 15;
+            this.DiscountsListBox.Location = new System.Drawing.Point(4, 18);
+            this.DiscountsListBox.Name = "DiscountsListBox";
+            this.DiscountsListBox.Size = new System.Drawing.Size(290, 94);
+            this.DiscountsListBox.TabIndex = 1;
+            // 
+            // DiscountsLabel
+            // 
+            this.DiscountsLabel.AutoSize = true;
+            this.DiscountsLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DiscountsLabel.Location = new System.Drawing.Point(4, 0);
+            this.DiscountsLabel.Name = "DiscountsLabel";
+            this.DiscountsLabel.Size = new System.Drawing.Size(64, 15);
+            this.DiscountsLabel.TabIndex = 0;
+            this.DiscountsLabel.Text = "Discounts:";
+            // 
             // CustomersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -254,6 +305,8 @@
             this.CustomersButtonsTableLayoutPanel.ResumeLayout(false);
             this.SelectedCustomerContainer.Panel1.ResumeLayout(false);
             this.SelectedCustomerContainer.Panel1.PerformLayout();
+            this.SelectedCustomerContainer.Panel2.ResumeLayout(false);
+            this.SelectedCustomerContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SelectedCustomerContainer)).EndInit();
             this.SelectedCustomerContainer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -276,5 +329,9 @@
         private System.Windows.Forms.TextBox CustomerIDTextBox;
         private Controls.AddressControl AddressCustomerControl;
         private System.Windows.Forms.CheckBox IsPriorityCheckBox;
+        private System.Windows.Forms.Button RemoveDiscountButton;
+        private System.Windows.Forms.Button AddDiscountButton;
+        private System.Windows.Forms.ListBox DiscountsListBox;
+        private System.Windows.Forms.Label DiscountsLabel;
     }
 }

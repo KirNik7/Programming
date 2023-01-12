@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractics.View.Tabs
+﻿using ObjectOrientedPractics.Model.Orders;
+
+namespace ObjectOrientedPractics.View.Tabs
 {
     partial class OrdersTab
     {
@@ -110,7 +112,7 @@
             // 
             // orderBindingSource
             // 
-            this.orderBindingSource.DataSource = typeof(ObjectOrientedPractics.Model.Order);
+            this.orderBindingSource.DataSource = typeof(Order);
             // 
             // storeBindingSource
             // 

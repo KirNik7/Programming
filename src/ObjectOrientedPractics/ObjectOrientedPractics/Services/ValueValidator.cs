@@ -44,5 +44,20 @@ namespace ObjectOrientedPractics.Services
                     $"{propertyName} должно быть в диапазоне от {min} до {max}");
             }
         }
+
+        /// <summary>
+        /// Проверяет, что число является положительным.
+        /// </summary>
+        /// <param name="nameProperty">Имя свойства, откуда был вызван метод.</param>
+        /// <param name="value">Число.</param>
+        /// <exception cref="System.ArgumentException">Выбрасывается, когда число меньше или равно нулю.</exception>
+        public static void AssertOnPositiveValue(string propertyName, double value)
+        {
+            if (value < 0)
+            {
+                throw new System.ArgumentException(
+                    $"{propertyName} должно быть положительным");
+            }
+        }
     }
 }

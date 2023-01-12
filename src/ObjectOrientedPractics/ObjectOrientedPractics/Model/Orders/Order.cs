@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using static ObjectOrientedPractics.Services.IdGenerator;
 
-namespace ObjectOrientedPractics.Model
+namespace ObjectOrientedPractics.Model.Orders
 {
     /// <summary>
     /// Хранит данные о заказе.
@@ -70,7 +70,7 @@ namespace ObjectOrientedPractics.Model
         /// Возвращает и задаёт дату заказа.
         /// </summary>
         public DateTime Date
-        { 
+        {
             get
             {
                 return _date;
@@ -122,7 +122,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-               _amount = value;
+                _amount = value;
             }
         }
 

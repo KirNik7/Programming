@@ -15,6 +15,7 @@
         Pets,
         Sports,
         Gifts,
-        Other
+        Other,
+        None
     }
 }
