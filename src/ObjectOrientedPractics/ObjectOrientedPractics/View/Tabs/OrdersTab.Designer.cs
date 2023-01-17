@@ -31,7 +31,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            ObjectOrientedPractics.Model.Address address2 = new ObjectOrientedPractics.Model.Address();
+            ObjectOrientedPractics.Model.Address address1 = new ObjectOrientedPractics.Model.Address();
             this.OrdersLabel = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -286,6 +286,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // DeliveryTimeSelectedOrderComboBox
             // 
+            this.DeliveryTimeSelectedOrderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DeliveryTimeSelectedOrderComboBox.FormattingEnabled = true;
             this.DeliveryTimeSelectedOrderComboBox.Location = new System.Drawing.Point(102, 22);
             this.DeliveryTimeSelectedOrderComboBox.Name = "DeliveryTimeSelectedOrderComboBox";
@@ -366,13 +367,13 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // OrderAddressControl
             // 
-            address2.Apartment = "";
-            address2.Building = "";
-            address2.City = "";
-            address2.Country = "";
-            address2.Index = 100000;
-            address2.Street = "";
-            this.OrderAddressControl.Address = address2;
+            address1.Apartment = "";
+            address1.Building = "";
+            address1.City = "";
+            address1.Country = "";
+            address1.Index = 100000;
+            address1.Street = "";
+            this.OrderAddressControl.Address = address1;
             this.OrderAddressControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OrderAddressControl.Location = new System.Drawing.Point(-1, 108);
