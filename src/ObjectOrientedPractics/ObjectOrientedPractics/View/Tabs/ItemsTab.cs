@@ -10,6 +10,11 @@ namespace ObjectOrientedPractics.View.Tabs
     public partial class ItemsTab : UserControl
     {
         /// <summary>
+        /// Событие изменения товаров.
+        /// </summary>
+        public event EventHandler<EventArgs> ItemsChanged;
+
+        /// <summary>
         /// Текущий товар.
         /// </summary>
         private Item _currentItem;
@@ -105,6 +110,7 @@ namespace ObjectOrientedPractics.View.Tabs
             Items.Add(item);
             UpdateListBox(Items.IndexOf(item));
             EnabledItemsTextBoxes();
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void RemoveItemButton_Click(object sender, EventArgs e)
@@ -127,6 +133,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 UpdateListBox(0);
                 EnabledItemsTextBoxes();
             }
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,6 +161,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Cost = double.Parse(ItemCostTextBox.Text);
                 ItemCostTextBox.BackColor = AppColors.CorrectColor;
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch
             {
@@ -170,6 +178,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 _currentItem.Name = ItemNameTextBox.Text;
                 ItemNameTextBox.BackColor = AppColors.CorrectColor;
                 UpdateListBox(Items.IndexOf(_currentItem));
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch
             {
@@ -185,6 +194,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Info = ItemInfoTextBox.Text;
                 ItemInfoTextBox.BackColor = AppColors.CorrectColor;
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch
             {
@@ -201,6 +211,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 if (ItemCategoryComboBox.SelectedItem == null) return;
                 _currentItem.Category = (Category)ItemCategoryComboBox.SelectedItem;
                 ItemCategoryComboBox.BackColor = AppColors.CorrectColor;
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch
             {

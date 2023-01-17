@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Model.Enums;
+using System;
 using static ObjectOrientedPractics.Services.IdGenerator;
 using static ObjectOrientedPractics.Services.ValueValidator;
 
@@ -9,6 +10,21 @@ namespace ObjectOrientedPractics.Model
     /// </summary>
     public class Item
     {
+        /// <summary>
+        /// Событие изменения имени.
+        /// </summary>
+        public event EventHandler<EventArgs> NameChanged;
+
+        /// <summary>
+        /// Событие изменения цены.
+        /// </summary>
+        public event EventHandler<EventArgs> CostChanged;
+
+        /// <summary>
+        /// Событие изменение информации.
+        /// </summary>
+        public event EventHandler<EventArgs> InfoChanged;
+
         /// <summary>
         /// Уникальный идентификатор товара.
         /// </summary>
@@ -73,7 +89,11 @@ namespace ObjectOrientedPractics.Model
             set
             {
                 AssertStringOnLength(value, 200, nameof(Name));
-                _name = value;
+                if (_name != value)
+                {
+                    _name = value;
+                    NameChanged?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
 
@@ -90,7 +110,11 @@ namespace ObjectOrientedPractics.Model
             set
             {
                 AssertStringOnLength(value, 200, nameof(Info));
-                _info = value;
+                if (_info != value)
+                {
+                    _info = value;
+                    InfoChanged?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
 
@@ -107,7 +131,11 @@ namespace ObjectOrientedPractics.Model
             set
             {
                 AssertValueInRange(value, 0, 100000, nameof(Cost));
-                _cost = value;
+                if (_cost != value)
+                {
+                    _cost = value;
+                    CostChanged?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
 

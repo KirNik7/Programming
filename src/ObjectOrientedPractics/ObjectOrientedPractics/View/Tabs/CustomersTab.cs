@@ -151,6 +151,7 @@ namespace ObjectOrientedPractics.View.Tabs
             CustomerIDTextBox.Text = _currentCustomer.Id.ToString();
             CustomerFullNameTextBox.Text = _currentCustomer.FullName;
             AddressCustomerControl.Address = _currentCustomer.Address;
+            UpdateDiscountsListBox();
         }
 
         private void CustomerFullNameTextBox_TextChanged(object sender, EventArgs e)

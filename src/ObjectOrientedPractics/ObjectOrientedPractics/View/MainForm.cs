@@ -20,6 +20,7 @@ namespace ObjectOrientedPractics
             CartsTab.Customers = Store.Customers;
             OrdersTab.Customers = Store.Customers;
             PriorityOrdersTab.Items = Store.Items;
+            ItemsTab.ItemsChanged += ItemsTab_ItemsChanged;
         }
 
         /// <summary>
@@ -37,10 +38,20 @@ namespace ObjectOrientedPractics
             }
         }
 
+        /*
         private void SelectedTabChanged(object sender, System.EventArgs e)
         {
             CartsTab.RefreshData();
             OrdersTab.RefreshData();
+        }*/
+        
+        private void ItemsTab_ItemsChanged(object sender, System.EventArgs args)
+        {
+            CartsTab.Items = ItemsTab.Items;
+            CartsTab.Customers = CustomersTab.Customers;
+            OrdersTab.Customers = CartsTab.Customers;
+            OrdersTab.RefreshData();
+            CartsTab.RefreshData();
         }
     }
 }
