@@ -44,14 +44,11 @@ namespace ObjectOrientedPractics
             CartsTab.RefreshData();
             OrdersTab.RefreshData();
         }*/
-        
+
         private void ItemsTab_ItemsChanged(object sender, System.EventArgs args)
         {
-            CartsTab.Items = ItemsTab.Items;
-            CartsTab.Customers = CustomersTab.Customers;
-            OrdersTab.Customers = CartsTab.Customers;
-            OrdersTab.RefreshData();
             CartsTab.RefreshData();
+            OrdersTab.RefreshData();
         }
     }
 }
