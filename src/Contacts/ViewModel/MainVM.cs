@@ -80,7 +80,7 @@ namespace Contacts.ViewModel
         {
             get
             {
-                return new SaveCommand((obj) =>
+                return new RelayCommand((obj) =>
                 {
                     ContactSerializer.Serialize(Contact, Path);
                 });
@@ -94,7 +94,7 @@ namespace Contacts.ViewModel
         {
             get
             {
-                return new LoadCommand((obj) =>
+                return new RelayCommand((obj) =>
                 {
                     var contact = ContactSerializer.Deserialize(Path);
                     Name = contact.Name;

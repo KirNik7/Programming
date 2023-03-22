@@ -10,7 +10,7 @@ namespace View.ViewModel
     /// <summary>
     /// Представляет реализацию интерфейса <see cref="ICommand"/>.
     /// </summary>
-    public class LoadCommand : ICommand
+    public class RelayCommand : ICommand
     {
         /// <summary>
         /// Делегат для вызова команды.
@@ -27,10 +27,10 @@ namespace View.ViewModel
         }
 
         /// <summary>
-        /// Создаёт экземпляр класса <see cref="LoadCommand"/>.
+        /// Создаёт экземпляр класса <see cref="RelayCommand"/>.
         /// </summary>
         /// <param name="execute">Делегат для вызова команды.</param>
-        public LoadCommand(Action<object> execute)
+        public RelayCommand(Action<object> execute)
         {
             this.execute = execute;
         }
