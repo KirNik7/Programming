@@ -11,8 +11,7 @@ namespace Contacts
         public MainWindow()
         {
             InitializeComponent();
-            MainVM vm = new MainVM();
-            DataContext = vm;
+            DataContext = new MainVM();
         }
     }
 }
