@@ -25,10 +25,9 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="31"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <GroupBox
-                x:Name="EditContactGroupBox"
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="3"
@@ -43,7 +42,6 @@
                 </StackPanel>
             </GroupBox>
             <GroupBox
-                x:Name="ReadContactGroupBox"
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="3"
