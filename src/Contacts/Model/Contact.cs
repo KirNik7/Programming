@@ -10,12 +10,12 @@
         /// </summary>
         /// <param name="name">Имя контакта.</param>
         /// <param name="email">Электронная почта контакта.</param>
-        /// <param name="phone">Номер телефона контакта.</param>
-        public Contact(string name, string email, string phone)
+        /// <param name="phoneNumber">Номер телефона контакта.</param>
+        public Contact(string name, string email, string phoneNumber)
         {
             Name = name;
             Email = email;
-            Phone = phone;
+            PhoneNumber = phoneNumber;
         }
         
         /// <summary>
@@ -39,6 +39,15 @@
         /// <summary>
         /// Возвращает и задаёт номер телефона контакта.
         /// </summary>
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Возвращает копию экземпляра класса <see cref="Contact"/>
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Contact(Name, PhoneNumber, Email);
+        }
     }
 }

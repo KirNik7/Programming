@@ -1,54 +1,68 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+using System;
 using System.IO;
-using View.Model;
+using View.ViewModel;
 
 namespace Contacts.Model.Services
 {
     /// <summary>
     /// Представляет реализацию по сериализации данных.
     /// </summary>
-    public static class ContactSerializer
+    public class ContactSerializer
     {
         /// <summary>
-        /// Проводит сериализацию данных.
+        /// Возвращает и задает путь сохранения файла.
         /// </summary>
-        /// <param name="contact">Контакт.</param>
-        /// <param name="path">Путь сериализации.</param>
-        public static void Serialize(Contact contact, string path)
+        public string Path { get; set; }
+            = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            + @"\contacts.json";
+
+        /// <summary>
+        /// Создает экземпляр класса <see cref="ContactSerializer"/>.
+        /// </summary>
+        public ContactSerializer()
         {
-            if (!Directory.Exists(Path.GetDirectoryName(path)))
-                Directory.CreateDirectory(Path.GetDirectoryName(path));
-            using (StreamWriter writer = new StreamWriter(path))
-            {
-                writer.Write(JsonConvert.SerializeObject(contact));
-            }
+
         }
 
         /// <summary>
-        /// Проводит десериализацию данных.
+        /// Загружает данные из файла в приложение.
         /// </summary>
-        /// <param name="path">Путь десериализации.</param>
-        /// <returns>Возвращает экземпляр класса <see cref="Contact"/>.</returns>
-        public static Contact Deserialize(string path)
+        /// <returns>Список контактов.</returns>
+        public ObservableCollection<ContactVM> Load()
         {
-            if (!Directory.Exists(Path.GetDirectoryName(path)))
-                Directory.CreateDirectory(Path.GetDirectoryName(path));
-            var contact = new Contact();
-            try
+            var contacts = new ObservableCollection<ContactVM>();
+
+            if (File.Exists(Path))
             {
-                using (StreamReader reader = new StreamReader(path))
+                using (StreamReader sr = new StreamReader(Path))
                 {
-                    contact = JsonConvert.DeserializeObject<Contact>(reader.ReadToEnd());
+                    contacts
+                        = JsonConvert.
+                        DeserializeObject<ObservableCollection<ContactVM>>
+                        (sr.ReadToEnd());
                 }
-
-                if (contact == null) contact = new Contact();
             }
-            catch (FileNotFoundException e)
+
+            return contacts;
+        }
+
+        /// <summary>
+        /// Сохраняет список объектов в файл.
+        /// </summary>
+        /// <param name="contacts">Список контактов.</param>
+        public void Save(ObservableCollection<ContactVM> contacts)
+        {
+            if (!File.Exists(Path))
             {
-                return contact;
+                File.Create(Path).Close();
             }
 
-            return contact;
+            using (StreamWriter wr = new StreamWriter(Path))
+            {
+                wr.Write(JsonConvert.SerializeObject(contacts));
+            }
         }
     }
 }

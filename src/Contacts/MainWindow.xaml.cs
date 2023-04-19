@@ -1,5 +1,5 @@
-﻿using Contacts.ViewModel;
-using System.Windows;
+﻿using System.Windows;
+using View.ViewModel;
 
 namespace Contacts
 {
@@ -8,11 +8,16 @@ namespace Contacts
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainVM mainVM = new MainVM();
         public MainWindow()
         {
             InitializeComponent();
-            MainVM vm = new MainVM();
-            DataContext = vm;
+            DataContext = mainVM;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            mainVM.SaveContacts();
         }
     }
 }
