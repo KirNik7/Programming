@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using View.ViewModel;
 
-namespace Contacts.Model.Services
+namespace Contacts.Model
 {
     /// <summary>
     /// Представляет реализацию по сериализации данных.

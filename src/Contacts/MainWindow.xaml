@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:View.Model.Services"
+        xmlns:local="clr-namespace:View.View"
         mc:Ignorable="d"
         Title="Contacts"
         Height="534" 
@@ -16,9 +16,9 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.4*"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="0.6*"/>
         </Grid.ColumnDefinitions>
         <Grid Background="#f8f8f8">
             <DockPanel Grid.Column="0" Margin="8" LastChildFill="True">

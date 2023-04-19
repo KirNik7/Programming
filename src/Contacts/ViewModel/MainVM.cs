@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Contacts.Model.Services;
+using Contacts.Model;
 using System.Collections.ObjectModel;
 using View.Model;
 
@@ -49,7 +49,7 @@ namespace View.ViewModel
         private bool _isVisible = false;
 
         /// <summary>
-        /// Поле, хранящее значение, которое говорит о том, была ли нажата кнопка Apply.
+        /// Поле, хранящее значение, говорящее о том, была ли нажата кнопка Apply.
         /// </summary>
         private bool _isApply = false;
 
@@ -65,7 +65,7 @@ namespace View.ViewModel
             = new ObservableCollection<ContactVM>();
 
         /// <summary>
-        /// Возвращает и задает, включен ли редактор контактов.
+        /// Возвращает и задает информацию о том, включен ли редактор контактов.
         /// </summary>
         public bool IsEdit { get; set; }
 
@@ -78,17 +78,11 @@ namespace View.ViewModel
             set
             {
                 _isApply = value;
-
+                IsVisible = !value;
+                IsReadOnly = value;
                 if (value)
                 {
                     IsEdit = false;
-                    IsVisible = false;
-                    IsReadOnly = true;
-                }
-                else
-                {
-                    IsVisible = true;
-                    IsReadOnly = false;
                 }
             }
         }

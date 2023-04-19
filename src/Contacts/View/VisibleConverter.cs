@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace View.Model.Services
+namespace View.View
 {
     /// <summary>
     /// Хранит логику для преобразования значений.
@@ -24,23 +24,14 @@ namespace View.Model.Services
                               object parameter,
                               CultureInfo culture)
         {
-            var returnValue = Visibility.Hidden;
+            var asBool = (bool)value;
 
-            switch (value)
+            if (asBool)
             {
-                case true:
-                    {
-                        returnValue = Visibility.Visible;
-                        break;
-                    }
-                case false:
-                    {
-                        returnValue = Visibility.Hidden;
-                        break;
-                    }
+                return Visibility.Visible;
             }
 
-            return returnValue;
+            return Visibility.Hidden;
         }
 
         /// <summary>
@@ -54,28 +45,13 @@ namespace View.Model.Services
         /// <returns>Булевое значение.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var returnValue = false;
+            var asVisibility = (Visibility)value;
 
-            switch ((Visibility)value)
+            if (asVisibility == Visibility.Visible)
             {
-                case Visibility.Visible:
-                    {
-                        returnValue = true;
-                        break;
-                    }
-                case Visibility.Collapsed:
-                    {
-                        returnValue = false;
-                        break;
-                    }
-                case Visibility.Hidden:
-                    {
-                        returnValue = false;
-                        break;
-                    }
+                return true;
             }
-
-            return returnValue;
+            return false;
         }
     }
 }
