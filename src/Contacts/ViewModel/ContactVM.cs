@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Xml.Linq;
 using View.Model;
 
 namespace View.ViewModel

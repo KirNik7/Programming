@@ -2,11 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Contacts.Model.Services;
 using System.Collections.ObjectModel;
-using System.Net;
-using System.Windows;
-using System.Windows.Interop;
 using View.Model;
-using View.Model.Services;
 
 namespace View.ViewModel
 {
@@ -19,11 +15,6 @@ namespace View.ViewModel
         /// Сериализатор.
         /// </summary>
         private ContactSerializer _serializer = new ContactSerializer();
-
-        /// <summary>
-        /// Объект класса <see cref="ContactVMFactory"/>.
-        /// </summary>
-        private ContactVMFactory _contactVMFactory = new ContactVMFactory();
 
         /// <summary>
         /// Объект, хранящий текущий контакт.
