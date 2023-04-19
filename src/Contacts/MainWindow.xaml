@@ -33,9 +33,12 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Height="25" Margin="3" Command="{Binding Path=AddContactCommand}" Content="Add" IsEnabled="{Binding Path=IsReadOnly}"/>
-                        <Button Grid.Column="1" Height="25" Margin="3" Command="{Binding Path=EditContactCommand}" Content="Edit" IsEnabled="{Binding Path=IsReadOnly}"/>
-                        <Button Grid.Column="2" Height="25" Margin="3" Command="{Binding Path=RemoveContactCommand}" Content="Remove" IsEnabled="{Binding Path=IsReadOnly}"/>
+                        <Button Grid.Column="0" Height="25" Margin="3" 
+                                Command="{Binding Path=AddContactCommand}" Content="Add" IsEnabled="{Binding Path=IsReadOnly}"/>
+                        <Button Grid.Column="1" Height="25" Margin="3" 
+                                Command="{Binding Path=EditContactCommand}" Content="Edit" IsEnabled="{Binding Path=IsReadOnly}"/>
+                        <Button Grid.Column="2" Height="25" Margin="3" 
+                                Command="{Binding Path=RemoveContactCommand}" Content="Remove" IsEnabled="{Binding Path=IsReadOnly}"/>
                     </Grid>
                     <ListBox
                         Margin="3"
