@@ -61,7 +61,7 @@
                    Width="100" Height="100"
                    Margin="3"
                    VerticalAlignment="Top"
-                   Source="/Resources/photo_placeholder_96x96.png"
+                   Source="/Resources/photo_placeholder_100x100.png"
                    />
             <TextBlock Grid.Column="1" Margin="3" Text="Name:"/>
             <StackPanel Grid.Row="1" Grid.Column="1">
