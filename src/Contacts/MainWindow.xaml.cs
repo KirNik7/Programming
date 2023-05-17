@@ -14,10 +14,5 @@ namespace Contacts
             InitializeComponent();
             DataContext = _mainVM;
         }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            _mainVM.SaveContacts();
-        }
     }
 }

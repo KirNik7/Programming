@@ -19,10 +19,7 @@ namespace View.View
         /// <param name="parameter">Параметр.</param>
         /// <param name="culture">Региональная культура</param>
         /// <returns>Значение из перечисления <see cref="Visibility"/>.</returns>
-        public object Convert(object value,
-                              Type targetType,
-                              object parameter,
-                              CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var asBool = (bool)value;
 
