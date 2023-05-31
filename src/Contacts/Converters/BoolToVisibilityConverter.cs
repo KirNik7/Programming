@@ -14,7 +14,7 @@ namespace View.Converters
         /// Конвертирует <see cref="bool" /> значение в <see cref="object" />.
         /// </summary>
         /// <param name="value">Значение, которое необходимо преобразовать.</param>
-        /// <param name="targetType">Тип, в который необходимо преобразовать.</param>
+        /// <param name="targetType">Тип, в который необходимо преобразовать.</param>s
         /// <param name="parameter">Вспомогательный параметр.</param>
         /// <param name="culture">Текущая культура приложения.</param>
         /// <returns>Возвращает значение видимости элемента.</returns>
