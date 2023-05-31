@@ -32,8 +32,8 @@ namespace ViewModel
         /// </summary>
         public MainVM()
         {
-            //Contacts = ContactSerializer.Deserialize(Path);
-            Contacts = new ObservableCollection<ContactVM>(ContactSerializer.Deserialize(Path).Select(c => new ContactVM(c)));
+            Contacts = new ObservableCollection<ContactVM>(ContactSerializer.
+                Deserialize(Path).Select(c => new ContactVM(c)));
             EditCommand = new RelayCommand(EditContact);
             AddCommand = new RelayCommand(AddContact);
             RemoveCommand = new RelayCommand(RemoveContact);
