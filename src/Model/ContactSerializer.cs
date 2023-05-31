@@ -21,7 +21,9 @@ namespace Model
             if (!File.Exists(path)) return new ObservableCollection<Contact>();
             using (var reader = new StreamReader(path))
             {
-                var contacts = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(reader.ReadToEnd()) ?? new ObservableCollection<Contact>();
+                var contacts = JsonConvert.
+                    DeserializeObject<ObservableCollection<Contact>>(reader.ReadToEnd()) ?? 
+                    new ObservableCollection<Contact>();
                 return contacts;
             }
         }
